@@ -1,0 +1,69 @@
+name: Snapshot & Deploy
+
+on:
+  # 美股收盤後（UTC 02:00 ≈ 美東前一日收盤後數小時），週二至週六
+  schedule:
+    - cron: "0 2 * * 2-6"
+  # 推送到主分支時也重新部署（程式變更）
+  push:
+    branches: [main]
+  # 允許在 Actions 頁面手動觸發
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同時間只跑一個部署
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # 跨執行保留 Polygon 明細快取（名稱/市值/產業），減少 API 呼叫
+      - name: Restore ticker metadata cache
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: polygon-tickers-v1
+
+      # 產生 public/rankings.json
+      - name: Snapshot rankings
+        run: node scripts/snapshot.mjs
+        env:
+          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      # 用 Pages 自動推得的 base_path（專案站台為 /repo，使用者站台為空）
+      - name: Build static site
+        run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
