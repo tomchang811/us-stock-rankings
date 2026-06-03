@@ -8,7 +8,7 @@
       "dollarVolume": 50105290241.08798,
       "marketCap": 1200021803669.0999,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "記憶體",
+      "theme": "記憶體/儲存",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -34,7 +34,7 @@
       "dollarVolume": 31548120037.46491,
       "marketCap": 254383092000.00003,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "AI 數據中心互連",
+      "theme": "資料中心/AI 基礎設施",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -47,7 +47,7 @@
       "dollarVolume": 18787175812.902058,
       "marketCap": 2280074157368.88,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "網路晶片/AI 基礎設施",
+      "theme": "資料中心/AI 基礎設施",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -60,7 +60,7 @@
       "dollarVolume": 18378625110.15629,
       "marketCap": 2107414400000.0002,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "雲端/AI 軟體",
+      "theme": "雲端/AI 巨頭",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -73,7 +73,7 @@
       "dollarVolume": 16535350892.685923,
       "marketCap": 3278242519222.24,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "雲端軟體/數據平台",
+      "theme": "雲端/AI 巨頭",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -112,7 +112,7 @@
       "dollarVolume": 12513200191.720034,
       "marketCap": 1955375840000,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "雲端/AI 軟體",
+      "theme": "雲端/AI 巨頭",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -138,7 +138,7 @@
       "dollarVolume": 12308913326.852865,
       "marketCap": 254175337040.87997,
       "sector": "COMPUTER STORAGE DEVICES",
-      "theme": "記憶體",
+      "theme": "記憶體/儲存",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -151,7 +151,7 @@
       "dollarVolume": 11393816598.639296,
       "marketCap": 542456180000.00006,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "CPU/AI 晶片",
+      "theme": "半導體製造/CPU",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -177,7 +177,7 @@
       "dollarVolume": 10766591971.215677,
       "marketCap": 2759413712522.7197,
       "sector": "RETAIL-CATALOG & MAIL-ORDER HOUSES",
-      "theme": "雲端/電商",
+      "theme": "電商/雲端",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -190,7 +190,7 @@
       "dollarVolume": 8793917504.804808,
       "marketCap": 74502857097.34999,
       "sector": "COMPUTER & OFFICE EQUIPMENT",
-      "theme": "AI 伺服器/數據中心",
+      "theme": "企業IT/伺服器",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -203,7 +203,7 @@
       "dollarVolume": 8162619811.556621,
       "marketCap": 80067870000,
       "sector": "COMMUNICATIONS EQUIPMENT, NEC",
-      "theme": "AI 數據中心互連",
+      "theme": "光通訊/光纖",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -216,7 +216,7 @@
       "dollarVolume": 7402676873.703608,
       "marketCap": 703423330680,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "企業軟體/雲端",
+      "theme": "企業軟體/資料庫",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -229,7 +229,7 @@
       "dollarVolume": 7153358181.465715,
       "marketCap": 141490632378.28,
       "sector": "ELECTRONIC COMPUTERS",
-      "theme": "伺服器/PC",
+      "theme": "企業IT/伺服器",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -242,7 +242,7 @@
       "dollarVolume": 6602162332.018519,
       "marketCap": 349393174894.77997,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "雲端軟體/數據平台",
+      "theme": "AI 數據分析",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -255,7 +255,7 @@
       "dollarVolume": 6264479000.88336,
       "marketCap": 425468647429.98,
       "sector": "—",
-      "theme": "晶片設計 IP",
+      "theme": "半導體 IP",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -281,7 +281,7 @@
       "dollarVolume": 5569845933.56441,
       "marketCap": 309438430734.4,
       "sector": "COMPUTER & OFFICE EQUIPMENT",
-      "theme": "企業軟體/雲端",
+      "theme": "企業IT/伺服器",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -294,7 +294,7 @@
       "dollarVolume": 5274547089.99511,
       "marketCap": 131607150000,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "雲端軟體/數據平台",
+      "theme": "雲端軟體 SaaS",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -333,7 +333,7 @@
       "dollarVolume": 4428325859.295413,
       "marketCap": 53382143704.53,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "AI 雲端服務",
+      "theme": "AI 雲端基礎設施",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -346,7 +346,7 @@
       "dollarVolume": 4418011069.872663,
       "marketCap": 253845360000,
       "sector": "RADIO & TV BROADCASTING & COMMUNICATIONS EQUIPMENT",
-      "theme": "行動晶片/物聯網",
+      "theme": "行動晶片/通訊",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -372,7 +372,7 @@
       "dollarVolume": 3883882968.8760147,
       "marketCap": 86143825423.8,
       "sector": "ELECTRICAL INDUSTRIAL APPARATUS",
-      "theme": "燃料電池/潔淨能源",
+      "theme": "潔淨能源/燃料電池",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -385,7 +385,7 @@
       "dollarVolume": 3837260723.0582643,
       "marketCap": 164487960000,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "雲端軟體/數據平台",
+      "theme": "雲端軟體 SaaS",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -398,7 +398,7 @@
       "dollarVolume": 3808887731.702867,
       "marketCap": 83516469741.69,
       "sector": "OPTICAL INSTRUMENTS & LENSES",
-      "theme": "AI 數據中心互連",
+      "theme": "光通訊/光纖",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -411,7 +411,7 @@
       "dollarVolume": 3773412316.754186,
       "marketCap": 57188212631.03999,
       "sector": "—",
-      "theme": "AI 雲端服務",
+      "theme": "AI 雲端基礎設施",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -424,7 +424,7 @@
       "dollarVolume": 3626748897.5238433,
       "marketCap": 42239036260,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "AI 數據中心互連",
+      "theme": "資料中心/AI 基礎設施",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -450,7 +450,7 @@
       "dollarVolume": 3575993305.182645,
       "marketCap": 172471820130,
       "sector": "DRAWING & INSULATING OF NONFERROUS WIRE",
-      "theme": "AI 數據中心互連",
+      "theme": "光通訊/光纖",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -463,7 +463,7 @@
       "dollarVolume": 3534645831.7724833,
       "marketCap": 90511885223.09999,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "雲端軟體/數據平台",
+      "theme": "雲端軟體 SaaS",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -476,7 +476,7 @@
       "dollarVolume": 3488491666.399323,
       "marketCap": 23801419688.399998,
       "sector": "FINANCE SERVICES",
-      "theme": "比特幣挖礦",
+      "theme": "比特幣/加密貨幣",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -489,7 +489,7 @@
       "dollarVolume": 3415155186.335686,
       "marketCap": 280417790762.92,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "類比晶片/嵌入式處理",
+      "theme": "類比/嵌入式晶片",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -502,7 +502,7 @@
       "dollarVolume": 3402486485.5129147,
       "marketCap": 504503637120,
       "sector": "COMPUTER COMMUNICATIONS EQUIPMENT",
-      "theme": "網路設備",
+      "theme": "網路設備/資安",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -528,7 +528,7 @@
       "dollarVolume": 3213370040.895147,
       "marketCap": 526659155622.24,
       "sector": "SERVICES-BUSINESS SERVICES, NEC",
-      "theme": "支付處理",
+      "theme": "支付服務",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -567,7 +567,7 @@
       "dollarVolume": 2829542239.3596845,
       "marketCap": 194090507966.1,
       "sector": "COMPUTER STORAGE DEVICES",
-      "theme": "記憶體",
+      "theme": "記憶體/儲存",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -580,7 +580,7 @@
       "dollarVolume": 2737773270.2361755,
       "marketCap": 30173165241.940002,
       "sector": "ELECTRONIC COMPUTERS",
-      "theme": "AI 伺服器/數據中心",
+      "theme": "企業IT/伺服器",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -606,7 +606,7 @@
       "dollarVolume": 2550355021.416731,
       "marketCap": 419051192053.23,
       "sector": "CONSTRUCTION MACHINERY & EQUIP",
-      "theme": "重型機械",
+      "theme": "工業機械",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -619,7 +619,7 @@
       "dollarVolume": 2539788253.345832,
       "marketCap": 16238728757.79,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "AI 數據中心互連",
+      "theme": "光通訊/光纖",
       "isNew": false,
       "rankChange": 0,
       "streak": 1
@@ -656,32 +656,42 @@
   "aiSource": "gemini",
   "themeSummary": [
     {
-      "theme": "AI 數據中心互連",
-      "reason": "AI算力需求激增帶動數據中心內部與外部高速傳輸元件需求。",
+      "theme": "光通訊/光纖",
+      "reason": "AI 數據中心對高速光通訊模組與光纖的需求激增，推動相關供應商股價上漲。",
       "symbols": [
-        "MRVL",
-        "LITE",
         "COHR",
-        "CRDO",
+        "LITE",
         "GLW",
         "AAOI"
       ],
-      "count": 6,
-      "avgChange": 14.593574148856208
+      "count": 4,
+      "avgChange": 13.43955124302969
     },
     {
-      "theme": "AI 伺服器/數據中心",
-      "reason": "AI應用擴張推升企業對高效能AI伺服器及數據中心基礎設施的投資。",
+      "theme": "資料中心/AI 基礎設施",
+      "reason": "AI 應用對數據中心基礎設施的龐大需求，推動高速網路、客製化晶片與傳輸方案供應商表現強勁。",
+      "symbols": [
+        "MRVL",
+        "AVGO",
+        "CRDO"
+      ],
+      "count": 3,
+      "avgChange": 12.833066117696712
+    },
+    {
+      "theme": "企業IT/伺服器",
+      "reason": "企業加速數位轉型與 AI 部署，對高效能伺服器及相關 IT 解決方案的需求持續增長。",
       "symbols": [
         "HPE",
-        "SMCI"
+        "SMCI",
+        "IBM"
       ],
-      "count": 2,
-      "avgChange": 13.243001597560088
+      "count": 3,
+      "avgChange": 9.74517315167635
     },
     {
       "theme": "半導體設備",
-      "reason": "全球半導體產業景氣復甦與AI晶片製造需求，帶動設備訂單增加。",
+      "reason": "全球半導體產業景氣復甦，加上 AI 晶片需求帶動先進製程擴張，設備供應商受惠。",
       "symbols": [
         "AMAT",
         "LRCX",
@@ -691,8 +701,8 @@
       "avgChange": 5.7087014487568695
     },
     {
-      "theme": "燃料電池/潔淨能源",
-      "reason": "市場對潔淨能源解決方案及氫能技術發展前景保持樂觀。",
+      "theme": "潔淨能源/燃料電池",
+      "reason": "市場對可再生能源和氫能技術的關注度提升，推動燃料電池相關企業股價表現。",
       "symbols": [
         "BE"
       ],
@@ -700,23 +710,15 @@
       "avgChange": 10.72721289897994
     },
     {
-      "theme": "網路晶片/AI 基礎設施",
-      "reason": "AI數據流量增長刺激對高效能網路晶片和基礎設施的需求。",
+      "theme": "記憶體/儲存",
+      "reason": "AI 晶片對高頻寬記憶體 (HBM) 的需求激增，帶動記憶體產業復甦，儲存解決方案也受惠。",
       "symbols": [
-        "AVGO"
-      ],
-      "count": 1,
-      "avgChange": 4.69595843207165
-    },
-    {
-      "theme": "記憶體",
-      "reason": "AI與HBM需求推動記憶體產業復甦，價格預期上漲。",
-      "symbols": [
-        "MU",
-        "WDC"
+        "WDC",
+        "MU"
       ],
       "count": 2,
       "avgChange": 2.928027735987593
     }
-  ]
+  ],
+  "newEntrants": []
 }

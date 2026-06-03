@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import SortableHeader from "./SortableHeader";
 import StatusBar from "./StatusBar";
 import ThemeSummary from "./ThemeSummary";
+import NewEntrants from "./NewEntrants";
 import {
   changeColorClass,
   formatMoney,
@@ -19,6 +20,7 @@ import {
   type SortKey,
   type StockRow,
   type ThemeSummaryItem,
+  type NewEntrant,
 } from "@/types/stock";
 
 // 靜態網站：資料來自每日排程產生的 rankings.json（相對路徑以相容 basePath）。
@@ -67,6 +69,7 @@ export default function RankingTable() {
   const [source, setSource] = useState<RankingSource | null>(null);
   const [aiSource, setAiSource] = useState<"gemini" | "none">("none");
   const [themeSummary, setThemeSummary] = useState<ThemeSummaryItem[]>([]);
+  const [newEntrants, setNewEntrants] = useState<NewEntrant[]>([]);
   const [notice, setNotice] = useState<string | undefined>(undefined);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -86,6 +89,7 @@ export default function RankingTable() {
       setSource(data.source);
       setAiSource(data.aiSource ?? "none");
       setThemeSummary(data.themeSummary ?? []);
+      setNewEntrants(data.newEntrants ?? []);
       setNotice(data.notice);
     } catch (err) {
       setError(err instanceof Error ? err.message : "載入失敗");
@@ -137,6 +141,7 @@ export default function RankingTable() {
         onRefresh={() => void load()}
       />
 
+      {!showSkeleton && <NewEntrants items={newEntrants} />}
       {!showSkeleton && <ThemeSummary items={themeSummary} aiSource={aiSource} />}
 
       {error && rows.length === 0 ? (

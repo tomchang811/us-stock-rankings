@@ -114,6 +114,35 @@ async function fetchPrev() {
   }
 }
 
+const GEMINI_MODEL = "gemini-2.5-flash";
+
+/** 呼叫 Gemini generateContent，對 429/500/503 退避重試，回傳解析後的回應物件。 */
+async function callGemini(apiKey, body) {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
+  for (let attempt = 0; ; attempt++) {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    if (res.ok) return res.json();
+    if ([429, 500, 503].includes(res.status) && attempt < 4) {
+      const wait = 5_000 * (attempt + 1);
+      console.warn(`  Gemini HTTP ${res.status}，${wait / 1000}s 後重試（第 ${attempt + 1} 次）…`);
+      await sleep(wait);
+      continue;
+    }
+    const t = await res.text().catch(() => "");
+    throw new Error(`Gemini HTTP ${res.status}: ${t.slice(0, 200)}`);
+  }
+}
+
+/** 串接候選回應的所有 text part。 */
+function candidateText(data) {
+  const parts = data?.candidates?.[0]?.content?.parts ?? [];
+  return parts.map((p) => p.text || "").join("").trim();
+}
+
 /** 用 Gemini 分析每檔題材標籤 + 當日發動題材摘要。回傳 null 表示未啟用/失敗。 */
 async function enrichWithGemini(stocks, apiKey) {
   const lines = stocks
@@ -156,32 +185,12 @@ ${lines}
     required: ["tickers", "summary"],
   };
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
   const body = {
     contents: [{ parts: [{ text: prompt }] }],
     generationConfig: { responseMimeType: "application/json", responseSchema: schema, temperature: 0.3 },
   };
-
-  let res;
-  for (let attempt = 0; ; attempt++) {
-    res = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    });
-    if (res.ok) break;
-    // 503/429/500 多為暫時性（模型忙碌/限流）→ 退避重試。
-    if ([429, 500, 503].includes(res.status) && attempt < 4) {
-      const wait = 5_000 * (attempt + 1);
-      console.warn(`  Gemini HTTP ${res.status}，${wait / 1000}s 後重試（第 ${attempt + 1} 次）…`);
-      await sleep(wait);
-      continue;
-    }
-    const t = await res.text().catch(() => "");
-    throw new Error(`Gemini HTTP ${res.status}: ${t.slice(0, 200)}`);
-  }
-  const data = await res.json();
-  const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+  const data = await callGemini(apiKey, body);
+  const text = candidateText(data);
   if (!text) throw new Error("Gemini 回應為空");
   const parsed = JSON.parse(text);
 
@@ -190,6 +199,32 @@ ${lines}
     if (it.symbol && it.theme) themesByTicker.set(it.symbol, it.theme);
   }
   return { themesByTicker, summary: parsed.summary ?? [] };
+}
+
+/**
+ * 用 Gemini + Google 搜尋，為「新進榜」個股說明近期催化劑（發生了什麼）。
+ * 回傳 Map<symbol, reason>。grounding 與結構化輸出不相容，故用容錯 JSON 解析。
+ */
+async function explainNewEntrants(newStocks, apiKey) {
+  const lines = newStocks
+    .map((s) => `${s.symbol} | ${s.name} | ${s.theme} | ${s.changePercent.toFixed(2)}%`)
+    .join("\n");
+  const prompt = `以下是今天「首次進入美股成交值前 50」的個股（代碼 | 名稱 | 題材 | 當日漲跌幅）：
+${lines}
+
+請用 Google 搜尋它們「最近幾天」的相關新聞，逐檔說明：這檔股票為何會突然放量、衝進成交值前 50？請指出「具體催化劑」（例如財報/財測、新產品或大訂單、分析師調升、併購、法說會、題材輪動、突發事件等）。每檔一句話、繁體中文、務實具體；若查無明確消息，請說「近期無明確個股消息，可能受族群輪動帶動」。
+只輸出 JSON 陣列，格式：[{"symbol":"代碼","reason":"一句話原因"}]，不要任何其他文字或 markdown。`;
+
+  const body = { contents: [{ parts: [{ text: prompt }] }], tools: [{ google_search: {} }] };
+  const data = await callGemini(apiKey, body);
+  const text = candidateText(data);
+  const s = text.indexOf("[");
+  const e = text.lastIndexOf("]");
+  if (s < 0 || e <= s) throw new Error("新進榜回應無 JSON 陣列");
+  const arr = JSON.parse(text.slice(s, e + 1));
+  const map = new Map();
+  for (const it of arr) if (it.symbol && it.reason) map.set(it.symbol, it.reason);
+  return map;
 }
 
 async function main() {
@@ -356,12 +391,33 @@ async function main() {
     })
     .filter((s) => s.count > 0);
 
+  // 新進榜雷達：對 isNew 的個股用 Gemini + Google 搜尋查近期催化劑。
+  let newEntrants = rows
+    .filter((r) => r.isNew)
+    .map((r) => ({
+      symbol: r.symbol,
+      name: r.name,
+      theme: r.theme,
+      changePercent: r.changePercent,
+      reason: "",
+    }));
+  if (geminiKey && newEntrants.length > 0) {
+    try {
+      const reasons = await explainNewEntrants(newEntrants, geminiKey);
+      newEntrants = newEntrants.map((n) => ({ ...n, reason: reasons.get(n.symbol) ?? "" }));
+      console.log(`新進榜 AI 說明完成（${reasons.size}/${newEntrants.length} 檔，含 Google 搜尋）`);
+    } catch (e) {
+      console.warn(`新進榜 AI 說明失敗：${e.message}`);
+    }
+  }
+
   const out = {
     rows,
     asOf: new Date(`${latest.date}T20:00:00Z`).toISOString(),
     source: "polygon",
     aiSource,
     themeSummary,
+    newEntrants,
   };
   await fs.mkdir(path.dirname(OUT_FILE), { recursive: true });
   await fs.writeFile(OUT_FILE, JSON.stringify(out, null, 2), "utf8");

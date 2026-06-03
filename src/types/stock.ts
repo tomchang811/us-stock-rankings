@@ -24,6 +24,15 @@ export interface ThemeSummaryItem {
   avgChange: number;
 }
 
+/** 新進榜個股 + AI（含 Google 搜尋）說明的近期催化劑。 */
+export interface NewEntrant {
+  symbol: string;
+  name: string;
+  theme: string;
+  changePercent: number;
+  reason: string;
+}
+
 export type RankingSource = "polygon" | "fmp" | "mock";
 
 export interface RankingsResponse {
@@ -33,6 +42,7 @@ export interface RankingsResponse {
   /** AI 題材分析來源；none 表示未啟用。 */
   aiSource: "gemini" | "none";
   themeSummary: ThemeSummaryItem[];
+  newEntrants: NewEntrant[];
   notice?: string;
 }
 
