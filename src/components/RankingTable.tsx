@@ -25,6 +25,13 @@ import {
 const DATA_URL = "rankings.json";
 const RANK_JUMP_THRESHOLD = 10; // 排名躍升標示門檻
 
+/** 依在榜天數給顏色：1 天(剛發動，灰) / 2–4 天 / ≥5 天(持續強勢，綠)。 */
+function streakClass(streak: number): string {
+  if (streak >= 5) return "text-emerald-300 font-semibold";
+  if (streak >= 2) return "text-slate-300";
+  return "text-slate-500";
+}
+
 interface ColumnDef {
   key: SortKey;
   label: string;
@@ -36,6 +43,7 @@ const COLUMNS: ColumnDef[] = [
   { key: "symbol", label: "代碼", align: "left" },
   { key: "price", label: "價格", align: "right" },
   { key: "changePercent", label: "漲跌幅", align: "right" },
+  { key: "streak", label: "在榜天數", align: "right" },
   { key: "dollarVolume", label: "成交金額", align: "right" },
   { key: "marketCap", label: "市值", align: "right" },
   { key: "theme", label: "題材/族群", align: "left" },
@@ -216,6 +224,10 @@ export default function RankingTable() {
                           )}`}
                         >
                           {formatPercent(row.changePercent)}
+                        </td>
+                        <td className="px-3 py-2.5 text-right font-mono">
+                          <span className={streakClass(row.streak)}>{row.streak}</span>
+                          <span className="ml-0.5 text-[10px] text-slate-600">天</span>
                         </td>
                         <td className="px-3 py-2.5 text-right font-mono text-emerald-300">
                           {formatMoney(row.dollarVolume)}

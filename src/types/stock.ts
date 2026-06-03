@@ -12,6 +12,7 @@ export interface StockRow {
   theme: string; // AI 題材/族群（無 AI 時退為 SIC 格式化字串）
   isNew: boolean; // 是否首次進前 50（對比前一交易日）
   rankChange: number | null; // 前一名次 − 本次名次（正=上升；新進為 null）
+  streak: number; // 連續在榜天數（含當日；新進為 1）
 }
 
 /** 一個「發動題材」族群。 */
@@ -38,7 +39,7 @@ export interface RankingsResponse {
 /** 可排序的欄位鍵。 */
 export type SortKey = keyof Pick<
   StockRow,
-  "symbol" | "name" | "price" | "changePercent" | "dollarVolume" | "marketCap" | "theme"
+  "symbol" | "name" | "price" | "changePercent" | "dollarVolume" | "marketCap" | "theme" | "streak"
 >;
 
 export type SortDir = "asc" | "desc";

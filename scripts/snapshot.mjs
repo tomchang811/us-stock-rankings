@@ -95,15 +95,20 @@ async function findTradingDays(key) {
   return days;
 }
 
-/** 取得線上前一份快照的 symbol → 名次(1-based) 對照表。 */
-async function fetchPrevRanks() {
+/** 取得線上前一份快照：symbol→名次(1-based)、symbol→該列資料、資料交易日。 */
+async function fetchPrev() {
   try {
     const res = await fetch(PREV_RANKINGS_URL);
     if (!res.ok) return null;
     const data = await res.json();
-    const map = new Map();
-    (data.rows ?? []).forEach((r, i) => map.set(r.symbol, i + 1));
-    return map;
+    const ranks = new Map();
+    const rows = new Map();
+    (data.rows ?? []).forEach((r, i) => {
+      ranks.set(r.symbol, i + 1);
+      rows.set(r.symbol, r);
+    });
+    const date = typeof data.asOf === "string" ? data.asOf.slice(0, 10) : null;
+    return { ranks, rows, date };
   } catch {
     return null;
   }
@@ -157,12 +162,21 @@ ${lines}
     generationConfig: { responseMimeType: "application/json", responseSchema: schema, temperature: 0.3 },
   };
 
-  const res = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  });
-  if (!res.ok) {
+  let res;
+  for (let attempt = 0; ; attempt++) {
+    res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    if (res.ok) break;
+    // 503/429/500 多為暫時性（模型忙碌/限流）→ 退避重試。
+    if ([429, 500, 503].includes(res.status) && attempt < 4) {
+      const wait = 5_000 * (attempt + 1);
+      console.warn(`  Gemini HTTP ${res.status}，${wait / 1000}s 後重試（第 ${attempt + 1} 次）…`);
+      await sleep(wait);
+      continue;
+    }
     const t = await res.text().catch(() => "");
     throw new Error(`Gemini HTTP ${res.status}: ${t.slice(0, 200)}`);
   }
@@ -252,9 +266,15 @@ async function main() {
     picked.push({ b, dv, meta, changePercent, marketCap });
   }
 
-  // 取得前一份快照名次 → 計算 isNew / rankChange。
-  const prevRanks = await fetchPrevRanks();
-  console.log(prevRanks ? `已取得前一份快照（${prevRanks.size} 檔）作對比` : "無前一份快照，新進榜/躍升本次略過");
+  // 取得前一份快照 → 計算 isNew / rankChange / streak（連續在榜天數）。
+  const prev = await fetchPrev();
+  // 同一交易日的重跑（例如改程式碼觸發部署）不重複累加 streak。
+  const sameDay = prev?.date != null && prev.date === latest.date;
+  console.log(
+    prev
+      ? `已取得前一份快照（${prev.ranks.size} 檔，交易日 ${prev.date}${sameDay ? "，同日重跑" : ""}）作對比`
+      : "無前一份快照，新進榜/躍升/在榜天數本次以 1 起算",
+  );
 
   // AI 題材分析（一次呼叫；缺金鑰或失敗則後備）。
   let aiSource = "none";
@@ -291,7 +311,8 @@ async function main() {
   const rows = picked.map((p, i) => {
     const t = p.b.T;
     const currentRank = i + 1;
-    const prevRank = prevRanks?.get(t);
+    const prevRank = prev?.ranks.get(t);
+    const inPrev = prev?.ranks.has(t) ?? false;
     // 題材：Gemini → 快取題材（未過期）→ SIC 格式化
     const cached = cache[t];
     const cachedTheme =
@@ -299,6 +320,16 @@ async function main() {
         ? cached.theme
         : null;
     const theme = themesByTicker.get(t) || cachedTheme || formatSector(p.meta.sector ?? "—");
+
+    // 連續在榜天數：在榜→前次 streak（+1，同日重跑不加）；不在榜或無前資料→1。
+    let streak;
+    if (!prev || !inPrev) {
+      streak = 1;
+    } else {
+      const prevStreak = prev.rows.get(t)?.streak ?? 1;
+      streak = sameDay ? prevStreak : prevStreak + 1;
+    }
+
     return {
       symbol: t,
       name: p.meta.name ?? t,
@@ -308,8 +339,9 @@ async function main() {
       marketCap: p.marketCap,
       sector: p.meta.sector ?? "—",
       theme,
-      isNew: prevRanks ? !prevRanks.has(t) : false,
+      isNew: prev ? !inPrev : false,
       rankChange: prevRank ? prevRank - currentRank : null,
+      streak,
     };
   });
 
