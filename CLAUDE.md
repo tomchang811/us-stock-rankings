@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A static website (Next.js static export) showing the **US market's top 50 stocks by dollar volume**, with AI-derived theme/族群 labels, a "發動題材" panel, a "新進榜雷達" (new-entrants) panel, NEW badges, rank-jump (▲N) markers, and a consecutive-days-on-board (streak) column. UI text is Traditional Chinese.
 
-Live: https://tomchang811.github.io/us-stock-rankings/ · Deploy details in [DEPLOY.md](DEPLOY.md) · Diagrams in [ARCHITECTURE.md](ARCHITECTURE.md).
+Live: https://usstocktop50.github.io/us-stock-rankings/ · Deploy details in [DEPLOY.md](DEPLOY.md) · Diagrams in [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## Commands
 

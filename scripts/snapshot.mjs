@@ -24,7 +24,7 @@ const FUND_TYPES = new Set(["ETF", "ETN", "ETV", "ETS", "FUND", "SP"]);
 // 前一份快照（線上）來源，用於計算 isNew / rankChange；可用 env 覆寫。
 const PREV_RANKINGS_URL =
   process.env.PREV_RANKINGS_URL ||
-  "https://tomchang811.github.io/us-stock-rankings/rankings.json";
+  "https://usstocktop50.github.io/us-stock-rankings/rankings.json";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const fmtDate = (d) => d.toISOString().slice(0, 10);
