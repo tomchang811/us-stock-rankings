@@ -6,12 +6,13 @@ import { formatTime } from "@/lib/format";
 interface Props {
   asOf: string | null;
   source: RankingSource | null;
+  aiSource?: "gemini" | "none";
   notice?: string;
   loading: boolean;
   onRefresh: () => void;
 }
 
-export default function StatusBar({ asOf, source, notice, loading, onRefresh }: Props) {
+export default function StatusBar({ asOf, source, aiSource, notice, loading, onRefresh }: Props) {
   return (
     <div className="mb-3 flex flex-wrap items-center justify-between gap-3 text-sm">
       <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-slate-400">
@@ -34,6 +35,16 @@ export default function StatusBar({ asOf, source, notice, loading, onRefresh }: 
         {source === "fmp" && (
           <span className="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-medium text-emerald-300">
             即時資料 · FMP
+          </span>
+        )}
+        {aiSource === "gemini" && (
+          <span className="rounded-full bg-sky-500/15 px-2.5 py-0.5 text-xs font-medium text-sky-300">
+            題材分析 · Gemini
+          </span>
+        )}
+        {aiSource === "none" && (
+          <span className="rounded-full bg-slate-600/30 px-2.5 py-0.5 text-xs font-medium text-slate-400">
+            AI 未啟用
           </span>
         )}
       </div>

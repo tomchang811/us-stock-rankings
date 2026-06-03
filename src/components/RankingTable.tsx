@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import SortableHeader from "./SortableHeader";
 import StatusBar from "./StatusBar";
+import ThemeSummary from "./ThemeSummary";
 import {
   changeColorClass,
   formatMoney,
@@ -17,10 +18,12 @@ import {
   type SortDir,
   type SortKey,
   type StockRow,
+  type ThemeSummaryItem,
 } from "@/types/stock";
 
 // 靜態網站：資料來自每日排程產生的 rankings.json（相對路徑以相容 basePath）。
 const DATA_URL = "rankings.json";
+const RANK_JUMP_THRESHOLD = 10; // 排名躍升標示門檻
 
 interface ColumnDef {
   key: SortKey;
@@ -35,7 +38,7 @@ const COLUMNS: ColumnDef[] = [
   { key: "changePercent", label: "漲跌幅", align: "right" },
   { key: "dollarVolume", label: "成交金額", align: "right" },
   { key: "marketCap", label: "市值", align: "right" },
-  { key: "sector", label: "產業別", align: "left" },
+  { key: "theme", label: "題材/族群", align: "left" },
 ];
 
 function compare(a: StockRow, b: StockRow, key: SortKey, dir: SortDir): number {
@@ -54,6 +57,8 @@ export default function RankingTable() {
   const [rows, setRows] = useState<StockRow[]>([]);
   const [asOf, setAsOf] = useState<string | null>(null);
   const [source, setSource] = useState<RankingSource | null>(null);
+  const [aiSource, setAiSource] = useState<"gemini" | "none">("none");
+  const [themeSummary, setThemeSummary] = useState<ThemeSummaryItem[]>([]);
   const [notice, setNotice] = useState<string | undefined>(undefined);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -71,6 +76,8 @@ export default function RankingTable() {
       setRows(data.rows);
       setAsOf(data.asOf);
       setSource(data.source);
+      setAiSource(data.aiSource ?? "none");
+      setThemeSummary(data.themeSummary ?? []);
       setNotice(data.notice);
     } catch (err) {
       setError(err instanceof Error ? err.message : "載入失敗");
@@ -96,6 +103,15 @@ export default function RankingTable() {
     });
   }, []);
 
+  // 成交值名次（# 永遠代表成交金額排名，與排序方式無關）。
+  const rankBySymbol = useMemo(() => {
+    const m = new Map<string, number>();
+    [...rows]
+      .sort((a, b) => b.dollarVolume - a.dollarVolume)
+      .forEach((r, i) => m.set(r.symbol, i + 1));
+    return m;
+  }, [rows]);
+
   const sortedRows = useMemo(() => {
     return [...rows].sort((a, b) => compare(a, b, sortKey, sortDir));
   }, [rows, sortKey, sortDir]);
@@ -107,10 +123,13 @@ export default function RankingTable() {
       <StatusBar
         asOf={asOf}
         source={source}
+        aiSource={aiSource}
         notice={notice}
         loading={loading}
         onRefresh={() => void load()}
       />
+
+      {!showSkeleton && <ThemeSummary items={themeSummary} aiSource={aiSource} />}
 
       {error && rows.length === 0 ? (
         <div className="rounded-lg border border-rose-800 bg-rose-950/40 p-8 text-center text-rose-300">
@@ -158,39 +177,58 @@ export default function RankingTable() {
                       </td>
                     </tr>
                   ))
-                : sortedRows.map((row, i) => (
-                    <tr
-                      key={row.symbol}
-                      className="border-b border-slate-800/60 transition-colors hover:bg-slate-800/40"
-                    >
-                      <td className="px-3 py-2.5 text-right font-mono text-xs text-slate-500">
-                        {i + 1}
-                      </td>
-                      <td className="max-w-[220px] truncate px-3 py-2.5 text-slate-100">
-                        {row.name}
-                      </td>
-                      <td className="px-3 py-2.5 font-mono font-semibold text-slate-200">
-                        {row.symbol}
-                      </td>
-                      <td className="px-3 py-2.5 text-right font-mono text-slate-200">
-                        {formatPrice(row.price)}
-                      </td>
-                      <td
-                        className={`px-3 py-2.5 text-right font-mono font-medium ${changeColorClass(
-                          row.changePercent,
-                        )}`}
+                : sortedRows.map((row) => {
+                    const rank = rankBySymbol.get(row.symbol) ?? 0;
+                    const jumped =
+                      row.rankChange != null && row.rankChange >= RANK_JUMP_THRESHOLD;
+                    return (
+                      <tr
+                        key={row.symbol}
+                        className={`border-b border-slate-800/60 transition-colors hover:bg-slate-800/40 ${
+                          row.isNew ? "bg-amber-400/[0.07]" : ""
+                        }`}
                       >
-                        {formatPercent(row.changePercent)}
-                      </td>
-                      <td className="px-3 py-2.5 text-right font-mono text-emerald-300">
-                        {formatMoney(row.dollarVolume)}
-                      </td>
-                      <td className="px-3 py-2.5 text-right font-mono text-slate-300">
-                        {formatMoney(row.marketCap)}
-                      </td>
-                      <td className="px-3 py-2.5 text-slate-400">{formatSector(row.sector)}</td>
-                    </tr>
-                  ))}
+                        <td className="px-3 py-2.5 text-right align-top">
+                          <div className="font-mono text-xs text-slate-500">{rank}</div>
+                          {jumped && (
+                            <div className="font-mono text-[10px] font-semibold text-emerald-400">
+                              ▲{row.rankChange}
+                            </div>
+                          )}
+                        </td>
+                        <td className="max-w-[220px] truncate px-3 py-2.5 text-slate-100">
+                          {row.isNew && (
+                            <span className="mr-1.5 rounded bg-amber-400/20 px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-amber-300 align-middle">
+                              NEW
+                            </span>
+                          )}
+                          {row.name}
+                        </td>
+                        <td className="px-3 py-2.5 font-mono font-semibold text-slate-200">
+                          {row.symbol}
+                        </td>
+                        <td className="px-3 py-2.5 text-right font-mono text-slate-200">
+                          {formatPrice(row.price)}
+                        </td>
+                        <td
+                          className={`px-3 py-2.5 text-right font-mono font-medium ${changeColorClass(
+                            row.changePercent,
+                          )}`}
+                        >
+                          {formatPercent(row.changePercent)}
+                        </td>
+                        <td className="px-3 py-2.5 text-right font-mono text-emerald-300">
+                          {formatMoney(row.dollarVolume)}
+                        </td>
+                        <td className="px-3 py-2.5 text-right font-mono text-slate-300">
+                          {formatMoney(row.marketCap)}
+                        </td>
+                        <td className="px-3 py-2.5 text-slate-300">
+                          {row.theme || formatSector(row.sector)}
+                        </td>
+                      </tr>
+                    );
+                  })}
             </tbody>
           </table>
         </div>

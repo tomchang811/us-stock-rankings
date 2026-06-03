@@ -43,11 +43,12 @@ jobs:
           path: .cache
           key: polygon-tickers-v1
 
-      # 產生 public/rankings.json
+      # 產生 public/rankings.json（含 AI 題材分析）
       - name: Snapshot rankings
         run: node scripts/snapshot.mjs
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
       - name: Setup Pages
         id: pages

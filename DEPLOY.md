@@ -29,10 +29,10 @@ git push -u origin main
 ```
 > `.env.local`（含金鑰）已被 `.gitignore` 排除，不會被推上去。
 
-### 2. 設定 Polygon 金鑰為 Repository Secret
+### 2. 設定 Repository Secrets
 GitHub repo → **Settings → Secrets and variables → Actions → New repository secret**
-- Name：`POLYGON_API_KEY`
-- Secret：你的 Polygon 金鑰
+- `POLYGON_API_KEY`：你的 Polygon 金鑰（必要）
+- `GEMINI_API_KEY`：你的 Google Gemini 金鑰（選用，做 AI 題材/族群分析；免費取得：https://aistudio.google.com/apikey 。未設定時題材欄會退回 SIC 產業別）
 
 ### 3. 啟用 GitHub Pages（用 Actions 部署）
 GitHub repo → **Settings → Pages → Build and deployment → Source** 選 **GitHub Actions**。
