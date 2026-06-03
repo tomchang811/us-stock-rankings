@@ -41,7 +41,6 @@ interface ColumnDef {
 }
 
 const COLUMNS: ColumnDef[] = [
-  { key: "name", label: "股票名稱", align: "left" },
   { key: "symbol", label: "代碼", align: "left" },
   { key: "price", label: "價格", align: "right" },
   { key: "changePercent", label: "漲跌幅", align: "right" },
@@ -209,15 +208,15 @@ export default function RankingTable() {
                             </div>
                           )}
                         </td>
-                        <td className="max-w-[220px] truncate px-3 py-2.5 text-slate-100">
+                        <td
+                          className="px-3 py-2.5 font-mono font-semibold text-slate-200"
+                          title={row.name}
+                        >
                           {row.isNew && (
                             <span className="mr-1.5 rounded bg-amber-400/20 px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-amber-300 align-middle">
                               NEW
                             </span>
                           )}
-                          {row.name}
-                        </td>
-                        <td className="px-3 py-2.5 font-mono font-semibold text-slate-200">
                           {row.symbol}
                         </td>
                         <td className="px-3 py-2.5 text-right font-mono text-slate-200">
