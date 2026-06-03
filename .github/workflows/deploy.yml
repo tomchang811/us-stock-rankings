@@ -43,9 +43,10 @@ jobs:
           path: .cache
           key: polygon-tickers-v1
 
-      # 產生 public/rankings.json（含 AI 題材分析）
+      # 產生 public/rankings.json（含 AI 題材分析）。
+      # 若資料來源暫時失敗（如 Polygon 5xx），不中斷部署 —— 沿用已 commit 的上一份快照。
       - name: Snapshot rankings
-        run: node scripts/snapshot.mjs
+        run: node scripts/snapshot.mjs || echo "::warning::snapshot 失敗，改用 repo 內既有 rankings.json 部署"
         env:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

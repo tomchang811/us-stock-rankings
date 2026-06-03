@@ -44,8 +44,9 @@ async function getJson(url) {
     const res = await fetch(url);
     if (res.ok) return res.json();
     if (res.status === 403) return { resultsCount: 0, results: [] }; // 當日資料未開放
-    if ((res.status === 401 || res.status === 429) && attempt < 3) {
-      await sleep(15_000);
+    // 401/429（限流）與 5xx（Polygon 伺服器暫時性錯誤）→ 退避重試。
+    if ((res.status === 401 || res.status === 429 || res.status >= 500) && attempt < 3) {
+      await sleep(res.status >= 500 ? 5_000 * (attempt + 1) : 15_000);
       continue;
     }
     throw new Error(`HTTP ${res.status} for ${url.replace(/apiKey=[^&]+/, "apiKey=***")}`);
