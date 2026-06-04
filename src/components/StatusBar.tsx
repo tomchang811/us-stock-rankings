@@ -5,6 +5,7 @@ import { formatTime } from "@/lib/format";
 
 interface Props {
   asOf: string | null;
+  generatedAt?: string | null;
   source: RankingSource | null;
   aiSource?: "gemini" | "none";
   notice?: string;
@@ -12,7 +13,7 @@ interface Props {
   onRefresh: () => void;
 }
 
-export default function StatusBar({ asOf, source, aiSource, notice, loading, onRefresh }: Props) {
+export default function StatusBar({ asOf, generatedAt, source, aiSource, notice, loading, onRefresh }: Props) {
   return (
     <div className="mb-3 flex flex-wrap items-center justify-between gap-3 text-sm">
       <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-slate-400">
@@ -22,6 +23,12 @@ export default function StatusBar({ asOf, source, aiSource, notice, loading, onR
             {asOf ? formatTime(asOf) : "—"}
           </span>
         </span>
+        {generatedAt && (
+          <span>
+            更新於：
+            <span className="ml-1 font-mono text-slate-300">{formatTime(generatedAt)}</span>
+          </span>
+        )}
         {source === "mock" && (
           <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-medium text-amber-300">
             示範資料（未設定 API 金鑰）

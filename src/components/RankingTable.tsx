@@ -65,6 +65,7 @@ function compare(a: StockRow, b: StockRow, key: SortKey, dir: SortDir): number {
 export default function RankingTable() {
   const [rows, setRows] = useState<StockRow[]>([]);
   const [asOf, setAsOf] = useState<string | null>(null);
+  const [generatedAt, setGeneratedAt] = useState<string | null>(null);
   const [source, setSource] = useState<RankingSource | null>(null);
   const [aiSource, setAiSource] = useState<"gemini" | "none">("none");
   const [themeSummary, setThemeSummary] = useState<ThemeSummaryItem[]>([]);
@@ -85,6 +86,7 @@ export default function RankingTable() {
       const data = (await res.json()) as RankingsResponse;
       setRows(data.rows);
       setAsOf(data.asOf);
+      setGeneratedAt(data.generatedAt ?? null);
       setSource(data.source);
       setAiSource(data.aiSource ?? "none");
       setThemeSummary(data.themeSummary ?? []);
@@ -133,6 +135,7 @@ export default function RankingTable() {
     <div>
       <StatusBar
         asOf={asOf}
+        generatedAt={generatedAt}
         source={source}
         aiSource={aiSource}
         notice={notice}

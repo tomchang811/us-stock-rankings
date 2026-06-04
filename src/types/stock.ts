@@ -38,6 +38,8 @@ export type RankingSource = "polygon" | "fmp" | "mock";
 export interface RankingsResponse {
   rows: StockRow[];
   asOf: string;
+  /** 本次快照實際產生時間（ISO）；可看出資料每日是否有更新。 */
+  generatedAt?: string;
   source: RankingSource;
   /** AI 題材分析來源；none 表示未啟用。 */
   aiSource: "gemini" | "none";

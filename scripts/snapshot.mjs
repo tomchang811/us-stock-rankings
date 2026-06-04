@@ -228,6 +228,42 @@ ${lines}
   return map;
 }
 
+/** 預期「最近一個已收盤的美股交易日」(UTC)：昨天起往回第一個工作日（不計假日）。 */
+function mostRecentExpectedTradingDate() {
+  const c = new Date();
+  c.setUTCDate(c.getUTCDate() - 1);
+  while (c.getUTCDay() === 0 || c.getUTCDay() === 6) c.setUTCDate(c.getUTCDate() - 1);
+  return fmtDate(c);
+}
+
+// 自檢重試：若抓到的最新交易日落後預期（Polygon 尚未公布），等候後重試。
+const STALE_RETRY_ATTEMPTS = 4;
+const STALE_RETRY_WAIT_MS = 20 * 60_000; // 20 分鐘
+
+/** 取交易日資料；若資料落後預期則延遲重試（自檢資料是否為最新）。 */
+async function getTradingDaysFresh(key) {
+  const expected = mostRecentExpectedTradingDate();
+  let days = [];
+  for (let attempt = 0; attempt <= STALE_RETRY_ATTEMPTS; attempt++) {
+    days = await findTradingDays(key);
+    const latest = days[0]?.date;
+    if (!latest) {
+      throw new Error("找不到近期可用的交易日資料");
+    }
+    if (latest >= expected || attempt === STALE_RETRY_ATTEMPTS) {
+      if (latest < expected) {
+        console.warn(`已重試 ${attempt} 次，最新仍為 ${latest}（預期 ${expected}）；可能為假日或 Polygon 延遲，先用現有資料。`);
+      }
+      return days;
+    }
+    console.log(
+      `最新可用 ${latest} 落後預期 ${expected}（資料可能尚未公布），${STALE_RETRY_WAIT_MS / 60000} 分鐘後重試（${attempt + 1}/${STALE_RETRY_ATTEMPTS}）…`,
+    );
+    await sleep(STALE_RETRY_WAIT_MS);
+  }
+  return days;
+}
+
 async function main() {
   const polygonKey = await readKey("POLYGON_API_KEY");
   if (!polygonKey) {
@@ -236,9 +272,8 @@ async function main() {
   }
   const geminiKey = await readKey("GEMINI_API_KEY");
 
-  console.log("尋找最近交易日並抓取 grouped 資料…");
-  const days = await findTradingDays(polygonKey);
-  if (days.length === 0) throw new Error("找不到近期可用的交易日資料");
+  console.log("尋找最近交易日並抓取 grouped 資料（含自檢重試）…");
+  const days = await getTradingDaysFresh(polygonKey);
   const latest = days[0];
   const prevMap = new Map();
   if (days[1]) for (const b of days[1].results) prevMap.set(b.T, b);
@@ -415,6 +450,7 @@ async function main() {
   const out = {
     rows,
     asOf: new Date(`${latest.date}T20:00:00Z`).toISOString(),
+    generatedAt: new Date().toISOString(), // 本次快照實際產生時間（可看出每日是否有跑）
     source: "polygon",
     aiSource,
     themeSummary,
