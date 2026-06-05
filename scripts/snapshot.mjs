@@ -228,6 +228,61 @@ ${lines}
   return map;
 }
 
+/**
+ * 用 Gemini + Google 搜尋產生「今日市場焦點」：
+ * 聚焦成交值最高的榜上熱門股/族群為何爆量（highlights），並列出
+ * 當日已發生（eventsPast）與即將到來（eventsUpcoming）的重大事件。
+ * grounding 與結構化輸出不相容，故用容錯 JSON 解析。失敗則丟例外（呼叫端後備為 null）。
+ */
+async function marketBriefing(topStocks, themeSummary, apiKey, tradingDate) {
+  const stockLines = topStocks
+    .map(
+      (s) =>
+        `${s.symbol} | ${s.name} | ${s.theme} | ${s.changePercent.toFixed(2)}% | $${(
+          s.dollarVolume / 1e9
+        ).toFixed(1)}B`,
+    )
+    .join("\n");
+  const themeLines = themeSummary.length
+    ? themeSummary.map((t) => `${t.theme}（${t.symbols.join("、")}）`).join("\n")
+    : "（無）";
+
+  const prompt = `今天分析的是美股 ${tradingDate}（前一交易日收盤）的資料。以下是當日「成交值前段」中成交金額最高的個股（代碼 | 名稱 | 題材 | 漲跌幅 | 成交金額）：
+${stockLines}
+
+當日發動的題材族群：
+${themeLines}
+
+請用 Google 搜尋「最近幾天」的美股新聞，完成三件事，全部繁體中文、務實具體，並「聚焦上面這些榜上熱門股與族群」：
+1. highlights：用 2–4 句話總結「本日成交重點」——資金為何集中在這些個股/族群、誰帶動了成交量、市場在交易什麼故事。
+2. eventsPast：當日（或最近一兩天）已發生、且與這些個股/族群相關的重大事件（財報、財測、Fed、經濟數據、併購、重大新聞等），每筆 title（簡短標題）+ detail（一句說明）。最多 5 筆；若無明確消息給空陣列。
+3. eventsUpcoming：未來幾天值得注意的重要事件（重要財報日、Fed 會議、CPI/就業數據、產品發表等），每筆 date（如 "6/10" 或 "本週四"）+ title + detail。最多 5 筆；若無則給空陣列。
+
+只輸出 JSON，格式：
+{"highlights":"...","eventsPast":[{"title":"...","detail":"..."}],"eventsUpcoming":[{"date":"...","title":"...","detail":"..."}]}
+不要任何其他文字或 markdown。`;
+
+  const body = { contents: [{ parts: [{ text: prompt }] }], tools: [{ google_search: {} }] };
+  const data = await callGemini(apiKey, body);
+  const text = candidateText(data);
+  const s = text.indexOf("{");
+  const e = text.lastIndexOf("}");
+  if (s < 0 || e <= s) throw new Error("市場焦點回應無 JSON 物件");
+  const parsed = JSON.parse(text.slice(s, e + 1));
+  const str = (v) => (typeof v === "string" ? v.trim() : "");
+  return {
+    highlights: str(parsed.highlights),
+    eventsPast: (Array.isArray(parsed.eventsPast) ? parsed.eventsPast : [])
+      .filter((x) => x && (x.title || x.detail))
+      .slice(0, 5)
+      .map((x) => ({ title: str(x.title), detail: str(x.detail) })),
+    eventsUpcoming: (Array.isArray(parsed.eventsUpcoming) ? parsed.eventsUpcoming : [])
+      .filter((x) => x && (x.title || x.detail))
+      .slice(0, 5)
+      .map((x) => ({ date: str(x.date), title: str(x.title), detail: str(x.detail) })),
+  };
+}
+
 /** 預期「最近一個已收盤的美股交易日」(UTC)：昨天起往回第一個工作日（不計假日）。 */
 function mostRecentExpectedTradingDate() {
   const c = new Date();
@@ -447,6 +502,20 @@ async function main() {
     }
   }
 
+  // 今日市場焦點：成交重點 + 重大事件（已發生／即將到來），Gemini + Google 搜尋。
+  let marketBrief = null;
+  if (geminiKey) {
+    try {
+      const topForBrief = rows.slice(0, 15); // 成交金額最高的前 15 檔（rows 已依成交值排序）
+      marketBrief = await marketBriefing(topForBrief, themeSummary, geminiKey, latest.date);
+      console.log(
+        `今日市場焦點完成（已發生 ${marketBrief.eventsPast.length} 筆、即將 ${marketBrief.eventsUpcoming.length} 筆，含 Google 搜尋）`,
+      );
+    } catch (e) {
+      console.warn(`今日市場焦點失敗：${e.message}`);
+    }
+  }
+
   const out = {
     rows,
     asOf: new Date(`${latest.date}T20:00:00Z`).toISOString(),
@@ -455,6 +524,7 @@ async function main() {
     aiSource,
     themeSummary,
     newEntrants,
+    marketBriefing: marketBrief,
   };
   await fs.mkdir(path.dirname(OUT_FILE), { recursive: true });
   await fs.writeFile(OUT_FILE, JSON.stringify(out, null, 2), "utf8");

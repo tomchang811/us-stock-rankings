@@ -33,6 +33,26 @@ export interface NewEntrant {
   reason: string;
 }
 
+/** 一則已發生的重大事件。 */
+export interface MarketEvent {
+  title: string;
+  detail: string;
+}
+
+/** 一則即將到來的重要事件（含日期/時點）。 */
+export interface UpcomingEvent {
+  date: string;
+  title: string;
+  detail: string;
+}
+
+/** 今日市場焦點：成交重點摘要 + 重大事件（已發生／即將到來）。 */
+export interface MarketBriefing {
+  highlights: string;
+  eventsPast: MarketEvent[];
+  eventsUpcoming: UpcomingEvent[];
+}
+
 export type RankingSource = "polygon" | "fmp" | "mock";
 
 export interface RankingsResponse {
@@ -45,6 +65,8 @@ export interface RankingsResponse {
   aiSource: "gemini" | "none";
   themeSummary: ThemeSummaryItem[];
   newEntrants: NewEntrant[];
+  /** 今日市場焦點（成交重點 + 重大事件）；未啟用 AI 或失敗時為 null/缺。 */
+  marketBriefing?: MarketBriefing | null;
   notice?: string;
 }
 
