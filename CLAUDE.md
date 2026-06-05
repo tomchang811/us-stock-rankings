@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A static website (Next.js static export) showing the **US market's top 50 stocks by dollar volume**, with AI-derived theme/族群 labels, a "發動題材" panel, a "新進榜雷達" (new-entrants) panel, NEW badges, rank-jump (▲N) markers, and a consecutive-days-on-board (streak) column. UI text is Traditional Chinese.
+A static website (Next.js static export) showing the **US market's top 50 stocks by dollar volume**, with AI-derived theme/族群 labels, a "今日市場焦點" briefing panel (成交重點 + 重大事件，已發生／即將到來), a "發動題材" panel, a "新進榜雷達" (new-entrants) panel, NEW badges, rank-jump (▲N) markers, and a consecutive-days-on-board (streak) column. UI text is Traditional Chinese.
 
 Live: https://usstocktop50.github.io/us-stock-rankings/ · Deploy details in [DEPLOY.md](DEPLOY.md) · Diagrams in [ARCHITECTURE.md](ARCHITECTURE.md).
 
@@ -27,8 +27,8 @@ node scripts/prewarm.mjs 60  # pre-fill .cache ticker metadata for top N (option
 **Data is produced at build time, not runtime.** There is no server and no API route (Next.js `output: "export"`).
 
 1. **`scripts/snapshot.mjs`** (plain ESM, the *only* data pipeline) runs in CI daily:
-   Polygon grouped-daily (full market) → rank by dollar volume `vw×v`, over-rank to 90 → Polygon ticker details to enrich + **drop ETF/fund `type`s** → keep top 50 stocks → fetch the **currently-live `rankings.json`** to compute `isNew`/`rankChange`/`streak` → Gemini (structured, no web search) for theme labels + `themeSummary` → Gemini (with `google_search` grounding) for `newEntrants` catalysts → writes **`public/rankings.json`**.
-2. `next build` exports static HTML+JS to `out/`; `.github/workflows/deploy.yml` deploys to GitHub Pages (cron `0 2 * * 2-6`, plus push/manual).
+   `getTradingDaysFresh` finds the latest Polygon grouped-daily (full market) **and self-checks freshness — retries up to 4×20min if the latest available date lags the expected trading day**, then proceeds gracefully → rank by dollar volume `vw×v`, over-rank to 90 → Polygon ticker details to enrich + **drop ETF/fund `type`s** → keep top 50 stocks → fetch the **currently-live `rankings.json`** to compute `isNew`/`rankChange`/`streak` → **three Gemini calls**: `enrichWithGemini` (structured, no search) for theme labels + `themeSummary`; `explainNewEntrants` (`google_search` grounding) for `newEntrants` catalysts; `marketBriefing` (`google_search` grounding) for the 今日市場焦點 panel → writes **`public/rankings.json`** (includes `generatedAt` = run timestamp, surfaced as 更新於 in the UI).
+2. `next build` exports static HTML+JS to `out/`; `.github/workflows/deploy.yml` deploys to GitHub Pages. **GitHub `schedule` cron drifts 4+ hours and is only a backup; the punctual ~08:30 Taipei refresh comes from an external cron-job.org job that POSTs `workflow_dispatch`** (see [DEPLOY.md](DEPLOY.md)). Push and manual dispatch also deploy.
 3. The browser loads static files and `RankingTable` does a single `fetch("rankings.json")` (relative path, for basePath compat). All sorting is client-side.
 
 Keys live only in CI (GitHub Secrets) / local `.env.local` — never in the shipped bundle.
@@ -37,7 +37,8 @@ Keys live only in CI (GitHub Secrets) / local `.env.local` — never in the ship
 - **`src/lib/providers/*` and `src/lib/rankings.ts` are orphaned** (an earlier server-mode data layer). The static app does NOT use them; `snapshot.mjs` is the live equivalent. `src/types/stock.ts` is self-contained and is the frontend's type source of truth — edit it, not providers/types.
 - **Adding any dynamic server feature (API route, SSR, `force-dynamic`) breaks `output: "export"`.** Keep everything static.
 - **`isNew`/`rankChange`/`streak` are relative to the previously deployed snapshot.** A same-trading-day re-run (e.g. a code push) compares against itself → 0 new entries, streak unchanged (this is the `sameDay` guard in snapshot.mjs, not a bug). They populate on the next *new* trading day.
-- **Gemini structured output and `google_search` grounding are mutually exclusive in one call** — hence two separate calls (`enrichWithGemini` uses `responseSchema`; `explainNewEntrants` uses the search tool + tolerant JSON parsing).
+- **Gemini structured output and `google_search` grounding are mutually exclusive in one call** — hence the split: `enrichWithGemini` uses `responseSchema`; the grounded calls (`explainNewEntrants`, `marketBriefing`) use the search tool + tolerant JSON parsing (slice first/last bracket, then `JSON.parse`).
+- **Grounded Gemini calls truncate their JSON unless you tame `gemini-2.5-flash`'s default thinking.** Thinking eats the output-token budget → JSON cut mid-string (`Unterminated string`). The grounded calls set `generationConfig: { thinkingConfig: { thinkingBudget: 0 }, maxOutputTokens: 2048 }`. Keep that on any new grounded call.
 - **Polygon free tier**: EOD/previous-trading-day only (requesting "today" before close returns 403 — the date walk starts at yesterday), ~5 req/min (sliding-window limiter in snapshot.mjs), `.cache/polygon-tickers.json` is the long-lived enrichment cache.
 
 ## Environment gotcha (Windows / PowerShell)
