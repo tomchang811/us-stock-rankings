@@ -216,7 +216,12 @@ ${lines}
 請用 Google 搜尋它們「最近幾天」的相關新聞，逐檔說明：這檔股票為何會突然放量、衝進成交值前 50？請指出「具體催化劑」（例如財報/財測、新產品或大訂單、分析師調升、併購、法說會、題材輪動、突發事件等）。每檔一句話、繁體中文、務實具體；若查無明確消息，請說「近期無明確個股消息，可能受族群輪動帶動」。
 只輸出 JSON 陣列，格式：[{"symbol":"代碼","reason":"一句話原因"}]，不要任何其他文字或 markdown。`;
 
-  const body = { contents: [{ parts: [{ text: prompt }] }], tools: [{ google_search: {} }] };
+  const body = {
+    contents: [{ parts: [{ text: prompt }] }],
+    tools: [{ google_search: {} }],
+    // 同市場焦點：關 thinking、拉高上限，避免 grounding 回應截斷 JSON。
+    generationConfig: { temperature: 0.4, maxOutputTokens: 2048, thinkingConfig: { thinkingBudget: 0 } },
+  };
   const data = await callGemini(apiKey, body);
   const text = candidateText(data);
   const s = text.indexOf("[");
@@ -262,7 +267,12 @@ ${themeLines}
 {"highlights":"...","eventsPast":[{"title":"...","detail":"..."}],"eventsUpcoming":[{"date":"...","title":"...","detail":"..."}]}
 不要任何其他文字或 markdown。`;
 
-  const body = { contents: [{ parts: [{ text: prompt }] }], tools: [{ google_search: {} }] };
+  const body = {
+    contents: [{ parts: [{ text: prompt }] }],
+    tools: [{ google_search: {} }],
+    // 關掉 thinking 並拉高輸出上限，避免 grounding 回應把 JSON 寫到一半就被截斷。
+    generationConfig: { temperature: 0.4, maxOutputTokens: 2048, thinkingConfig: { thinkingBudget: 0 } },
+  };
   const data = await callGemini(apiKey, body);
   const text = candidateText(data);
   const s = text.indexOf("{");
