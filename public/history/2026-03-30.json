@@ -21,7 +21,7 @@
       "dollarVolume": 24602925987.909733,
       "marketCap": 362904817611.8,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "HBM 記憶體",
+      "theme": "記憶體 HBM",
       "isNew": false,
       "rankChange": 1,
       "streak": 14
@@ -47,7 +47,7 @@
       "dollarVolume": 16141744403.90603,
       "marketCap": 2666510921347.84,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "雲端/AI 巨頭",
+      "theme": "雲端軟體 SaaS",
       "isNew": false,
       "rankChange": 1,
       "streak": 14
@@ -73,7 +73,7 @@
       "dollarVolume": 12100087079.778759,
       "marketCap": 84781386455,
       "sector": "COMPUTER STORAGE DEVICES",
-      "theme": "儲存裝置與記憶體",
+      "theme": "資料儲存",
       "isNew": false,
       "rankChange": 2,
       "streak": 14
@@ -99,7 +99,7 @@
       "dollarVolume": 9636210550.14775,
       "marketCap": 1592864000000,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "雲端/AI 巨頭",
+      "theme": "雲端/AI 服務",
       "isNew": false,
       "rankChange": 1,
       "streak": 14
@@ -112,7 +112,7 @@
       "dollarVolume": 9341904038.070118,
       "marketCap": 2161641141164.2,
       "sector": "RETAIL-CATALOG & MAIL-ORDER HOUSES",
-      "theme": "雲端/電商巨頭",
+      "theme": "電商/雲端服務",
       "isNew": false,
       "rankChange": -2,
       "streak": 14
@@ -125,7 +125,7 @@
       "dollarVolume": 8262114734.075197,
       "marketCap": 1389198991867.4402,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "AI 基礎設施晶片",
+      "theme": "網路晶片",
       "isNew": false,
       "rankChange": 0,
       "streak": 14
@@ -151,7 +151,7 @@
       "dollarVolume": 6230161912.413247,
       "marketCap": 1490251840000,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "雲端/AI 巨頭",
+      "theme": "雲端/AI 服務",
       "isNew": false,
       "rankChange": -1,
       "streak": 14
@@ -164,7 +164,7 @@
       "dollarVolume": 5765368327.495601,
       "marketCap": 315824611991.7,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "大數據/AI 軟體",
+      "theme": "資料分析軟體",
       "isNew": false,
       "rankChange": 1,
       "streak": 14
@@ -177,7 +177,7 @@
       "dollarVolume": 5165130065.014179,
       "marketCap": 710734089868.14,
       "sector": "PETROLEUM REFINING",
-      "theme": "Petroleum Refining",
+      "theme": "石油與天然氣",
       "isNew": false,
       "rankChange": -1,
       "streak": 14
@@ -203,7 +203,7 @@
       "dollarVolume": 4947191138.747204,
       "marketCap": 50942662000,
       "sector": "COMMUNICATIONS EQUIPMENT, NEC",
-      "theme": "光通訊",
+      "theme": "光通訊元件",
       "isNew": false,
       "rankChange": 1,
       "streak": 14
@@ -229,7 +229,7 @@
       "dollarVolume": 3335380263.5152116,
       "marketCap": 760364955085.86,
       "sector": "NATIONAL COMMERCIAL BANKS",
-      "theme": "銀行",
+      "theme": "大型銀行",
       "isNew": false,
       "rankChange": 3,
       "streak": 14
@@ -255,7 +255,7 @@
       "dollarVolume": 2795001672.290949,
       "marketCap": 399195184800.00006,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "企業軟體/雲端",
+      "theme": "雲端軟體 SaaS",
       "isNew": false,
       "rankChange": 6,
       "streak": 14
@@ -268,7 +268,7 @@
       "dollarVolume": 2791416001.456275,
       "marketCap": 497149513031.28,
       "sector": "SERVICES-BUSINESS SERVICES, NEC",
-      "theme": "金融支付",
+      "theme": "支付處理",
       "isNew": false,
       "rankChange": -2,
       "streak": 14
@@ -281,7 +281,7 @@
       "dollarVolume": 2745529955.1268935,
       "marketCap": 93536331414.47,
       "sector": "SURGICAL & MEDICAL INSTRUMENTS & APPARATUS",
-      "theme": "Surgical & Medical Instruments & Apparatus",
+      "theme": "醫療器材",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -294,7 +294,7 @@
       "dollarVolume": 2727654154.5303936,
       "marketCap": 834976182801.78,
       "sector": "PHARMACEUTICAL PREPARATIONS",
-      "theme": "減肥藥 GLP-1",
+      "theme": "生技製藥/減肥藥",
       "isNew": false,
       "rankChange": 4,
       "streak": 13
@@ -320,7 +320,7 @@
       "dollarVolume": 2527413449.816572,
       "marketCap": 982822775642.5,
       "sector": "RETAIL-VARIETY STORES",
-      "theme": "零售巨頭",
+      "theme": "零售百貨",
       "isNew": false,
       "rankChange": 7,
       "streak": 14
@@ -346,7 +346,7 @@
       "dollarVolume": 2363107812.1967645,
       "marketCap": 285091899463.75,
       "sector": "ELECTRONIC & OTHER ELECTRICAL EQUIPMENT (NO COMPUTER EQUIP)",
-      "theme": "Electronic & Other Electrical Equipment (No Computer Equip)",
+      "theme": "航空製造",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -359,7 +359,7 @@
       "dollarVolume": 2352757652.7182236,
       "marketCap": 86746151908.76999,
       "sector": "COMPUTER STORAGE DEVICES",
-      "theme": "儲存裝置與記憶體",
+      "theme": "資料儲存",
       "isNew": false,
       "rankChange": 8,
       "streak": 12
@@ -372,7 +372,7 @@
       "dollarVolume": 2328877524.2628026,
       "marketCap": 219638287913.25,
       "sector": "ELECTRONIC & OTHER ELECTRICAL EQUIPMENT (NO COMPUTER EQUIP)",
-      "theme": "Electronic & Other Electrical Equipment (No Computer Equip)",
+      "theme": "電力基礎建設",
       "isNew": false,
       "rankChange": 1,
       "streak": 12
@@ -385,7 +385,7 @@
       "dollarVolume": 2210401488.573704,
       "marketCap": 419649558109.72003,
       "sector": "PETROLEUM REFINING",
-      "theme": "Petroleum Refining",
+      "theme": "石油與天然氣",
       "isNew": false,
       "rankChange": -10,
       "streak": 14
@@ -398,7 +398,7 @@
       "dollarVolume": 2185640175.0205345,
       "marketCap": 182957239962.85,
       "sector": "NATIONAL COMMERCIAL BANKS",
-      "theme": "National Commercial Banks",
+      "theme": "大型銀行",
       "isNew": false,
       "rankChange": -6,
       "streak": 2
@@ -450,7 +450,7 @@
       "dollarVolume": 2124436945.625499,
       "marketCap": 442135248313.2,
       "sector": "RETAIL-VARIETY STORES",
-      "theme": "Retail-Variety Stores",
+      "theme": "零售百貨",
       "isNew": false,
       "rankChange": 14,
       "streak": 2
@@ -463,7 +463,7 @@
       "dollarVolume": 2050003412.436197,
       "marketCap": 335171976446.73,
       "sector": "NATIONAL COMMERCIAL BANKS",
-      "theme": "商業銀行",
+      "theme": "大型銀行",
       "isNew": false,
       "rankChange": 5,
       "streak": 3
@@ -515,7 +515,7 @@
       "dollarVolume": 1915680341.7546704,
       "marketCap": 76816188000,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "AI 基礎設施晶片",
+      "theme": "網路晶片",
       "isNew": false,
       "rankChange": 8,
       "streak": 4
@@ -528,7 +528,7 @@
       "dollarVolume": 1900546758.3323662,
       "marketCap": 35764017231.25,
       "sector": "FINANCE SERVICES",
-      "theme": "Finance Services",
+      "theme": "比特幣/加密",
       "isNew": false,
       "rankChange": -7,
       "streak": 6
@@ -541,7 +541,7 @@
       "dollarVolume": 1899755028.0197778,
       "marketCap": 30949737881.850002,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "AI 雲端運算",
+      "theme": "AI 雲端基礎設施",
       "isNew": false,
       "rankChange": 2,
       "streak": 2
@@ -554,7 +554,7 @@
       "dollarVolume": 1896097360.718762,
       "marketCap": 125949600000,
       "sector": "COMPUTER PERIPHERAL EQUIPMENT, NEC",
-      "theme": "資安",
+      "theme": "資安軟體",
       "isNew": false,
       "rankChange": 0,
       "streak": 2
@@ -567,7 +567,7 @@
       "dollarVolume": 1888026995.9685724,
       "marketCap": 303648126591.60004,
       "sector": "COMPUTER COMMUNICATIONS EQUIPMENT",
-      "theme": "網通設備",
+      "theme": "網路設備",
       "isNew": false,
       "rankChange": 2,
       "streak": 5
@@ -580,7 +580,7 @@
       "dollarVolume": 1886563484.7752945,
       "marketCap": 113756762560,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "Services-Computer Programming, Data Processing, Etc.",
+      "theme": "行動廣告技術",
       "isNew": false,
       "rankChange": 2,
       "streak": 3
@@ -593,7 +593,7 @@
       "dollarVolume": 1863489710.3388531,
       "marketCap": 110634992403.75002,
       "sector": "DRAWING & INSULATING OF NONFERROUS WIRE",
-      "theme": "光通訊/光纖",
+      "theme": "特殊玻璃/材料",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -606,7 +606,7 @@
       "dollarVolume": 1843477819.1010265,
       "marketCap": 42972176857.65,
       "sector": "OPTICAL INSTRUMENTS & LENSES",
-      "theme": "光通訊/光纖",
+      "theme": "光學元件",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -619,7 +619,7 @@
       "dollarVolume": 1789547449.986158,
       "marketCap": 433255897620,
       "sector": "SERVICES-BUSINESS SERVICES, NEC",
-      "theme": "Services-Business Services, Nec",
+      "theme": "支付處理",
       "isNew": false,
       "rankChange": -13,
       "streak": 3
@@ -632,7 +632,7 @@
       "dollarVolume": 1757458257.3969045,
       "marketCap": 307412907213.69,
       "sector": "CONSTRUCTION MACHINERY & EQUIP",
-      "theme": "工業機械",
+      "theme": "重型機械",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -645,14 +645,14 @@
       "dollarVolume": 1754406333.8635542,
       "marketCap": 583726043297.79,
       "sector": "PHARMACEUTICAL PREPARATIONS",
-      "theme": "Pharmaceutical Preparations",
+      "theme": "生技製藥",
       "isNew": false,
       "rankChange": -13,
       "streak": 2
     }
   ],
   "asOf": "2026-03-30T20:00:00.000Z",
-  "generatedAt": "2026-06-06T12:54:23.361Z",
+  "generatedAt": "2026-06-06T14:16:02.473Z",
   "source": "polygon",
   "aiSource": "gemini",
   "themeSummary": [],
