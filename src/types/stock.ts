@@ -68,6 +68,38 @@ export interface RankingsResponse {
   /** 今日市場焦點（成交重點 + 重大事件）；未啟用 AI 或失敗時為 null/缺。 */
   marketBriefing?: MarketBriefing | null;
   notice?: string;
+  /** 是否為回補的歷史資料（無 grounded 事件分析）。 */
+  backfilled?: boolean;
+}
+
+/** history/index.json 的一筆：可選的歷史交易日（新到舊）。 */
+export interface HistoryIndexEntry {
+  date: string; // 交易日 YYYY-MM-DD
+  asOf: string; // ISO（收盤時點）
+  generatedAt: string | null; // 該份快照產生時間
+  count: number; // 當日榜上檔數
+}
+
+/** 某個股在某交易日的走勢資料點。 */
+export interface TrendPoint {
+  d: string; // 交易日 YYYY-MM-DD
+  rank: number; // 成交值名次（1=最高）
+  dv: number; // 成交金額
+  price: number; // 收盤價
+  chg: number; // 漲跌幅 (%)
+  streak: number; // 連續在榜天數
+}
+
+/** 單一個股跨日的走勢。 */
+export interface SymbolTrend {
+  name: string;
+  points: TrendPoint[];
+}
+
+/** history/trends.json：所有歷史日期 + 每檔個股的跨日走勢。 */
+export interface TrendsData {
+  dates: string[]; // 由舊到新
+  symbols: Record<string, SymbolTrend>;
 }
 
 /** 可排序的欄位鍵。 */

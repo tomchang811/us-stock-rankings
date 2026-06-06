@@ -1,83 +1,37 @@
 // 產生靜態網站的資料快照：抓取最新交易日全美股成交值前 50 名「個股」（排除 ETF），
 // 補上名稱/市值/SIC，並用 Gemini 分析題材/族群；標示新進榜與排名躍升。
-// 寫入 public/rankings.json。供 GitHub Action 每日收盤後執行，或本機手動執行。
+// 寫入 public/rankings.json，並另存一份歷史快照 public/history/<交易日>.json（重建 index/trends）。
+// 供 GitHub Action 每日收盤後執行，或本機手動執行。
 //
 // 用法： node scripts/snapshot.mjs
 // 環境變數 / .env.local：POLYGON_API_KEY（必要）、GEMINI_API_KEY（選用，缺少則題材退回 SIC）
 
+import {
+  sleep,
+  fmtDate,
+  getJson,
+  readKey,
+  formatSector,
+  grouped,
+  loadCache,
+  saveCache,
+  pickTopStocks,
+  callGemini,
+  candidateText,
+  enrichWithGemini,
+  writeHistory,
+  THEME_TTL_MS,
+  ROOT,
+} from "./lib/core.mjs";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
-const TOP_N = 50; // 最終輸出的個股數
-const OVER_RANK = 90; // 過量排名上限（濾掉 ETF 後仍要湊滿 50）
-const ROOT = process.cwd();
-const CACHE_DIR = path.join(ROOT, ".cache");
-const CACHE_FILE = path.join(CACHE_DIR, "polygon-tickers.json");
 const OUT_FILE = path.join(ROOT, "public", "rankings.json");
-const META_TTL_MS = 7 * 24 * 60 * 60 * 1000; // 名稱/市值/SIC 7 天重抓
-const THEME_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 題材標籤 30 天重抓
-const RANK_JUMP_THRESHOLD = 10; // 排名躍升標示門檻
-
-// Polygon ticker type 中屬於「基金/ETF」者一律排除（只保留個股與 ADR/普通股）。
-const FUND_TYPES = new Set(["ETF", "ETN", "ETV", "ETS", "FUND", "SP"]);
 
 // 前一份快照（線上）來源，用於計算 isNew / rankChange；可用 env 覆寫。
 const PREV_RANKINGS_URL =
   process.env.PREV_RANKINGS_URL ||
   "https://usstocktop50.github.io/us-stock-rankings/rankings.json";
-
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const fmtDate = (d) => d.toISOString().slice(0, 10);
-
-// 滑動視窗速率限制：每 60 秒最多 5 次（Polygon 免費方案）。
-const callTimes = [];
-async function rateSlot() {
-  const now = Date.now();
-  while (callTimes.length && now - callTimes[0] > 60_000) callTimes.shift();
-  if (callTimes.length >= 5) await sleep(60_000 - (now - callTimes[0]) + 200);
-  callTimes.push(Date.now());
-}
-
-async function getJson(url) {
-  for (let attempt = 0; ; attempt++) {
-    await rateSlot();
-    const res = await fetch(url);
-    if (res.ok) return res.json();
-    if (res.status === 403) return { resultsCount: 0, results: [] }; // 當日資料未開放
-    // 401/429（限流）與 5xx（Polygon 伺服器暫時性錯誤）→ 退避重試。
-    if ((res.status === 401 || res.status === 429 || res.status >= 500) && attempt < 3) {
-      await sleep(res.status >= 500 ? 5_000 * (attempt + 1) : 15_000);
-      continue;
-    }
-    throw new Error(`HTTP ${res.status} for ${url.replace(/apiKey=[^&]+/, "apiKey=***")}`);
-  }
-}
-
-/** 從環境變數或 .env.local 讀取指定金鑰。 */
-async function readKey(name) {
-  if (process.env[name]) return process.env[name].trim();
-  try {
-    const raw = await fs.readFile(path.join(ROOT, ".env.local"), "utf8");
-    const m = raw.match(new RegExp(`^${name}\\s*=\\s*(.+)\\s*$`, "m"));
-    if (m) return m[1].trim();
-  } catch {}
-  return null;
-}
-
-/** 將全大寫的 SIC 字串轉為較易讀的標題大小寫（與 src/lib/format.ts formatSector 等價）。 */
-function formatSector(sector) {
-  if (!sector || sector === "—") return "—";
-  if (sector !== sector.toUpperCase()) return sector;
-  return sector
-    .toLowerCase()
-    .replace(/\b([a-z])/g, (m) => m.toUpperCase())
-    .replace(/\bAnd\b/g, "&");
-}
-
-const grouped = (key, ds) =>
-  `https://api.polygon.io/v2/aggs/grouped/locale/us/market/stocks/${ds}?adjusted=true&apiKey=${key}`;
-const details = (key, t) =>
-  `https://api.polygon.io/v3/reference/tickers/${encodeURIComponent(t)}?apiKey=${key}`;
 
 /** 從昨天往回找最近兩個有資料的交易日（最新用於排行，前一日用於漲跌幅）。 */
 async function findTradingDays(key) {
@@ -113,93 +67,6 @@ async function fetchPrev() {
   } catch {
     return null;
   }
-}
-
-const GEMINI_MODEL = "gemini-2.5-flash";
-
-/** 呼叫 Gemini generateContent，對 429/500/503 退避重試，回傳解析後的回應物件。 */
-async function callGemini(apiKey, body) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
-  for (let attempt = 0; ; attempt++) {
-    const res = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    });
-    if (res.ok) return res.json();
-    if ([429, 500, 503].includes(res.status) && attempt < 4) {
-      const wait = 5_000 * (attempt + 1);
-      console.warn(`  Gemini HTTP ${res.status}，${wait / 1000}s 後重試（第 ${attempt + 1} 次）…`);
-      await sleep(wait);
-      continue;
-    }
-    const t = await res.text().catch(() => "");
-    throw new Error(`Gemini HTTP ${res.status}: ${t.slice(0, 200)}`);
-  }
-}
-
-/** 串接候選回應的所有 text part。 */
-function candidateText(data) {
-  const parts = data?.candidates?.[0]?.content?.parts ?? [];
-  return parts.map((p) => p.text || "").join("").trim();
-}
-
-/** 用 Gemini 分析每檔題材標籤 + 當日發動題材摘要。回傳 null 表示未啟用/失敗。 */
-async function enrichWithGemini(stocks, apiKey) {
-  const lines = stocks
-    .map((s) => `${s.symbol} | ${s.name} | ${s.sector} | ${s.changePercent.toFixed(2)}%`)
-    .join("\n");
-
-  const prompt = `你是美股題材分析師。以下是某交易日「成交值前 50 名個股」（格式：代碼 | 名稱 | SIC產業 | 當日漲跌幅）：
-${lines}
-
-請完成兩件事，全部用繁體中文：
-1. tickers：為每一檔指定「一個」精簡且具體的題材/族群標籤（例如：AI 晶片、記憶體、HBM、核電/SMR、量子運算、減肥藥 GLP-1、雲端軟體 SaaS、資安、比特幣/加密、太空、國防、電力基礎建設、電動車、生技製藥…）。同一族群的股票請用「完全一致」的標籤字串。避免過於籠統（不要只寫「科技」「半導體」）。
-2. summary：找出當日「發動」的題材族群——以「上漲（漲跌幅為正）」的股票為主，依族群的強度（成員數與漲幅）由強到弱排序，最多 6 組。每組給 theme（題材名，需與 tickers 用詞一致）、reason（一句話說明該題材近期為何受資金關注，用你既有的知識）、symbols（屬於該族群且當日上漲的代碼陣列）。
-
-只輸出 JSON。`;
-
-  const schema = {
-    type: "object",
-    properties: {
-      tickers: {
-        type: "array",
-        items: {
-          type: "object",
-          properties: { symbol: { type: "string" }, theme: { type: "string" } },
-          required: ["symbol", "theme"],
-        },
-      },
-      summary: {
-        type: "array",
-        items: {
-          type: "object",
-          properties: {
-            theme: { type: "string" },
-            reason: { type: "string" },
-            symbols: { type: "array", items: { type: "string" } },
-          },
-          required: ["theme", "reason", "symbols"],
-        },
-      },
-    },
-    required: ["tickers", "summary"],
-  };
-
-  const body = {
-    contents: [{ parts: [{ text: prompt }] }],
-    generationConfig: { responseMimeType: "application/json", responseSchema: schema, temperature: 0.3 },
-  };
-  const data = await callGemini(apiKey, body);
-  const text = candidateText(data);
-  if (!text) throw new Error("Gemini 回應為空");
-  const parsed = JSON.parse(text);
-
-  const themesByTicker = new Map();
-  for (const it of parsed.tickers ?? []) {
-    if (it.symbol && it.theme) themesByTicker.set(it.symbol, it.theme);
-  }
-  return { themesByTicker, summary: parsed.summary ?? [] };
 }
 
 /**
@@ -344,63 +211,10 @@ async function main() {
   if (days[1]) for (const b of days[1].results) prevMap.set(b.T, b);
   console.log(`最新交易日：${latest.date}（${latest.results.length} 檔）`);
 
-  const ranked = latest.results
-    .map((b) => ({ b, dv: (b.vw && b.vw > 0 ? b.vw : b.c) * b.v }))
-    .filter((r) => r.b.c > 0 && r.b.v > 0 && r.dv > 0)
-    .sort((a, b) => b.dv - a.dv)
-    .slice(0, OVER_RANK);
+  const cache = await loadCache();
 
-  // 載入既有明細快取（重複執行可省去 API 呼叫）。
-  let cache = {};
-  try {
-    cache = JSON.parse(await fs.readFile(CACHE_FILE, "utf8"));
-  } catch {}
-  await fs.mkdir(CACHE_DIR, { recursive: true });
-
-  // 逐檔補明細，濾掉 ETF/基金，湊滿 TOP_N 檔個股後停止。
-  const picked = [];
-  for (const { b, dv } of ranked) {
-    if (picked.length >= TOP_N) break;
-    const t = b.T;
-    let meta = cache[t];
-    if (!meta || Date.now() - meta.fetchedAt > META_TTL_MS) {
-      try {
-        const data = await getJson(details(polygonKey, t));
-        const r = data.results ?? {};
-        meta = {
-          ...(cache[t] ?? {}),
-          ticker: t,
-          name: r.name ?? t,
-          type: r.type ?? "",
-          marketCap: r.market_cap ?? null,
-          sharesOutstanding:
-            r.share_class_shares_outstanding ?? r.weighted_shares_outstanding ?? null,
-          sector: r.sic_description ?? null,
-          fetchedAt: Date.now(),
-        };
-        cache[t] = meta;
-        await fs.writeFile(CACHE_FILE, JSON.stringify(cache), "utf8");
-        console.log(`  補抓 ${t} → ${meta.name} (${meta.type})`);
-      } catch (e) {
-        meta = cache[t] ?? { ticker: t, name: t, type: "", marketCap: null, sharesOutstanding: null, sector: null };
-        console.warn(`  ${t} 明細補抓失敗：${e.message}`);
-      }
-    }
-    if (FUND_TYPES.has((meta.type ?? "").toUpperCase())) {
-      console.log(`  跳過 ETF/基金：${t} (${meta.type})`);
-      continue;
-    }
-    const prevClose = prevMap.get(t)?.c;
-    const changePercent =
-      prevClose && prevClose > 0
-        ? ((b.c - prevClose) / prevClose) * 100
-        : ((b.c - b.o) / b.o) * 100;
-    const marketCap =
-      meta.sharesOutstanding && meta.sharesOutstanding > 0
-        ? meta.sharesOutstanding * b.c
-        : meta.marketCap ?? 0;
-    picked.push({ b, dv, meta, changePercent, marketCap });
-  }
+  // 排名 + 逐檔補明細、濾 ETF、湊滿 50 檔（共用 core.pickTopStocks）。
+  const picked = await pickTopStocks(latest.results, prevMap, cache, polygonKey, { log: true });
 
   // 取得前一份快照 → 計算 isNew / rankChange / streak（連續在榜天數）。
   const prev = await fetchPrev();
@@ -435,7 +249,7 @@ async function main() {
           cache[p.b.T] = { ...cache[p.b.T], theme: th, themeFetchedAt: Date.now() };
         }
       }
-      await fs.writeFile(CACHE_FILE, JSON.stringify(cache), "utf8");
+      await saveCache(cache);
       console.log(`Gemini 題材分析完成（${themesByTicker.size} 檔、${summaryRaw.length} 組題材）`);
     } catch (e) {
       console.warn(`Gemini 失敗，改用後備題材：${e.message}`);
@@ -538,9 +352,13 @@ async function main() {
   };
   await fs.mkdir(path.dirname(OUT_FILE), { recursive: true });
   await fs.writeFile(OUT_FILE, JSON.stringify(out, null, 2), "utf8");
+
+  // 另存歷史快照（以交易日命名）並重建 index.json / trends.json，供前端切換與走勢圖。
+  await writeHistory(out);
+
   const newCount = rows.filter((r) => r.isNew).length;
   console.log(
-    `完成：寫出 ${rows.length} 檔個股 → public/rankings.json（交易日 ${latest.date}，AI=${aiSource}，新進榜 ${newCount} 檔）`,
+    `完成：寫出 ${rows.length} 檔個股 → public/rankings.json + public/history/${latest.date}.json（AI=${aiSource}，新進榜 ${newCount} 檔）`,
   );
 }
 

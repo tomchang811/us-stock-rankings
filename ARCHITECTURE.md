@@ -152,15 +152,22 @@ flowchart TD
 
 | 路徑 | 角色 |
 |------|------|
-| `scripts/snapshot.mjs` | **資料引擎**：抓 Polygon + Gemini 分析 → 產 `public/rankings.json` |
+| `scripts/lib/core.mjs` | **共用管線**：Polygon 取數/限流、`pickTopStocks`、`enrichWithGemini`、歷史寫入（snapshot 與 backfill 共用） |
+| `scripts/snapshot.mjs` | **資料引擎**：抓最新交易日 + Gemini 分析 → 產 `public/rankings.json` 與當日 `public/history/<date>.json` |
+| `scripts/backfill.mjs` | 回補過去 N 個交易日的歷史快照（一次性） |
 | `scripts/prewarm.mjs` | 預熱明細快取（選用） |
-| `.github/workflows/deploy.yml` | 每日排程 + 建置 + 部署 Pages |
+| `.github/workflows/deploy.yml` | 每日排程 + 建置 + 部署 Pages + commit 資料回 main |
+| `.github/workflows/backfill.yml` | 手動回補歷史（Gemini 可用）+ 部署 + commit |
 | `src/app/{layout,page}.tsx`、`globals.css` | 頁面外殼 |
-| `src/components/RankingTable.tsx` | 主表格（抓資料、排序、標示） |
-| `src/components/{NewEntrants,ThemeSummary,StatusBar,SortableHeader}.tsx` | 面板與表頭 |
+| `src/components/RankingTable.tsx` | 主表格（抓資料、日期切換、排序、標示、開走勢圖） |
+| `src/components/StockTrendModal.tsx` | 個股走勢圖（名次/成交額/收盤價 SVG sparkline + 近期資料表） |
+| `src/components/{NewEntrants,ThemeSummary,MarketBriefing,StatusBar,SortableHeader}.tsx` | 面板與表頭 |
 | `src/lib/format.ts` | 格式化與著色工具 |
-| `src/types/stock.ts` | 前端共用型別（自足） |
-| `public/rankings.json` | 每日資料快照（CI 產生、靜態提供） |
+| `src/types/stock.ts` | 前端共用型別（自足；含 `HistoryIndexEntry`/`TrendsData`） |
+| `public/rankings.json` | 最新一日資料快照（CI 產生、靜態提供） |
+| `public/history/<date>.json`、`index.json`、`trends.json` | 歷史快照存檔 + 日期索引 + 每檔跨日走勢（CI 產生並 commit 回 repo） |
 | `src/lib/providers/*`、`src/lib/rankings.ts` | 早期 server 模式的資料層（靜態版未使用，保留供未來 server 部署參考） |
+
+> **歷史快照**：`snapshot.mjs` 每日除了 `rankings.json` 也寫一份以交易日命名的 `public/history/<date>.json`，並由 `core.rebuildHistoryMeta()` 重建 `index.json`（日期清單）與 `trends.json`（每檔個股跨日的名次/成交額/價格）。前端 `RankingTable` 載入時讀 `index.json` → 預設最新一天，下拉可切換任一歷史日；點任一列開 `StockTrendModal`，延遲載入 `trends.json` 畫走勢。歷史能跨日累積，靠 CI 把資料 commit 回 `main`（見 deploy.yml）。
 
 > 部署與金鑰設定見 [DEPLOY.md](DEPLOY.md)。

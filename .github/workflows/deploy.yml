@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write # 需可寫回 repo（commit 歷史快照）
   pages: write
   id-token: write
 
@@ -72,3 +72,18 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deploy
         uses: actions/deploy-pages@v4
+
+      # 將產生的快照與歷史寫回 repo，讓歷史能跨每日累積（否則下次 build 會缺舊歷史）。
+      # [skip ci] 避免此 commit 再次觸發部署而形成迴圈。
+      - name: Commit snapshot + history back to repo
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/rankings.json public/history
+          if git diff --staged --quiet; then
+            echo "資料無變更，略過 commit。"
+          else
+            git commit -m "chore(data): 更新排行快照與歷史 [skip ci]"
+            git push
+          fi

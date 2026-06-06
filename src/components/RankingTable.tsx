@@ -6,6 +6,7 @@ import StatusBar from "./StatusBar";
 import ThemeSummary from "./ThemeSummary";
 import NewEntrants from "./NewEntrants";
 import MarketBriefing from "./MarketBriefing";
+import StockTrendModal from "./StockTrendModal";
 import {
   changeColorClass,
   formatMoney,
@@ -23,10 +24,16 @@ import {
   type ThemeSummaryItem,
   type NewEntrant,
   type MarketBriefing as MarketBriefingData,
+  type HistoryIndexEntry,
+  type TrendsData,
+  type SymbolTrend,
 } from "@/types/stock";
 
 // 靜態網站：資料來自每日排程產生的 rankings.json（相對路徑以相容 basePath）。
 const DATA_URL = "rankings.json";
+const HISTORY_INDEX_URL = "history/index.json";
+const TRENDS_URL = "history/trends.json";
+const historyUrl = (date: string) => `history/${date}.json`;
 const RANK_JUMP_THRESHOLD = 10; // 排名躍升標示門檻
 
 /** 依在榜天數給顏色：1 天(剛發動，灰) / 2–4 天 / ≥5 天(持續強勢，綠)。 */
@@ -34,6 +41,11 @@ function streakClass(streak: number): string {
   if (streak >= 5) return "text-emerald-300 font-semibold";
   if (streak >= 2) return "text-slate-300";
   return "text-slate-500";
+}
+
+/** 顯示用日期：YYYY-MM-DD。 */
+function fmtDateLabel(date: string): string {
+  return date;
 }
 
 interface ColumnDef {
@@ -77,14 +89,25 @@ export default function RankingTable() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // 歷史快照切換。
+  const [history, setHistory] = useState<HistoryIndexEntry[]>([]);
+  const [selectedDate, setSelectedDate] = useState<string | null>(null);
+
+  // 個股走勢圖（trends.json 延遲載入）。
+  const [trends, setTrends] = useState<TrendsData | null>(null);
+  const [trendsLoading, setTrendsLoading] = useState(false);
+  const [trendTarget, setTrendTarget] = useState<{ symbol: string; name: string } | null>(null);
+
   const [sortKey, setSortKey] = useState<SortKey>("dollarVolume");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
 
-  const load = useCallback(async () => {
+  /** 載入某一天（date 為 null 時載入最新的 rankings.json）。 */
+  const load = useCallback(async (date: string | null) => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(DATA_URL, { cache: "no-store" });
+      const url = date ? historyUrl(date) : DATA_URL;
+      const res = await fetch(url, { cache: "no-store" });
       if (!res.ok) throw new Error(`讀取資料失敗 ${res.status}`);
       const data = (await res.json()) as RankingsResponse;
       setRows(data.rows);
@@ -103,10 +126,56 @@ export default function RankingTable() {
     }
   }, []);
 
-  // 開啟頁面立即載入。資料每日由排程更新，故不需輪詢；保留手動重新整理。
+  // 開啟頁面：先讀歷史索引；有則載入最新一天，否則退回 rankings.json。
   useEffect(() => {
-    void load();
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch(HISTORY_INDEX_URL, { cache: "no-store" });
+        if (res.ok) {
+          const idx = (await res.json()) as HistoryIndexEntry[];
+          if (!cancelled && Array.isArray(idx) && idx.length > 0) {
+            setHistory(idx);
+            setSelectedDate(idx[0].date);
+            await load(idx[0].date);
+            return;
+          }
+        }
+      } catch {
+        // 無索引（尚未部署歷史）→ 退回單一最新檔。
+      }
+      if (!cancelled) await load(null);
+    })();
+    return () => {
+      cancelled = true;
+    };
   }, [load]);
+
+  const handleSelectDate = useCallback(
+    (date: string) => {
+      setSelectedDate(date);
+      void load(date);
+    },
+    [load],
+  );
+
+  /** 點擊個股 → 開啟走勢圖（首次開啟時延遲載入 trends.json）。 */
+  const openTrend = useCallback(
+    async (symbol: string, name: string) => {
+      setTrendTarget({ symbol, name });
+      if (trends || trendsLoading) return;
+      setTrendsLoading(true);
+      try {
+        const res = await fetch(TRENDS_URL, { cache: "no-store" });
+        if (res.ok) setTrends((await res.json()) as TrendsData);
+      } catch {
+        // 無 trends.json → 走勢圖顯示「資料不足」。
+      } finally {
+        setTrendsLoading(false);
+      }
+    },
+    [trends, trendsLoading],
+  );
 
   const handleSort = useCallback((key: SortKey) => {
     setSortKey((prevKey) => {
@@ -134,6 +203,10 @@ export default function RankingTable() {
   }, [rows, sortKey, sortDir]);
 
   const showSkeleton = loading && rows.length === 0;
+  const isLatest = history.length === 0 || selectedDate === history[0]?.date;
+  const trendData: SymbolTrend | null = trendTarget
+    ? trends?.symbols[trendTarget.symbol] ?? null
+    : null;
 
   return (
     <div>
@@ -144,8 +217,35 @@ export default function RankingTable() {
         aiSource={aiSource}
         notice={notice}
         loading={loading}
-        onRefresh={() => void load()}
+        onRefresh={() => void load(selectedDate)}
       />
+
+      {history.length > 0 && (
+        <div className="mb-4 flex flex-wrap items-center gap-2">
+          <label htmlFor="history-date" className="text-xs font-medium text-slate-400">
+            歷史日期
+          </label>
+          <select
+            id="history-date"
+            value={selectedDate ?? ""}
+            onChange={(e) => handleSelectDate(e.target.value)}
+            className="rounded-md border border-slate-700 bg-slate-900 px-2.5 py-1.5 text-sm text-slate-200 focus:border-emerald-500 focus:outline-none"
+          >
+            {history.map((h) => (
+              <option key={h.date} value={h.date}>
+                {fmtDateLabel(h.date)}
+                {h.date === history[0].date ? "（最新）" : ""}
+              </option>
+            ))}
+          </select>
+          {!isLatest && (
+            <span className="rounded bg-amber-400/15 px-2 py-0.5 text-[11px] font-medium text-amber-300">
+              檢視歷史快照
+            </span>
+          )}
+          <span className="text-xs text-slate-600">· 點任一列看個股走勢</span>
+        </div>
+      )}
 
       {!showSkeleton && <MarketBriefing data={marketBriefing} />}
       {!showSkeleton && <NewEntrants items={newEntrants} />}
@@ -157,7 +257,7 @@ export default function RankingTable() {
           <div className="mt-3">
             <button
               type="button"
-              onClick={() => void load()}
+              onClick={() => void load(selectedDate)}
               className="rounded-md border border-rose-700 px-3 py-1.5 text-sm hover:bg-rose-900/40"
             >
               重試
@@ -204,7 +304,9 @@ export default function RankingTable() {
                     return (
                       <tr
                         key={row.symbol}
-                        className={`border-b border-slate-800/60 transition-colors hover:bg-slate-800/40 ${
+                        onClick={() => void openTrend(row.symbol, row.name)}
+                        title={`${row.name}（點擊看走勢）`}
+                        className={`cursor-pointer border-b border-slate-800/60 transition-colors hover:bg-slate-800/40 ${
                           row.isNew ? "bg-amber-400/[0.07]" : ""
                         }`}
                       >
@@ -262,6 +364,16 @@ export default function RankingTable() {
         <div className="rounded-lg border border-slate-800 p-8 text-center text-slate-500">
           目前沒有資料。
         </div>
+      )}
+
+      {trendTarget && (
+        <StockTrendModal
+          symbol={trendTarget.symbol}
+          name={trendTarget.name}
+          trend={trendData}
+          loading={trendsLoading}
+          onClose={() => setTrendTarget(null)}
+        />
       )}
     </div>
   );
