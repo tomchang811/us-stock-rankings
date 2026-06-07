@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import TradingViewChart from "./TradingViewChart";
 import { changeColorClass, formatMoney, formatPercent, formatPrice } from "@/lib/format";
 import type { SymbolTrend, TrendPoint } from "@/types/stock";
@@ -101,19 +101,25 @@ function Panel({
 }
 
 export default function StockTrendModal({ symbol, name, trend, loading, onClose }: Props) {
+  const [chartExpanded, setChartExpanded] = useState(false);
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      if (e.key !== "Escape") return;
+      // Esc：若日K放大中，先收起放大；否則關閉整個視窗。
+      if (chartExpanded) setChartExpanded(false);
+      else onClose();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [onClose]);
+  }, [onClose, chartExpanded]);
 
   const points = trend?.points ?? [];
   const enough = points.length >= 2;
   const last = points[points.length - 1];
 
   return (
+    <>
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
       onClick={onClose}
@@ -140,8 +146,16 @@ export default function StockTrendModal({ symbol, name, trend, loading, onClose 
         </div>
 
         {/* 日K（TradingView 即時資料，連續完整） */}
-        <div className="mb-4">
+        <div className="relative mb-4">
           <TradingViewChart symbol={symbol} />
+          <button
+            type="button"
+            onClick={() => setChartExpanded(true)}
+            className="absolute right-2 top-2 z-10 rounded-md border border-slate-600 bg-slate-900/85 px-2 py-1 text-xs text-slate-200 shadow hover:bg-slate-800"
+            aria-label="放大日K"
+          >
+            ⤢ 放大
+          </button>
         </div>
 
         {/* 本站獨有：成交值名次 / 成交金額 走勢（僅含在榜交易日） */}
@@ -218,5 +232,26 @@ export default function StockTrendModal({ symbol, name, trend, loading, onClose 
         )}
       </div>
     </div>
+
+    {chartExpanded && (
+      <div className="fixed inset-0 z-[60] flex flex-col bg-slate-950 p-3" role="dialog" aria-modal="true">
+        <div className="mb-2 flex items-center justify-between">
+          <div className="font-mono text-sm font-semibold text-white">
+            {symbol} <span className="font-sans font-normal text-slate-400">· {name} · 日K</span>
+          </div>
+          <button
+            type="button"
+            onClick={() => setChartExpanded(false)}
+            className="rounded-md border border-slate-600 px-3 py-1 text-sm text-slate-200 hover:bg-slate-800"
+          >
+            ⤡ 縮小
+          </button>
+        </div>
+        <div className="min-h-0 flex-1">
+          <TradingViewChart symbol={symbol} height="100%" />
+        </div>
+      </div>
+    )}
+    </>
   );
 }

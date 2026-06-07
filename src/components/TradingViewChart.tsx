@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 interface Props {
   symbol: string; // 純美股代碼（如 NVDA）；TradingView 多能自動解析上市交易所
-  height?: number;
+  height?: number | string; // 數字=px；字串可用 "85vh" 等
 }
 
 /**
