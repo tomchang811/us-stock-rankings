@@ -108,24 +108,45 @@ async function explainNewEntrants(newStocks, apiKey) {
   const prompt = `以下是今天「首次進入美股成交值前 50」的個股（代碼 | 名稱 | 題材 | 當日漲跌幅）：
 ${lines}
 
-請用 Google 搜尋它們「最近幾天」的相關新聞，逐檔說明：這檔股票為何會突然放量、衝進成交值前 50？請指出「具體催化劑」（例如財報/財測、新產品或大訂單、分析師調升、併購、法說會、題材輪動、突發事件等）。每檔一句話、繁體中文、務實具體；若查無明確消息，請說「近期無明確個股消息，可能受族群輪動帶動」。
+請用 Google 搜尋它們「最近幾天」的相關新聞，逐檔說明：這檔股票為何會突然放量、衝進成交值前 50？請指出「具體催化劑」（例如財報/財測、新產品或大訂單、分析師調升、併購、法說會、題材輪動、突發事件等）。每檔「一句話、20 字內」、繁體中文、務實具體；若查無明確消息，請說「近期無明確個股消息，可能受族群輪動帶動」。
 只輸出 JSON 陣列，格式：[{"symbol":"代碼","reason":"一句話原因"}]，不要任何其他文字或 markdown。`;
 
   const body = {
     contents: [{ parts: [{ text: prompt }] }],
     tools: [{ google_search: {} }],
-    // 同市場焦點：關 thinking、拉高上限，避免 grounding 回應截斷 JSON。
-    generationConfig: { temperature: 0.4, maxOutputTokens: 2048, thinkingConfig: { thinkingBudget: 0 } },
+    // 關 thinking、拉高上限，避免 grounding 回應截斷 JSON（新進榜檔數多時尤其容易爆 token）。
+    generationConfig: { temperature: 0.4, maxOutputTokens: 4096, thinkingConfig: { thinkingBudget: 0 } },
   };
   const data = await callGemini(apiKey, body);
   const text = candidateText(data);
+  const map = new Map();
+  for (const it of parseJsonObjects(text)) {
+    if (it.symbol && it.reason) map.set(it.symbol, it.reason);
+  }
+  if (map.size === 0) throw new Error("新進榜回應無可解析的 JSON");
+  return map;
+}
+
+/**
+ * 從（可能被截斷的）grounded 回應文字抽出 JSON 物件陣列。
+ * 先試整段陣列解析；失敗則逐一抽出完整的 {…} 物件（容忍尾端被截斷）。
+ */
+function parseJsonObjects(text) {
   const s = text.indexOf("[");
   const e = text.lastIndexOf("]");
-  if (s < 0 || e <= s) throw new Error("新進榜回應無 JSON 陣列");
-  const arr = JSON.parse(text.slice(s, e + 1));
-  const map = new Map();
-  for (const it of arr) if (it.symbol && it.reason) map.set(it.symbol, it.reason);
-  return map;
+  if (s >= 0 && e > s) {
+    try {
+      const arr = JSON.parse(text.slice(s, e + 1));
+      if (Array.isArray(arr)) return arr;
+    } catch {}
+  }
+  const out = [];
+  for (const m of text.match(/\{[^{}]*\}/g) ?? []) {
+    try {
+      out.push(JSON.parse(m));
+    } catch {}
+  }
+  return out;
 }
 
 /**
@@ -166,7 +187,7 @@ ${themeLines}
     contents: [{ parts: [{ text: prompt }] }],
     tools: [{ google_search: {} }],
     // 關掉 thinking 並拉高輸出上限，避免 grounding 回應把 JSON 寫到一半就被截斷。
-    generationConfig: { temperature: 0.4, maxOutputTokens: 2048, thinkingConfig: { thinkingBudget: 0 } },
+    generationConfig: { temperature: 0.4, maxOutputTokens: 4096, thinkingConfig: { thinkingBudget: 0 } },
   };
   const data = await callGemini(apiKey, body);
   const text = candidateText(data);
