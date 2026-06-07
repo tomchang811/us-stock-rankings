@@ -34,7 +34,7 @@
       "dollarVolume": 26496277330.66163,
       "marketCap": 230483556000.00003,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "資料中心晶片",
+      "theme": "數據中心基礎設施",
       "isNew": false,
       "rankChange": 1,
       "streak": 51
@@ -99,7 +99,7 @@
       "dollarVolume": 20169890004.184185,
       "marketCap": 1826303558614.32,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "資料中心晶片",
+      "theme": "數據中心基礎設施",
       "isNew": false,
       "rankChange": -5,
       "streak": 61
@@ -125,7 +125,7 @@
       "dollarVolume": 14821059349.436213,
       "marketCap": 498428420000,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "CPU/資料中心",
+      "theme": "CPU/半導體製造",
       "isNew": false,
       "rankChange": 4,
       "streak": 61
@@ -190,7 +190,7 @@
       "dollarVolume": 8270973780.368081,
       "marketCap": 2153268410580,
       "sector": "—",
-      "theme": "晶圓代工",
+      "theme": "半導體製造",
       "isNew": false,
       "rankChange": 5,
       "streak": 61
@@ -242,7 +242,7 @@
       "dollarVolume": 5343655350.571505,
       "marketCap": 227600760000,
       "sector": "RADIO & TV BROADCASTING & COMMUNICATIONS EQUIPMENT",
-      "theme": "行動通訊晶片",
+      "theme": "行動晶片",
       "isNew": false,
       "rankChange": 8,
       "streak": 30
@@ -255,7 +255,7 @@
       "dollarVolume": 5239000403.211688,
       "marketCap": 311186547897.02,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "AI 軟體",
+      "theme": "數據分析/AI 軟體",
       "isNew": false,
       "rankChange": -5,
       "streak": 61
@@ -294,7 +294,7 @@
       "dollarVolume": 4801734818.136408,
       "marketCap": 49996341697.28,
       "sector": "—",
-      "theme": "雲端基礎設施",
+      "theme": "AI 雲端基礎設施",
       "isNew": false,
       "rankChange": 10,
       "streak": 19
@@ -346,7 +346,7 @@
       "dollarVolume": 4386968947.327263,
       "marketCap": 128190233405.31999,
       "sector": "ELECTRONIC COMPUTERS",
-      "theme": "伺服器/PC",
+      "theme": "IT 基礎設施",
       "isNew": false,
       "rankChange": -9,
       "streak": 10
@@ -385,7 +385,7 @@
       "dollarVolume": 4136472540.7418537,
       "marketCap": 682556414504.01,
       "sector": "FIRE, MARINE & CASUALTY INSURANCE",
-      "theme": "綜合企業",
+      "theme": "綜合控股",
       "isNew": false,
       "rankChange": 20,
       "streak": 3
@@ -476,7 +476,7 @@
       "dollarVolume": 3588393294.492902,
       "marketCap": 267716923155.19998,
       "sector": "COMPUTER & OFFICE EQUIPMENT",
-      "theme": "企業IT服務",
+      "theme": "企業IT/混合雲",
       "isNew": false,
       "rankChange": -1,
       "streak": 8
@@ -502,7 +502,7 @@
       "dollarVolume": 3495798878.3719254,
       "marketCap": 19423530931.9,
       "sector": "FINANCE SERVICES",
-      "theme": "比特幣/加密",
+      "theme": "比特幣挖礦",
       "isNew": false,
       "rankChange": -2,
       "streak": 5
@@ -515,7 +515,7 @@
       "dollarVolume": 3444614872.928128,
       "marketCap": 38160848086.6,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "資料中心晶片",
+      "theme": "數據中心互連",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -528,7 +528,7 @@
       "dollarVolume": 3434512578.0712276,
       "marketCap": 259431051002.46,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "工業/汽車晶片",
+      "theme": "工業/汽車半導體",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -541,7 +541,7 @@
       "dollarVolume": 3252588534.365216,
       "marketCap": 44931947736.21,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "AI 雲端服務",
+      "theme": "AI 雲端基礎設施",
       "isNew": false,
       "rankChange": -4,
       "streak": 5
@@ -554,7 +554,7 @@
       "dollarVolume": 3134834836.050275,
       "marketCap": 190027343850.24002,
       "sector": "COMPUTER STORAGE DEVICES",
-      "theme": "記憶體",
+      "theme": "數據儲存",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -567,7 +567,7 @@
       "dollarVolume": 3120452973.7509046,
       "marketCap": 170353870400,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "行動廣告",
+      "theme": "行動廣告技術",
       "isNew": false,
       "rankChange": -2,
       "streak": 2
@@ -580,7 +580,7 @@
       "dollarVolume": 3086056201.167293,
       "marketCap": 74982248043.48001,
       "sector": "ELECTRICAL INDUSTRIAL APPARATUS",
-      "theme": "清潔能源",
+      "theme": "燃料電池/潔淨能源",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -606,7 +606,7 @@
       "dollarVolume": 2970094572.4992585,
       "marketCap": 65249002044.06,
       "sector": "SECURITY BROKERS, DEALERS & FLOTATION COMPANIES",
-      "theme": "線上券商",
+      "theme": "金融科技",
       "isNew": false,
       "rankChange": -1,
       "streak": 2
@@ -619,7 +619,7 @@
       "dollarVolume": 2945549696.410671,
       "marketCap": 195511866985.6,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "工業/汽車晶片",
+      "theme": "工業/汽車半導體",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -652,13 +652,13 @@
     }
   ],
   "asOf": "2026-06-05T20:00:00.000Z",
-  "generatedAt": "2026-06-07T07:02:49.886Z",
+  "generatedAt": "2026-06-07T12:21:53.396Z",
   "source": "polygon",
   "aiSource": "gemini",
   "themeSummary": [
     {
-      "theme": "綜合企業",
-      "reason": "巴菲特旗下的綜合企業，通常被視為市場波動時的避險資產，其多元化投資組合提供穩定性。",
+      "theme": "綜合控股",
+      "reason": "巴菲特領導的波克夏海瑟威因其穩健的投資組合和價值投資策略，持續吸引尋求避險和長期回報的資金。",
       "symbols": [
         "BRK.B"
       ],
@@ -667,7 +667,7 @@
     },
     {
       "theme": "零售",
-      "reason": "作為大型零售商，在通膨壓力下，消費者轉向更實惠的選擇，有助於其業績表現。",
+      "reason": "在通膨壓力下，大型折扣零售商因其價格競爭力和日常必需品供應，顯示出較強的韌性。",
       "symbols": [
         "WMT"
       ],
@@ -676,7 +676,7 @@
     },
     {
       "theme": "醫療保險",
-      "reason": "醫療保健服務需求穩定，且其作為行業龍頭，持續受益於人口結構變化和醫療支出增長。",
+      "reason": "醫療保健服務需求穩定，且該公司在市場中具領導地位，使其成為防禦性資金的選擇。",
       "symbols": [
         "UNH"
       ],
@@ -685,7 +685,7 @@
     },
     {
       "theme": "串流媒體",
-      "reason": "透過嚴格的成本控制、打擊帳號共享以及推出廣告方案，提升了獲利能力和用戶增長預期。",
+      "reason": "隨著訂閱用戶增長和內容策略奏效，串流媒體巨頭的盈利能力和市場份額持續受到投資者關注。",
       "symbols": [
         "NFLX"
       ],
@@ -694,7 +694,7 @@
     },
     {
       "theme": "減肥藥 GLP-1",
-      "reason": "GLP-1 藥物市場潛力巨大，Eli Lilly 在此領域擁有領先地位，產品需求持續強勁。",
+      "reason": "GLP-1 類藥物市場潛力巨大，禮來公司在此領域的領先地位和新藥研發進展持續推動股價上漲。",
       "symbols": [
         "LLY"
       ],
@@ -703,7 +703,7 @@
     },
     {
       "theme": "銀行",
-      "reason": "利率維持高位有利於銀行淨利息收入，且其作為大型銀行，在經濟不確定性下展現韌性。",
+      "reason": "隨著利率環境趨於穩定，大型銀行因其穩健的資產負債表和多元化的業務收入，受到市場青睞。",
       "symbols": [
         "JPM"
       ],
@@ -717,102 +717,97 @@
       "name": "KLA Corporation Common Stock",
       "theme": "半導體設備",
       "changePercent": -9.473980573412785,
-      "reason": "公司宣布1拆10股票分割及季度現金股利，提升股票流動性。"
+      "reason": "KLA宣布1股拆10股、提高季度股息，並有70億美元庫藏股計畫。"
     },
     {
       "symbol": "CRDO",
       "name": "Credo Technology Group Holding Ltd Ordinary Shares",
-      "theme": "資料中心晶片",
+      "theme": "數據中心互連",
       "changePercent": -4.878160919540236,
-      "reason": "第四季度財報優於預期，並預計AI基礎設施擴張將帶動銷售成長。"
+      "reason": "Credo受惠於Zacks調升評級、與Rebellions合作及併購DustPhotonics。"
     },
     {
       "symbol": "TXN",
       "name": "Texas Instruments Incorporated",
-      "theme": "工業/汽車晶片",
+      "theme": "工業/汽車半導體",
       "changePercent": -6.650948030258376,
-      "reason": "第一季度財報強勁，數據中心收入年增90%，且CFO將進行人事變動。"
+      "reason": "德州儀器第一季財報優於預期，數據中心營收成長90%，獲分析師看好。"
     },
     {
       "symbol": "STX",
       "name": "Seagate Technology Holdings PLC Ordinary Shares (Ireland)",
-      "theme": "記憶體",
+      "theme": "數據儲存",
       "changePercent": -8.479573213533621,
-      "reason": "近期無明確個股消息，可能受族群輪動帶動。"
+      "reason": "Seagate受惠於AI儲存需求強勁、財報優異及債務交換交易。"
     },
     {
       "symbol": "BE",
       "name": "Bloom Energy Corporation",
-      "theme": "清潔能源",
+      "theme": "燃料電池/潔淨能源",
       "changePercent": -9.527405017675118,
-      "reason": "第一季度業績創紀錄並上調全年財測，與Oracle擴大合作加速AI基礎設施建置。"
+      "reason": "Bloom Energy受惠AI數據中心需求，與Oracle擴大合作及財報亮眼。"
     },
     {
       "symbol": "COST",
       "name": "Costco Wholesale Corp",
       "theme": "零售",
       "changePercent": -0.049364940607807696,
-      "reason": "五月銷售強勁，同店銷售成長穩健，防禦性零售股受青睞。"
+      "reason": "Costco第三季營收超預期，汽油銷量創紀錄，並計畫退還關稅。"
     },
     {
       "symbol": "ADI",
       "name": "Analog Devices, Inc.",
-      "theme": "工業/汽車晶片",
+      "theme": "工業/汽車半導體",
       "changePercent": -6.383524582517026,
-      "reason": "第二季度營收成長37%，工業、汽車、通訊領域訂單創紀錄，並收購Empower Semiconductor。"
+      "reason": "Analog Devices第二季財報創紀錄，並宣布收購Empower Semiconductor。"
     },
     {
       "symbol": "GEV",
       "name": "GE Vernova Inc.",
       "theme": "電力基礎建設",
       "changePercent": -3.0851317824629176,
-      "reason": "宣布季度股息，並深化印度市場承諾，推出新風力渦輪機。"
+      "reason": "GE Vernova受惠AI電力需求、印度風電訂單及強勁財報。"
     }
   ],
   "marketBriefing": {
-    "highlights": "本日美股成交重點集中在AI相關晶片與記憶體類股，以及部分科技巨頭。資金主要流向AI晶片和記憶體公司，如Micron Technology (MU)、Nvidia (NVDA)、Marvell Technology (MRVL) 和 AMD (AMD)，這些公司在AI熱潮下交易量顯著。然而，由於Broadcom (AVGO) 財報後對AI晶片營收目標的看法，引發市場對AI基礎設施支出可能趨緩的擔憂，導致這些熱門股普遍下跌。此外，Tesla (TSLA) 的Robotaxi進展也受到關注，但整體市場情緒偏向謹慎。",
+    "highlights": "本日美股成交重點集中在AI晶片、記憶體和數據中心基礎設施等半導體相關類股，主要受到博通財報展望不如預期，以及市場對AI晶片需求過度樂觀的獲利了結賣壓影響，導致多檔熱門股出現大幅下跌。儘管如此，市場對於AI長期的發展潛力仍抱持信心，部分華爾街機構認為跌勢反應過度。此外，美國5月非農就業數據強勁，引發市場對聯準會可能升息的擔憂，也對股市造成壓力。",
     "eventsPast": [
       {
-        "title": "Broadcom 公布第二季財報與財測",
-        "detail": "Broadcom (AVGO) 於 6 月 3 日公布了 2026 財年第二季財報，營收年增 48% 達到 222 億美元，AI半導體營收年增 143% 達到 108 億美元，並預計第三季AI營收將加速成長至約 160 億美元。然而，由於公司未上調全年AI半導體營收目標，引發市場對AI基礎設施支出可能趨緩的擔憂，導致股價下跌。"
+        "title": "博通財報展望不如預期",
+        "detail": "博通(AVGO)公布最新財報，雖然季度獲利優於預期，但因未進一步提高全年AI晶片銷售目標，導致股價大跌逾12%，並拖累其他半導體類股走弱。"
       },
       {
-        "title": "美光科技股價大跌",
-        "detail": "美光科技 (MU) 股價在 6 月 5 日大跌超過 13%，延續了兩天的跌勢。這主要是受到 Broadcom 財報後市場對 AI 基礎設施支出可能趨緩的擔憂，以及零售投資者可能為了即將到來的 SpaceX IPO 而出售股票以釋出資金的影響。"
+        "title": "美國5月非農就業報告強勁",
+        "detail": "美國5月季調後非農就業人口增加17.2萬人，高於市場預期，引發市場對聯準會可能升息的擔憂。"
       },
       {
-        "title": "Nvidia HBM4 記憶體認證消息",
-        "detail": "Nvidia 執行長黃仁勳於 6 月 5 日在首爾確認，美光科技 (MU) 已與三星和 SK 海力士一同獲得 HBM4 記憶體的認證，將供應給下一代 Vera Rubin AI 平台。然而，此消息未能阻止美光股價的跌勢，市場認為此利多已提前反映。"
+        "title": "AI搶奪記憶體產能，產業團體呼籲政府介入",
+        "detail": "AI熱潮推升記憶體晶片需求，導致汽車、醫療設備等產業面臨記憶體短缺威脅，多個產業協會已聯名致函美國政府，呼籲擴大供應。"
       },
       {
-        "title": "JPMorgan Chase 佈局代幣化支付與私募信貸",
-        "detail": "JPMorgan Chase (JPM) 正與美國銀行業財團合作推出共享代幣化存款網絡，利用區塊鏈技術實現即時結算和可編程支付，以挑戰穩定幣和加密原生支付。同時，JPMorgan 也傳出正探索大規模進軍私募信貸市場，可能涉及數十億美元的平台收購。"
+        "title": "蘋果AI戰略轉向，Siri傳將採用Google雲端與輝達晶片",
+        "detail": "蘋果(AAPL)預計今年9月推出新版Siri，傳出將透過Google Cloud的輝達Blackwell B200 AI晶片提供部分雲端運算能力，顯示蘋果在生成式AI布局上的新策略。"
       },
       {
-        "title": "Tesla Robotaxi 在奧斯汀推出無人駕駛服務",
-        "detail": "Tesla Robotaxi 在 2026 年 6 月的第一週宣布，已在奧斯汀都會區的地理圍欄區域內提供無人駕駛 Robotaxi 服務，這是其自動駕駛服務的重要一步。"
+        "title": "特斯拉Robotaxi進展，但股價受博通拖累",
+        "detail": "特斯拉(TSLA)的Robotaxi已開始在德州奧斯汀進行無人駕駛，但受博通財報影響，股價仍呈現下跌。"
       }
     ],
     "eventsUpcoming": [
       {
-        "date": "6/24",
-        "title": "美光科技 (MU) 公布 2026 財年第三季財報",
-        "detail": "美光科技 (MU) 將於 2026 年 6 月 24 日公布其 2026 財年第三季財報，市場將密切關注其在 AI 記憶體需求方面的表現和財測。"
+        "date": "本週四",
+        "title": "聯準會利率決策會議",
+        "detail": "聯準會(Fed)預計於6月17日公布利率決策，市場將關注其對通膨的看法及未來政策走向。"
       },
       {
-        "date": "7/16",
-        "title": "Netflix (NFLX) 公布財報",
-        "detail": "Netflix (NFLX) 預計將於 2026 年 7 月 16 日公布財報，投資者將關注其訂閱用戶增長、營收和獲利能力。"
+        "date": "6/12",
+        "title": "SpaceX IPO",
+        "detail": "馬斯克旗下太空探索公司SpaceX預計於6月12日以每股135美元的價格正式登陸紐約證券交易所，預計募資750億美元。"
       },
       {
-        "date": "8/5",
-        "title": "Eli Lilly (LLY) 公布財報",
-        "detail": "Eli Lilly (LLY) 預計將於 2026 年 8 月 5 日公布財報，市場將關注其減肥藥 GLP-1 相關產品的銷售表現和未來展望。"
-      },
-      {
-        "date": "本週",
-        "title": "Apple WWDC 2026 開發者大會",
-        "detail": "Apple (AAPL) 將於本週舉行 WWDC 2026 開發者大會，預期將發表由 Gemini 驅動的 Siri、iOS 27、macOS 27 等新功能，並可能推出新的 Apple TV 和 HomePod mini 機型。"
+        "date": "6/8起至月底",
+        "title": "多檔美股相關基金/ETF募集",
+        "detail": "6月將有群益標普500 (009823)、群益美國科技巨頭 (009824) 等五檔美股相關基金/ETF募集，提供投資人低檔布局的機會。"
       }
     ]
   }
