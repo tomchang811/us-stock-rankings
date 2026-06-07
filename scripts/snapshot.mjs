@@ -22,6 +22,7 @@ import {
   writeHistory,
   THEME_TTL_MS,
   ROOT,
+  HISTORY_DIR,
 } from "./lib/core.mjs";
 import { promises as fs } from "node:fs";
 import path from "node:path";
@@ -48,6 +49,33 @@ async function findTradingDays(key) {
     cursor.setUTCDate(cursor.getUTCDate() - 1);
   }
   return days;
+}
+
+/**
+ * 取「前一交易日」基準（優先，且最穩）：讀 public/history 下日期 < latestDate 的最新一檔。
+ * 用真正的前一交易日來算 streak/isNew/rankChange，可避免「同日重跑/重部署」把 streak 壓回線上舊值。
+ * 回傳與 fetchPrev 相同形狀；無歷史則回 null（呼叫端退回 fetchPrev）。
+ */
+async function readPrevFromHistory(latestDate) {
+  try {
+    const dates = (await fs.readdir(HISTORY_DIR))
+      .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+      .map((f) => f.slice(0, 10))
+      .filter((d) => d < latestDate)
+      .sort();
+    const prevDate = dates[dates.length - 1];
+    if (!prevDate) return null;
+    const data = JSON.parse(await fs.readFile(path.join(HISTORY_DIR, `${prevDate}.json`), "utf8"));
+    const ranks = new Map();
+    const rows = new Map();
+    (data.rows ?? []).forEach((r, i) => {
+      ranks.set(r.symbol, i + 1);
+      rows.set(r.symbol, r);
+    });
+    return { ranks, rows, date: prevDate };
+  } catch {
+    return null;
+  }
 }
 
 /** 取得線上前一份快照：symbol→名次(1-based)、symbol→該列資料、資料交易日。 */
@@ -216,8 +244,9 @@ async function main() {
   // 排名 + 逐檔補明細、濾 ETF、湊滿 50 檔（共用 core.pickTopStocks）。
   const picked = await pickTopStocks(latest.results, prevMap, cache, polygonKey, { log: true });
 
-  // 取得前一份快照 → 計算 isNew / rankChange / streak（連續在榜天數）。
-  const prev = await fetchPrev();
+  // 取得「前一交易日」基準 → 計算 isNew / rankChange / streak（連續在榜天數）。
+  // 優先用歷史封存檔（真正的前一交易日，streak 鏈不會被同日重跑/重部署破壞）；無則退回線上前一份。
+  const prev = (await readPrevFromHistory(latest.date)) ?? (await fetchPrev());
   // 同一交易日的重跑（例如改程式碼觸發部署）不重複累加 streak。
   const sameDay = prev?.date != null && prev.date === latest.date;
   console.log(
