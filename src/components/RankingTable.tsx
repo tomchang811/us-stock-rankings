@@ -85,6 +85,7 @@ export default function RankingTable() {
   const [themeSummary, setThemeSummary] = useState<ThemeSummaryItem[]>([]);
   const [newEntrants, setNewEntrants] = useState<NewEntrant[]>([]);
   const [marketBriefing, setMarketBriefing] = useState<MarketBriefingData | null>(null);
+  const [backfilled, setBackfilled] = useState(false);
   const [notice, setNotice] = useState<string | undefined>(undefined);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -118,6 +119,7 @@ export default function RankingTable() {
       setThemeSummary(data.themeSummary ?? []);
       setNewEntrants(data.newEntrants ?? []);
       setMarketBriefing(data.marketBriefing ?? null);
+      setBackfilled(data.backfilled === true);
       setNotice(data.notice);
     } catch (err) {
       setError(err instanceof Error ? err.message : "載入失敗");
@@ -244,6 +246,12 @@ export default function RankingTable() {
             </span>
           )}
           <span className="text-xs text-slate-600">· 點任一列看個股走勢</span>
+        </div>
+      )}
+
+      {!showSkeleton && backfilled && (
+        <div className="mb-5 rounded-lg border border-slate-700/60 bg-slate-900/40 px-4 py-3 text-xs leading-relaxed text-slate-400">
+          📁 此日為歷史回補資料，無當日「今日市場焦點」與「發動題材」（即時事件無法事後重建）。個股題材、走勢與排行仍正常顯示。
         </div>
       )}
 
