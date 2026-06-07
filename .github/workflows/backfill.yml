@@ -48,6 +48,10 @@ jobs:
           POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
+      # 回補後把 streak 重接成連續鏈、同步 rankings.json（純離線）。
+      - name: Reconcile streak chain
+        run: node scripts/reconcile-streak.mjs
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5

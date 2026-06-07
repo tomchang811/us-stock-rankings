@@ -8,7 +8,7 @@
       "dollarVolume": 69883701103.78955,
       "marketCap": 974373497404.51,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "記憶體 HBM",
+      "theme": "記憶體",
       "isNew": false,
       "rankChange": 0,
       "streak": 61
@@ -34,7 +34,7 @@
       "dollarVolume": 26496277330.66163,
       "marketCap": 230483556000.00003,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "網路晶片",
+      "theme": "網路基礎設施晶片",
       "isNew": false,
       "rankChange": 1,
       "streak": 51
@@ -73,7 +73,7 @@
       "dollarVolume": 21324694359.139557,
       "marketCap": 230919321444.56,
       "sector": "COMPUTER STORAGE DEVICES",
-      "theme": "資料儲存",
+      "theme": "儲存裝置",
       "isNew": false,
       "rankChange": -1,
       "streak": 61
@@ -99,7 +99,7 @@
       "dollarVolume": 20169890004.184185,
       "marketCap": 1826303558614.32,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "網路晶片",
+      "theme": "網路基礎設施晶片",
       "isNew": false,
       "rankChange": -5,
       "streak": 61
@@ -112,7 +112,7 @@
       "dollarVolume": 18025982247.592796,
       "marketCap": 1302255033684,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "社群媒體/AI",
+      "theme": "社群媒體/元宇宙",
       "isNew": false,
       "rankChange": 2,
       "streak": 61
@@ -125,7 +125,7 @@
       "dollarVolume": 14821059349.436213,
       "marketCap": 498428420000,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "CPU/AI 晶片",
+      "theme": "CPU 晶片",
       "isNew": false,
       "rankChange": 4,
       "streak": 61
@@ -151,7 +151,7 @@
       "dollarVolume": 13901688584.623915,
       "marketCap": 2646571634539.08,
       "sector": "RETAIL-CATALOG & MAIL-ORDER HOUSES",
-      "theme": "電商/雲端服務",
+      "theme": "電子商務/雲端服務",
       "isNew": false,
       "rankChange": 1,
       "streak": 61
@@ -164,7 +164,7 @@
       "dollarVolume": 13802923675.983889,
       "marketCap": 2146318719999.9998,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "雲端/AI 服務",
+      "theme": "網路搜尋/AI",
       "isNew": false,
       "rankChange": -7,
       "streak": 61
@@ -177,7 +177,7 @@
       "dollarVolume": 8565008480.756848,
       "marketCap": 1995586560000,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "雲端/AI 服務",
+      "theme": "網路搜尋/AI",
       "isNew": false,
       "rankChange": -4,
       "streak": 61
@@ -203,7 +203,7 @@
       "dollarVolume": 6779393118.772271,
       "marketCap": 67192748000,
       "sector": "COMMUNICATIONS EQUIPMENT, NEC",
-      "theme": "光通訊元件",
+      "theme": "光學通訊",
       "isNew": false,
       "rankChange": 0,
       "streak": 61
@@ -216,7 +216,7 @@
       "dollarVolume": 6289956612.505008,
       "marketCap": 614553509280,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "雲端軟體 SaaS",
+      "theme": "企業軟體/雲端資料庫",
       "isNew": false,
       "rankChange": 4,
       "streak": 61
@@ -255,7 +255,7 @@
       "dollarVolume": 5239000403.211688,
       "marketCap": 311186547897.02,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "資料分析軟體",
+      "theme": "大數據分析/AI 軟體",
       "isNew": false,
       "rankChange": -5,
       "streak": 61
@@ -268,7 +268,7 @@
       "dollarVolume": 5238963780.071534,
       "marketCap": 362310256172.34,
       "sector": "—",
-      "theme": "半導體 IP",
+      "theme": "晶片設計 IP",
       "isNew": false,
       "rankChange": 2,
       "streak": 13
@@ -294,7 +294,7 @@
       "dollarVolume": 4801734818.136408,
       "marketCap": 49996341697.28,
       "sector": "—",
-      "theme": "雲端服務",
+      "theme": "AI 雲端基礎設施",
       "isNew": false,
       "rankChange": 10,
       "streak": 19
@@ -307,7 +307,7 @@
       "dollarVolume": 4732098052.033295,
       "marketCap": 176380740075.32,
       "sector": "COMPUTER STORAGE DEVICES",
-      "theme": "資料儲存",
+      "theme": "儲存裝置",
       "isNew": false,
       "rankChange": 2,
       "streak": 59
@@ -320,7 +320,7 @@
       "dollarVolume": 4727012438.135755,
       "marketCap": 1065505061576.52,
       "sector": "PHARMACEUTICAL PREPARATIONS",
-      "theme": "生技製藥/減肥藥",
+      "theme": "減肥藥 GLP-1",
       "isNew": false,
       "rankChange": -3,
       "streak": 13
@@ -346,7 +346,7 @@
       "dollarVolume": 4386968947.327263,
       "marketCap": 128190233405.31999,
       "sector": "ELECTRONIC COMPUTERS",
-      "theme": "電腦/伺服器",
+      "theme": "伺服器/PC",
       "isNew": false,
       "rankChange": -9,
       "streak": 10
@@ -385,7 +385,7 @@
       "dollarVolume": 4136472540.7418537,
       "marketCap": 682556414504.01,
       "sector": "FIRE, MARINE & CASUALTY INSURANCE",
-      "theme": "綜合控股",
+      "theme": "綜合保險/控股",
       "isNew": false,
       "rankChange": 20,
       "streak": 3
@@ -424,7 +424,7 @@
       "dollarVolume": 3742955116.9174232,
       "marketCap": 14202969759,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "光通訊元件",
+      "theme": "光學通訊",
       "isNew": false,
       "rankChange": 8,
       "streak": 2
@@ -437,7 +437,7 @@
       "dollarVolume": 3649624343.0814366,
       "marketCap": 252006613513.2,
       "sector": "OPTICAL INSTRUMENTS & LENSES",
-      "theme": "半導體檢測設備",
+      "theme": "半導體設備",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -463,7 +463,7 @@
       "dollarVolume": 3590104023.3851476,
       "marketCap": 170828629253.66,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "資安軟體",
+      "theme": "資安",
       "isNew": false,
       "rankChange": -19,
       "streak": 5
@@ -476,7 +476,7 @@
       "dollarVolume": 3588393294.492902,
       "marketCap": 267716923155.19998,
       "sector": "COMPUTER & OFFICE EQUIPMENT",
-      "theme": "企業IT解決方案",
+      "theme": "企業服務/混合雲",
       "isNew": false,
       "rankChange": -1,
       "streak": 8
@@ -515,7 +515,7 @@
       "dollarVolume": 3444614872.928128,
       "marketCap": 38160848086.6,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "高速連接晶片",
+      "theme": "資料中心互連",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -528,7 +528,7 @@
       "dollarVolume": 3434512578.0712276,
       "marketCap": 259431051002.46,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "類比半導體",
+      "theme": "類比晶片",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -554,7 +554,7 @@
       "dollarVolume": 3134834836.050275,
       "marketCap": 190027343850.24002,
       "sector": "COMPUTER STORAGE DEVICES",
-      "theme": "資料儲存",
+      "theme": "儲存裝置",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -567,7 +567,7 @@
       "dollarVolume": 3120452973.7509046,
       "marketCap": 170353870400,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "行動廣告技術",
+      "theme": "行動廣告/應用程式",
       "isNew": false,
       "rankChange": -2,
       "streak": 2
@@ -606,7 +606,7 @@
       "dollarVolume": 2970094572.4992585,
       "marketCap": 65249002044.06,
       "sector": "SECURITY BROKERS, DEALERS & FLOTATION COMPANIES",
-      "theme": "線上券商",
+      "theme": "金融科技",
       "isNew": false,
       "rankChange": -1,
       "streak": 2
@@ -619,7 +619,7 @@
       "dollarVolume": 2945549696.410671,
       "marketCap": 195511866985.6,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "類比半導體",
+      "theme": "類比晶片",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -645,18 +645,108 @@
       "dollarVolume": 2847236371.0617976,
       "marketCap": 836998981640.66,
       "sector": "NATIONAL COMMERCIAL BANKS",
-      "theme": "大型銀行",
+      "theme": "銀行業",
       "isNew": false,
       "rankChange": -19,
       "streak": 2
     }
   ],
   "asOf": "2026-06-05T20:00:00.000Z",
-  "generatedAt": "2026-06-06T14:16:02.493Z",
+  "generatedAt": "2026-06-06T13:13:38.052Z",
   "source": "polygon",
   "aiSource": "gemini",
-  "themeSummary": [],
+  "themeSummary": [
+    {
+      "theme": "綜合保險/控股",
+      "reason": "在市場波動時期，綜合型控股公司因其多元化投資組合和穩健的現金流，常被視為避險資產而受到資金青睞。",
+      "symbols": [
+        "BRK.B"
+      ],
+      "count": 1,
+      "avgChange": 1.9848317071641979
+    },
+    {
+      "theme": "零售百貨",
+      "reason": "在通膨壓力下，大型零售百貨因其日常必需品供應和價格競爭力，顯示出較強的韌性，吸引消費者支出。",
+      "symbols": [
+        "WMT"
+      ],
+      "count": 1,
+      "avgChange": 0.9682350942755229
+    },
+    {
+      "theme": "醫療保險",
+      "reason": "醫療保險行業因其穩定的需求和防禦性特質，在經濟不確定性中仍能保持增長，吸引尋求穩定收益的資金。",
+      "symbols": [
+        "UNH"
+      ],
+      "count": 1,
+      "avgChange": 0.7566776805306832
+    },
+    {
+      "theme": "串流媒體",
+      "reason": "串流媒體巨頭透過內容創新和全球用戶增長，持續鞏固其市場領導地位，吸引投資者關注其長期增長潛力。",
+      "symbols": [
+        "NFLX"
+      ],
+      "count": 1,
+      "avgChange": 0.7601765571358564
+    },
+    {
+      "theme": "減肥藥 GLP-1",
+      "reason": "GLP-1 減肥藥市場潛力巨大，相關藥廠因其創新藥物和強勁的銷售預期，持續獲得市場高度關注。",
+      "symbols": [
+        "LLY"
+      ],
+      "count": 1,
+      "avgChange": 0.5465354981471194
+    },
+    {
+      "theme": "銀行業",
+      "reason": "大型銀行在利率環境變化中展現出穩健的盈利能力和資產負債表，吸引投資者對其金融穩定性的信心。",
+      "symbols": [
+        "JPM"
+      ],
+      "count": 1,
+      "avgChange": 0.4760526231142907
+    }
+  ],
   "newEntrants": [],
-  "marketBriefing": null,
-  "backfilled": true
+  "marketBriefing": {
+    "highlights": "本日美股成交重點聚焦於AI晶片與記憶體族群的劇烈波動。主要動能來自博通 (AVGO) 財報不如市場預期，儘管營收創高且AI晶片收入高速成長，但因未上修長期AI展望，引發市場對AI晶片估值過高的擔憂，導致資金從AI高檔股撤出。同時，美國5月非農就業數據強勁，加劇了聯準會升息的預期，進一步壓抑了高本益比科技股的表現。部分資金轉向金融和醫療等防禦型板塊，使得道瓊指數相對抗跌。",
+    "eventsPast": [
+      {
+        "title": "博通 (AVGO) 財報不如預期，引發AI晶片股賣壓",
+        "detail": "博通公布強勁的第二財季營收，AI半導體收入年增143%，但因未上調2027年AI晶片營收目標，導致股價暴跌近13%，並拖累費城半導體指數重挫。"
+      },
+      {
+        "title": "美國5月非農就業數據強勁，升息擔憂升溫",
+        "detail": "美國5月非農就業人口新增17.2萬人，遠高於市場預期，強化了聯準會升息的預期，對高本益比的科技股造成壓力。"
+      },
+      {
+        "title": "美光 (MU) 股價重挫，分析師示警記憶體價格見頂",
+        "detail": "記憶體大廠美光股價重挫逾7%，因分析師警告DRAM與NAND快閃記憶體價格可能在2026年年中見頂，並預計明年初開始下跌。"
+      },
+      {
+        "title": "Marvell Technology (MRVL) 納入標普500指數",
+        "detail": "Marvell Technology將於6月22日開盤前正式納入標普500指數，儘管當日受半導體族群賣壓影響重挫，但此消息仍被視為利多。"
+      },
+      {
+        "title": "聯合健康 (UNH) 股價逆勢上漲，醫療管理股受關注",
+        "detail": "美國最大健康保險商聯合健康股價逆勢大漲，受惠於醫療使用趨勢改善、支付率上調，以及資金從AI主題轉向價值型防禦板塊。"
+      }
+    ],
+    "eventsUpcoming": [
+      {
+        "date": "6/10",
+        "title": "美國5月消費者物價指數 (CPI) 公布",
+        "detail": "美國勞工部將公布5月份CPI數據，此為評估通膨壓力和聯準會貨幣政策的重要指標。"
+      },
+      {
+        "date": "6/11-7/19",
+        "title": "FIFA世界盃足球賽",
+        "detail": "美國、加拿大和墨西哥將共同主辦世界盃足球賽，預計將為餐旅業帶來短暫的就業提振效果。"
+      }
+    ]
+  }
 }

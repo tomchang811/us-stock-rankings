@@ -11,7 +11,7 @@
       "theme": "記憶體",
       "isNew": false,
       "rankChange": 0,
-      "streak": 4
+      "streak": 61
     },
     {
       "symbol": "NVDA",
@@ -24,7 +24,7 @@
       "theme": "AI 晶片",
       "isNew": false,
       "rankChange": 0,
-      "streak": 4
+      "streak": 61
     },
     {
       "symbol": "MRVL",
@@ -36,8 +36,8 @@
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
       "theme": "網路基礎設施晶片",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": 1,
+      "streak": 51
     },
     {
       "symbol": "TSLA",
@@ -49,8 +49,8 @@
       "sector": "MOTOR VEHICLES & PASSENGER CAR BODIES",
       "theme": "電動車",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": 4,
+      "streak": 61
     },
     {
       "symbol": "AMD",
@@ -62,8 +62,8 @@
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
       "theme": "AI 晶片",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": 2,
+      "streak": 61
     },
     {
       "symbol": "SNDK",
@@ -75,8 +75,8 @@
       "sector": "COMPUTER STORAGE DEVICES",
       "theme": "儲存裝置",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": -1,
+      "streak": 61
     },
     {
       "symbol": "AAPL",
@@ -88,8 +88,8 @@
       "sector": "ELECTRONIC COMPUTERS",
       "theme": "消費性電子",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": 2,
+      "streak": 61
     },
     {
       "symbol": "AVGO",
@@ -101,8 +101,8 @@
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
       "theme": "網路基礎設施晶片",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": -5,
+      "streak": 61
     },
     {
       "symbol": "META",
@@ -114,8 +114,8 @@
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
       "theme": "社群媒體/元宇宙",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": 2,
+      "streak": 61
     },
     {
       "symbol": "INTC",
@@ -127,8 +127,8 @@
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
       "theme": "CPU 晶片",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": 4,
+      "streak": 61
     },
     {
       "symbol": "MSFT",
@@ -140,8 +140,8 @@
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
       "theme": "雲端軟體 SaaS",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": 1,
+      "streak": 61
     },
     {
       "symbol": "AMZN",
@@ -153,8 +153,8 @@
       "sector": "RETAIL-CATALOG & MAIL-ORDER HOUSES",
       "theme": "電子商務/雲端服務",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": 1,
+      "streak": 61
     },
     {
       "symbol": "GOOGL",
@@ -166,8 +166,8 @@
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
       "theme": "網路搜尋/AI",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": -7,
+      "streak": 61
     },
     {
       "symbol": "GOOG",
@@ -179,8 +179,8 @@
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
       "theme": "網路搜尋/AI",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": -4,
+      "streak": 61
     },
     {
       "symbol": "TSM",
@@ -192,8 +192,8 @@
       "sector": "—",
       "theme": "晶圓代工",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": 5,
+      "streak": 61
     },
     {
       "symbol": "LITE",
@@ -206,7 +206,7 @@
       "theme": "光學通訊",
       "isNew": false,
       "rankChange": 0,
-      "streak": 4
+      "streak": 61
     },
     {
       "symbol": "ORCL",
@@ -218,8 +218,8 @@
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
       "theme": "企業軟體/雲端資料庫",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": 4,
+      "streak": 61
     },
     {
       "symbol": "AMAT",
@@ -231,8 +231,8 @@
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
       "theme": "半導體設備",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": 11,
+      "streak": 26
     },
     {
       "symbol": "QCOM",
@@ -244,8 +244,8 @@
       "sector": "RADIO & TV BROADCASTING & COMMUNICATIONS EQUIPMENT",
       "theme": "行動晶片",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": 8,
+      "streak": 30
     },
     {
       "symbol": "PLTR",
@@ -257,8 +257,8 @@
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
       "theme": "大數據分析/AI 軟體",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": -5,
+      "streak": 61
     },
     {
       "symbol": "ARM",
@@ -270,8 +270,8 @@
       "sector": "—",
       "theme": "晶片設計 IP",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": 2,
+      "streak": 13
     },
     {
       "symbol": "MSTR",
@@ -283,7 +283,7 @@
       "sector": "FINANCE SERVICES",
       "theme": "比特幣/加密",
       "isNew": false,
-      "rankChange": 0,
+      "rankChange": 10,
       "streak": 4
     },
     {
@@ -296,8 +296,8 @@
       "sector": "—",
       "theme": "AI 雲端基礎設施",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": 10,
+      "streak": 19
     },
     {
       "symbol": "WDC",
@@ -309,8 +309,8 @@
       "sector": "COMPUTER STORAGE DEVICES",
       "theme": "儲存裝置",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": 2,
+      "streak": 59
     },
     {
       "symbol": "LLY",
@@ -322,8 +322,8 @@
       "sector": "PHARMACEUTICAL PREPARATIONS",
       "theme": "減肥藥 GLP-1",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": -3,
+      "streak": 13
     },
     {
       "symbol": "ASML",
@@ -335,7 +335,7 @@
       "sector": "—",
       "theme": "半導體設備",
       "isNew": false,
-      "rankChange": 0,
+      "rankChange": -1,
       "streak": 4
     },
     {
@@ -348,8 +348,8 @@
       "sector": "ELECTRONIC COMPUTERS",
       "theme": "伺服器/PC",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": -9,
+      "streak": 10
     },
     {
       "symbol": "WMT",
@@ -361,8 +361,8 @@
       "sector": "RETAIL-VARIETY STORES",
       "theme": "零售百貨",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": 19,
+      "streak": 15
     },
     {
       "symbol": "UNH",
@@ -374,7 +374,7 @@
       "sector": "HOSPITAL & MEDICAL SERVICE PLANS",
       "theme": "醫療保險",
       "isNew": false,
-      "rankChange": 0,
+      "rankChange": -10,
       "streak": 3
     },
     {
@@ -387,7 +387,7 @@
       "sector": "FIRE, MARINE & CASUALTY INSURANCE",
       "theme": "綜合保險/控股",
       "isNew": false,
-      "rankChange": 0,
+      "rankChange": 20,
       "streak": 3
     },
     {
@@ -400,7 +400,7 @@
       "sector": "SPECIAL INDUSTRY MACHINERY, NEC",
       "theme": "半導體設備",
       "isNew": false,
-      "rankChange": 0,
+      "rankChange": 13,
       "streak": 4
     },
     {
@@ -413,8 +413,8 @@
       "sector": "COMPUTER COMMUNICATIONS EQUIPMENT",
       "theme": "網路設備",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": 2,
+      "streak": 19
     },
     {
       "symbol": "AAOI",
@@ -426,7 +426,7 @@
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
       "theme": "光學通訊",
       "isNew": false,
-      "rankChange": 0,
+      "rankChange": 8,
       "streak": 2
     },
     {
@@ -438,8 +438,8 @@
       "marketCap": 252006613513.2,
       "sector": "OPTICAL INSTRUMENTS & LENSES",
       "theme": "半導體設備",
-      "isNew": false,
-      "rankChange": 0,
+      "isNew": true,
+      "rankChange": null,
       "streak": 1
     },
     {
@@ -452,8 +452,8 @@
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
       "theme": "雲端軟體 SaaS",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": -7,
+      "streak": 16
     },
     {
       "symbol": "CRWD",
@@ -465,8 +465,8 @@
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
       "theme": "資安",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": -19,
+      "streak": 5
     },
     {
       "symbol": "IBM",
@@ -478,8 +478,8 @@
       "sector": "COMPUTER & OFFICE EQUIPMENT",
       "theme": "企業服務/混合雲",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": -1,
+      "streak": 8
     },
     {
       "symbol": "NFLX",
@@ -491,8 +491,8 @@
       "sector": "SERVICES-VIDEO TAPE RENTAL",
       "theme": "串流媒體",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": -8,
+      "streak": 5
     },
     {
       "symbol": "IREN",
@@ -504,8 +504,8 @@
       "sector": "FINANCE SERVICES",
       "theme": "比特幣挖礦",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": -2,
+      "streak": 5
     },
     {
       "symbol": "CRDO",
@@ -516,8 +516,8 @@
       "marketCap": 38160848086.6,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
       "theme": "資料中心互連",
-      "isNew": false,
-      "rankChange": 0,
+      "isNew": true,
+      "rankChange": null,
       "streak": 1
     },
     {
@@ -529,8 +529,8 @@
       "marketCap": 259431051002.46,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
       "theme": "類比晶片",
-      "isNew": false,
-      "rankChange": 0,
+      "isNew": true,
+      "rankChange": null,
       "streak": 1
     },
     {
@@ -543,8 +543,8 @@
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
       "theme": "AI 雲端基礎設施",
       "isNew": false,
-      "rankChange": 0,
-      "streak": 4
+      "rankChange": -4,
+      "streak": 5
     },
     {
       "symbol": "STX",
@@ -555,8 +555,8 @@
       "marketCap": 190027343850.24002,
       "sector": "COMPUTER STORAGE DEVICES",
       "theme": "儲存裝置",
-      "isNew": false,
-      "rankChange": 0,
+      "isNew": true,
+      "rankChange": null,
       "streak": 1
     },
     {
@@ -569,7 +569,7 @@
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
       "theme": "行動廣告/應用程式",
       "isNew": false,
-      "rankChange": 0,
+      "rankChange": -2,
       "streak": 2
     },
     {
@@ -581,8 +581,8 @@
       "marketCap": 74982248043.48001,
       "sector": "ELECTRICAL INDUSTRIAL APPARATUS",
       "theme": "燃料電池/潔淨能源",
-      "isNew": false,
-      "rankChange": 0,
+      "isNew": true,
+      "rankChange": null,
       "streak": 1
     },
     {
@@ -594,8 +594,8 @@
       "marketCap": 431172594049.8,
       "sector": "RETAIL-VARIETY STORES",
       "theme": "零售百貨",
-      "isNew": false,
-      "rankChange": 0,
+      "isNew": true,
+      "rankChange": null,
       "streak": 1
     },
     {
@@ -608,7 +608,7 @@
       "sector": "SECURITY BROKERS, DEALERS & FLOTATION COMPANIES",
       "theme": "金融科技",
       "isNew": false,
-      "rankChange": 0,
+      "rankChange": -1,
       "streak": 2
     },
     {
@@ -620,8 +620,8 @@
       "marketCap": 195511866985.6,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
       "theme": "類比晶片",
-      "isNew": false,
-      "rankChange": 0,
+      "isNew": true,
+      "rankChange": null,
       "streak": 1
     },
     {
@@ -633,8 +633,8 @@
       "marketCap": 250879674531.95,
       "sector": "ELECTRONIC & OTHER ELECTRICAL EQUIPMENT (NO COMPUTER EQUIP)",
       "theme": "電力基礎建設",
-      "isNew": false,
-      "rankChange": 0,
+      "isNew": true,
+      "rankChange": null,
       "streak": 1
     },
     {
@@ -647,7 +647,7 @@
       "sector": "NATIONAL COMMERCIAL BANKS",
       "theme": "銀行業",
       "isNew": false,
-      "rankChange": 0,
+      "rankChange": -19,
       "streak": 2
     }
   ],

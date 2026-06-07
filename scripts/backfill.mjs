@@ -195,6 +195,27 @@ async function main() {
       marketBriefing: null,
       backfilled: true, // 標記為回補資料（歷史日無 grounded 事件分析）
     };
+
+    // 保險：若該日已有「正式日」檔（每日排程產生、含 grounded AI），保留其
+    // marketBriefing / themeSummary / newEntrants 與各列題材，只更新價量/streak，
+    // 避免重跑回補把正式日的 AI 整理蓋成空白。
+    try {
+      const existing = JSON.parse(
+        await fs.readFile(path.join(HISTORY_DIR, `${date}.json`), "utf8"),
+      );
+      if (existing && existing.backfilled !== true) {
+        out.marketBriefing = existing.marketBriefing ?? null;
+        out.themeSummary = existing.themeSummary ?? [];
+        out.newEntrants = existing.newEntrants ?? [];
+        out.aiSource = existing.aiSource ?? out.aiSource;
+        delete out.backfilled;
+        const themeBySym = new Map((existing.rows ?? []).map((r) => [r.symbol, r.theme]));
+        out.rows = rows.map((r) =>
+          themeBySym.has(r.symbol) ? { ...r, theme: themeBySym.get(r.symbol) } : r,
+        );
+      }
+    } catch {}
+
     await fs.writeFile(path.join(HISTORY_DIR, `${date}.json`), JSON.stringify(out, null, 2), "utf8");
     written++;
   }
