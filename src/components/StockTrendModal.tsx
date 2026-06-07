@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import TradingViewChart from "./TradingViewChart";
 import { changeColorClass, formatMoney, formatPercent, formatPrice } from "@/lib/format";
 import type { SymbolTrend, TrendPoint } from "@/types/stock";
 
@@ -138,18 +139,22 @@ export default function StockTrendModal({ symbol, name, trend, loading, onClose 
           </button>
         </div>
 
+        {/* 日K（TradingView 即時資料，連續完整） */}
+        <div className="mb-4">
+          <TradingViewChart symbol={symbol} />
+        </div>
+
+        {/* 本站獨有：成交值名次 / 成交金額 走勢（僅含在榜交易日） */}
         {loading ? (
-          <div className="py-12 text-center text-slate-500">載入走勢中…</div>
+          <div className="py-8 text-center text-sm text-slate-500">載入名次/成交額走勢中…</div>
         ) : !enough ? (
-          <div className="py-12 text-center text-slate-500">
-            此檔歷史資料不足（{points.length} 天），無法繪製走勢。
-            <br />
-            <span className="text-xs">累積更多每日快照後即可顯示。</span>
+          <div className="rounded-lg border border-slate-800 p-4 text-center text-xs text-slate-500">
+            名次/成交額走勢需累積更多在榜天數（目前 {points.length} 天）。
           </div>
         ) : (
           <div className="space-y-3">
             <p className="text-xs text-slate-500">
-              共 {points.length} 個交易日 · 點 = 該日資料（僅含「在榜」的交易日）
+              以下為本站資料 · 共 {points.length} 個在榜交易日
             </p>
             <Panel label="成交值名次（越上越前）" value={`#${last.rank}`}>
               <LineChart
@@ -166,14 +171,6 @@ export default function StockTrendModal({ symbol, name, trend, loading, onClose 
                 accessor={(p) => p.dv}
                 color="#34d399"
                 formatVal={formatMoney}
-              />
-            </Panel>
-            <Panel label="收盤價" value={formatPrice(last.price)}>
-              <LineChart
-                points={points}
-                accessor={(p) => p.price}
-                color="#a78bfa"
-                formatVal={formatPrice}
               />
             </Panel>
 
