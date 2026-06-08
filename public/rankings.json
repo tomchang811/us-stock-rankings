@@ -8,7 +8,7 @@
       "dollarVolume": 69883701103.78955,
       "marketCap": 974373497404.51,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "Semiconductors & Related Devices",
+      "theme": "記憶體",
       "isNew": false,
       "rankChange": 0,
       "streak": 61
@@ -21,7 +21,7 @@
       "dollarVolume": 45744999808.47448,
       "marketCap": 4963420000000,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "Semiconductors & Related Devices",
+      "theme": "AI 晶片",
       "isNew": false,
       "rankChange": 0,
       "streak": 61
@@ -34,7 +34,7 @@
       "dollarVolume": 26496277330.66163,
       "marketCap": 230483556000.00003,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "Semiconductors & Related Devices",
+      "theme": "AI 基礎設施晶片",
       "isNew": false,
       "rankChange": 1,
       "streak": 51
@@ -47,7 +47,7 @@
       "dollarVolume": 25354118568.08847,
       "marketCap": 1468488033561,
       "sector": "MOTOR VEHICLES & PASSENGER CAR BODIES",
-      "theme": "Motor Vehicles & Passenger Car Bodies",
+      "theme": "電動車",
       "isNew": false,
       "rankChange": 4,
       "streak": 61
@@ -60,7 +60,7 @@
       "dollarVolume": 22437620727.97511,
       "marketCap": 760479526016.82,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "Semiconductors & Related Devices",
+      "theme": "AI 晶片",
       "isNew": false,
       "rankChange": 2,
       "streak": 61
@@ -73,7 +73,7 @@
       "dollarVolume": 21324694359.139557,
       "marketCap": 230919321444.56,
       "sector": "COMPUTER STORAGE DEVICES",
-      "theme": "Computer Storage Devices",
+      "theme": "記憶體",
       "isNew": false,
       "rankChange": -1,
       "streak": 61
@@ -86,7 +86,7 @@
       "dollarVolume": 20274959781.98571,
       "marketCap": 4514011993040,
       "sector": "ELECTRONIC COMPUTERS",
-      "theme": "Electronic Computers",
+      "theme": "消費性電子",
       "isNew": false,
       "rankChange": 2,
       "streak": 61
@@ -99,7 +99,7 @@
       "dollarVolume": 20169890004.184185,
       "marketCap": 1826303558614.32,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "Semiconductors & Related Devices",
+      "theme": "AI 基礎設施晶片",
       "isNew": false,
       "rankChange": -5,
       "streak": 61
@@ -112,7 +112,7 @@
       "dollarVolume": 18025982247.592796,
       "marketCap": 1302255033684,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "Services-Computer Programming, Data Processing, Etc.",
+      "theme": "社群媒體/AI 軟體",
       "isNew": false,
       "rankChange": 2,
       "streak": 61
@@ -125,7 +125,7 @@
       "dollarVolume": 14821059349.436213,
       "marketCap": 498428420000,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "Semiconductors & Related Devices",
+      "theme": "AI 晶片",
       "isNew": false,
       "rankChange": 4,
       "streak": 61
@@ -138,7 +138,7 @@
       "dollarVolume": 14593045143.17452,
       "marketCap": 3095205888115.68,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "Services-Prepackaged Software",
+      "theme": "雲端軟體 SaaS",
       "isNew": false,
       "rankChange": 1,
       "streak": 61
@@ -151,7 +151,7 @@
       "dollarVolume": 13901688584.623915,
       "marketCap": 2646571634539.08,
       "sector": "RETAIL-CATALOG & MAIL-ORDER HOUSES",
-      "theme": "Retail-Catalog & Mail-Order Houses",
+      "theme": "電商/雲端服務",
       "isNew": false,
       "rankChange": 1,
       "streak": 61
@@ -164,7 +164,7 @@
       "dollarVolume": 13802923675.983889,
       "marketCap": 2146318719999.9998,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "Services-Computer Programming, Data Processing, Etc.",
+      "theme": "網路搜尋/AI 軟體",
       "isNew": false,
       "rankChange": -7,
       "streak": 61
@@ -177,7 +177,7 @@
       "dollarVolume": 8565008480.756848,
       "marketCap": 1995586560000,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "Services-Computer Programming, Data Processing, Etc.",
+      "theme": "網路搜尋/AI 軟體",
       "isNew": false,
       "rankChange": -4,
       "streak": 61
@@ -190,7 +190,7 @@
       "dollarVolume": 8270973780.368081,
       "marketCap": 2153268410580,
       "sector": "—",
-      "theme": "—",
+      "theme": "晶圓代工",
       "isNew": false,
       "rankChange": 5,
       "streak": 61
@@ -203,7 +203,7 @@
       "dollarVolume": 6779393118.772271,
       "marketCap": 67192748000,
       "sector": "COMMUNICATIONS EQUIPMENT, NEC",
-      "theme": "Communications Equipment, Nec",
+      "theme": "光通訊",
       "isNew": false,
       "rankChange": 0,
       "streak": 61
@@ -216,7 +216,7 @@
       "dollarVolume": 6289956612.505008,
       "marketCap": 614553509280,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "Services-Prepackaged Software",
+      "theme": "企業軟體/雲端資料庫",
       "isNew": false,
       "rankChange": 4,
       "streak": 61
@@ -229,7 +229,7 @@
       "dollarVolume": 5504859240.679708,
       "marketCap": 359671561384.3,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "Semiconductors & Related Devices",
+      "theme": "半導體設備",
       "isNew": false,
       "rankChange": 11,
       "streak": 26
@@ -242,7 +242,7 @@
       "dollarVolume": 5343655350.571505,
       "marketCap": 227600760000,
       "sector": "RADIO & TV BROADCASTING & COMMUNICATIONS EQUIPMENT",
-      "theme": "Radio & Tv Broadcasting & Communications Equipment",
+      "theme": "行動晶片",
       "isNew": false,
       "rankChange": 8,
       "streak": 30
@@ -255,7 +255,7 @@
       "dollarVolume": 5239000403.211688,
       "marketCap": 311186547897.02,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "Services-Prepackaged Software",
+      "theme": "大數據分析/AI 軟體",
       "isNew": false,
       "rankChange": -5,
       "streak": 61
@@ -268,7 +268,7 @@
       "dollarVolume": 5238963780.071534,
       "marketCap": 366276249166.8,
       "sector": "—",
-      "theme": "—",
+      "theme": "晶片設計IP",
       "isNew": false,
       "rankChange": 2,
       "streak": 13
@@ -281,7 +281,7 @@
       "dollarVolume": 4980361139.679557,
       "marketCap": 39842469993.68,
       "sector": "FINANCE SERVICES",
-      "theme": "Finance Services",
+      "theme": "比特幣/加密",
       "isNew": false,
       "rankChange": 10,
       "streak": 4
@@ -294,7 +294,7 @@
       "dollarVolume": 4801734818.136408,
       "marketCap": 49996341697.28,
       "sector": "—",
-      "theme": "—",
+      "theme": "AI 雲端服務",
       "isNew": false,
       "rankChange": 10,
       "streak": 19
@@ -307,7 +307,7 @@
       "dollarVolume": 4732098052.033295,
       "marketCap": 176380740075.32,
       "sector": "COMPUTER STORAGE DEVICES",
-      "theme": "Computer Storage Devices",
+      "theme": "記憶體",
       "isNew": false,
       "rankChange": 2,
       "streak": 59
@@ -320,7 +320,7 @@
       "dollarVolume": 4727012438.135755,
       "marketCap": 1065505061576.52,
       "sector": "PHARMACEUTICAL PREPARATIONS",
-      "theme": "Pharmaceutical Preparations",
+      "theme": "減肥藥 GLP-1",
       "isNew": false,
       "rankChange": -3,
       "streak": 13
@@ -333,7 +333,7 @@
       "dollarVolume": 4577943087.869631,
       "marketCap": 637237562312.76,
       "sector": "—",
-      "theme": "—",
+      "theme": "半導體設備",
       "isNew": false,
       "rankChange": -1,
       "streak": 4
@@ -346,7 +346,7 @@
       "dollarVolume": 4386968947.327263,
       "marketCap": 128190233405.31999,
       "sector": "ELECTRONIC COMPUTERS",
-      "theme": "Electronic Computers",
+      "theme": "PC/伺服器",
       "isNew": false,
       "rankChange": -9,
       "streak": 10
@@ -359,7 +359,7 @@
       "dollarVolume": 4385584980.628394,
       "marketCap": 946056449946.4,
       "sector": "RETAIL-VARIETY STORES",
-      "theme": "Retail-Variety Stores",
+      "theme": "零售",
       "isNew": false,
       "rankChange": 19,
       "streak": 15
@@ -372,7 +372,7 @@
       "dollarVolume": 4361380743.961943,
       "marketCap": 362776445065.88,
       "sector": "HOSPITAL & MEDICAL SERVICE PLANS",
-      "theme": "Hospital & Medical Service Plans",
+      "theme": "醫療保險",
       "isNew": false,
       "rankChange": -10,
       "streak": 3
@@ -385,7 +385,7 @@
       "dollarVolume": 4136472540.7418537,
       "marketCap": 682556414504.01,
       "sector": "FIRE, MARINE & CASUALTY INSURANCE",
-      "theme": "Fire, Marine & Casualty Insurance",
+      "theme": "綜合控股",
       "isNew": false,
       "rankChange": 20,
       "streak": 3
@@ -398,7 +398,7 @@
       "dollarVolume": 4114770840.720227,
       "marketCap": 379273172879.99994,
       "sector": "SPECIAL INDUSTRY MACHINERY, NEC",
-      "theme": "Special Industry Machinery, Nec",
+      "theme": "半導體設備",
       "isNew": false,
       "rankChange": 13,
       "streak": 4
@@ -411,7 +411,7 @@
       "dollarVolume": 4087335275.489905,
       "marketCap": 479436112650.6,
       "sector": "COMPUTER COMMUNICATIONS EQUIPMENT",
-      "theme": "Computer Communications Equipment",
+      "theme": "網路設備",
       "isNew": false,
       "rankChange": 2,
       "streak": 19
@@ -424,7 +424,7 @@
       "dollarVolume": 3742955116.9174232,
       "marketCap": 14202969759,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "Semiconductors & Related Devices",
+      "theme": "光通訊",
       "isNew": false,
       "rankChange": 8,
       "streak": 2
@@ -437,7 +437,7 @@
       "dollarVolume": 3649624343.0814366,
       "marketCap": 252006613513.2,
       "sector": "OPTICAL INSTRUMENTS & LENSES",
-      "theme": "Optical Instruments & Lenses",
+      "theme": "半導體設備",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -450,7 +450,7 @@
       "dollarVolume": 3591424692.1121197,
       "marketCap": 115935950000,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "Services-Prepackaged Software",
+      "theme": "雲端軟體 SaaS",
       "isNew": false,
       "rankChange": -7,
       "streak": 16
@@ -463,7 +463,7 @@
       "dollarVolume": 3590104023.3851476,
       "marketCap": 170818085516.4,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "Services-Prepackaged Software",
+      "theme": "資安",
       "isNew": false,
       "rankChange": -19,
       "streak": 5
@@ -476,7 +476,7 @@
       "dollarVolume": 3588393294.492902,
       "marketCap": 267716923155.19998,
       "sector": "COMPUTER & OFFICE EQUIPMENT",
-      "theme": "Computer & Office Equipment",
+      "theme": "企業IT服務",
       "isNew": false,
       "rankChange": -1,
       "streak": 8
@@ -489,7 +489,7 @@
       "dollarVolume": 3558769133.949385,
       "marketCap": 346043423031.04004,
       "sector": "SERVICES-VIDEO TAPE RENTAL",
-      "theme": "Services-Video Tape Rental",
+      "theme": "串流媒體",
       "isNew": false,
       "rankChange": -8,
       "streak": 5
@@ -502,7 +502,7 @@
       "dollarVolume": 3495798878.3719254,
       "marketCap": 19423530931.9,
       "sector": "FINANCE SERVICES",
-      "theme": "Finance Services",
+      "theme": "比特幣/加密",
       "isNew": false,
       "rankChange": -2,
       "streak": 5
@@ -515,7 +515,7 @@
       "dollarVolume": 3444614872.928128,
       "marketCap": 38160848086.6,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "Semiconductors & Related Devices",
+      "theme": "AI 基礎設施晶片",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -528,7 +528,7 @@
       "dollarVolume": 3434512578.0712276,
       "marketCap": 259431051002.46,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "Semiconductors & Related Devices",
+      "theme": "類比/嵌入式晶片",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -541,7 +541,7 @@
       "dollarVolume": 3252588534.365216,
       "marketCap": 44931947736.21,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "Services-Prepackaged Software",
+      "theme": "AI 雲端服務",
       "isNew": false,
       "rankChange": -4,
       "streak": 5
@@ -554,7 +554,7 @@
       "dollarVolume": 3134834836.050275,
       "marketCap": 190027343850.24002,
       "sector": "COMPUTER STORAGE DEVICES",
-      "theme": "Computer Storage Devices",
+      "theme": "記憶體",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -567,7 +567,7 @@
       "dollarVolume": 3120452973.7509046,
       "marketCap": 170353870400,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "Services-Computer Programming, Data Processing, Etc.",
+      "theme": "行動廣告/軟體",
       "isNew": false,
       "rankChange": -2,
       "streak": 2
@@ -580,7 +580,7 @@
       "dollarVolume": 3086056201.167293,
       "marketCap": 74982248043.48001,
       "sector": "ELECTRICAL INDUSTRIAL APPARATUS",
-      "theme": "Electrical Industrial Apparatus",
+      "theme": "燃料電池/潔淨能源",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -593,7 +593,7 @@
       "dollarVolume": 3036349304.6579533,
       "marketCap": 431172594049.8,
       "sector": "RETAIL-VARIETY STORES",
-      "theme": "Retail-Variety Stores",
+      "theme": "零售",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -606,7 +606,7 @@
       "dollarVolume": 2970094572.4992585,
       "marketCap": 65249002044.06,
       "sector": "SECURITY BROKERS, DEALERS & FLOTATION COMPANIES",
-      "theme": "Security Brokers, Dealers & Flotation Companies",
+      "theme": "金融科技",
       "isNew": false,
       "rankChange": -1,
       "streak": 2
@@ -619,7 +619,7 @@
       "dollarVolume": 2945549696.410671,
       "marketCap": 195511866985.6,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "Semiconductors & Related Devices",
+      "theme": "類比/嵌入式晶片",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -632,7 +632,7 @@
       "dollarVolume": 2865490414.2814484,
       "marketCap": 250879674531.95,
       "sector": "ELECTRONIC & OTHER ELECTRICAL EQUIPMENT (NO COMPUTER EQUIP)",
-      "theme": "Electronic & Other Electrical Equipment (No Computer Equip)",
+      "theme": "電力基礎建設",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -645,124 +645,169 @@
       "dollarVolume": 2847236371.0617976,
       "marketCap": 836998981640.66,
       "sector": "NATIONAL COMMERCIAL BANKS",
-      "theme": "National Commercial Banks",
+      "theme": "銀行",
       "isNew": false,
       "rankChange": -19,
       "streak": 2
     }
   ],
   "asOf": "2026-06-05T20:00:00.000Z",
-  "generatedAt": "2026-06-07T13:42:53.708Z",
+  "generatedAt": "2026-06-08T14:58:48.895Z",
   "source": "polygon",
-  "aiSource": "none",
-  "themeSummary": [],
+  "aiSource": "gemini",
+  "themeSummary": [
+    {
+      "theme": "綜合控股",
+      "reason": "波克夏海瑟威因其穩健的投資組合和巴菲特的價值投資策略，在市場波動時常被視為避險標的。",
+      "symbols": [
+        "BRK.B"
+      ],
+      "count": 1,
+      "avgChange": 1.9848317071641979
+    },
+    {
+      "theme": "零售",
+      "reason": "沃爾瑪作為大型零售巨頭，其穩定的消費需求和成本控制能力使其在通膨環境下仍能維持業績韌性。",
+      "symbols": [
+        "WMT"
+      ],
+      "count": 1,
+      "avgChange": 0.9682350942755229
+    },
+    {
+      "theme": "醫療保險",
+      "reason": "聯合健康集團作為醫療保險龍頭，受益於穩定的醫療服務需求和人口老齡化趨勢，業績表現穩健。",
+      "symbols": [
+        "UNH"
+      ],
+      "count": 1,
+      "avgChange": 0.7566776805306832
+    },
+    {
+      "theme": "串流媒體",
+      "reason": "網飛透過持續的內容投資和訂閱模式優化，在全球串流媒體市場中保持領先地位，吸引資金關注。",
+      "symbols": [
+        "NFLX"
+      ],
+      "count": 1,
+      "avgChange": 0.7601765571358564
+    },
+    {
+      "theme": "減肥藥 GLP-1",
+      "reason": "禮來公司在減肥藥GLP-1市場具有領先地位，其藥物需求持續強勁，為公司帶來巨大成長潛力。",
+      "symbols": [
+        "LLY"
+      ],
+      "count": 1,
+      "avgChange": 0.5465354981471194
+    },
+    {
+      "theme": "銀行",
+      "reason": "摩根大通作為美國大型銀行，受益於升息環境下的淨利息收入增長以及穩健的資產負債表。",
+      "symbols": [
+        "JPM"
+      ],
+      "count": 1,
+      "avgChange": 0.4760526231142907
+    }
+  ],
   "newEntrants": [
     {
       "symbol": "KLAC",
       "name": "KLA Corporation Common Stock",
-      "theme": "Optical Instruments & Lenses",
+      "theme": "半導體設備",
       "changePercent": -9.473980573412785,
-      "reason": "KLA宣布1拆10股票分割及提高季度股息，以增加股票可近性與流動性。"
+      "reason": "KLA Corporation宣布1拆10股票分割及季度現金股利，提升股票可近性與流動性。"
     },
     {
       "symbol": "CRDO",
       "name": "Credo Technology Group Holding Ltd Ordinary Shares",
-      "theme": "Semiconductors & Related Devices",
+      "theme": "AI 基礎設施晶片",
       "changePercent": -4.878160919540236,
-      "reason": "Credo Q4財報營收年增157%並超預期，Q1財測亦佳，分析師紛紛調升目標價。"
+      "reason": "Credo Technology Q4財報優於預期，但AI展望與估值擔憂導致股價下跌。"
     },
     {
       "symbol": "TXN",
       "name": "Texas Instruments Incorporated",
-      "theme": "Semiconductors & Related Devices",
+      "theme": "類比/嵌入式晶片",
       "changePercent": -6.650948030258376,
       "reason": "近期無明確個股消息，可能受族群輪動帶動。"
     },
     {
       "symbol": "STX",
       "name": "Seagate Technology Holdings PLC Ordinary Shares (Ireland)",
-      "theme": "Computer Storage Devices",
+      "theme": "記憶體",
       "changePercent": -8.479573213533621,
-      "reason": "近期無明確個股消息，可能受族群輪動帶動。"
+      "reason": "Seagate Q3財報強勁，並宣布發行季度現金股利，但整體半導體市場下跌。"
     },
     {
       "symbol": "BE",
       "name": "Bloom Energy Corporation",
-      "theme": "Electrical Industrial Apparatus",
+      "theme": "燃料電池/潔淨能源",
       "changePercent": -9.527405017675118,
-      "reason": "Bloom Energy與Oracle擴大合作，提供2.8 GW燃料電池以加速AI基礎設施建置。"
+      "reason": "Bloom Energy受惠於AI資料中心合約與Q1財報亮眼，但近期因關稅政策有波動。"
     },
     {
       "symbol": "COST",
       "name": "Costco Wholesale Corp",
-      "theme": "Retail-Variety Stores",
+      "theme": "零售",
       "changePercent": -0.049364940607807696,
-      "reason": "Costco公布5月銷售業績，並於5月底發布優於預期的Q3財報。"
+      "reason": "Costco公布5月銷售業績，並宣布調升季度現金股利。"
     },
     {
       "symbol": "ADI",
       "name": "Analog Devices, Inc.",
-      "theme": "Semiconductors & Related Devices",
+      "theme": "類比/嵌入式晶片",
       "changePercent": -6.383524582517026,
-      "reason": "Analog Devices收購Empower Semiconductor，擴展AI時代高密度電源產品組合。"
+      "reason": "Analog Devices Q2財報亮眼並收購Empower Semiconductor，強化AI電源管理能力。"
     },
     {
       "symbol": "GEV",
       "name": "GE Vernova Inc.",
-      "theme": "Electronic & Other Electrical Equipment (No Computer Equip)",
+      "theme": "電力基礎建設",
       "changePercent": -3.0851317824629176,
-      "reason": "GE Vernova Q1訂單激增71%，受惠於AI數據中心電力需求，上調全年財測。"
+      "reason": "GE Vernova受惠於AI資料中心電力需求，並在印度獲得風力渦輪機訂單。"
     }
   ],
   "marketBriefing": {
-    "highlights": "本日美股成交重點集中在半導體產業，多檔半導體個股如美光 (MU)、輝達 (NVDA)、邁威爾科技 (MRVL) 和超微 (AMD) 均出現大幅下跌。這波跌勢主要受到市場對AI題材漲勢已大幅反映的獲利了結賣壓，以及部分分析師調降評等、對AI板塊供需結構變化的疑慮所影響。儘管如此，部分個股仍有長期利好消息，例如邁威爾科技因AI熱潮將被納入標普500指數，顯示資金仍在尋找AI產業中具潛力的標的。",
+    "highlights": "本日美股成交重點集中在AI相關類股，尤其是記憶體和AI晶片公司，儘管多數股票呈現下跌。資金流向顯示市場對AI基礎設施的長期需求仍抱有期待，但對於短期內AI營收增長預期趨於謹慎，導致部分高估值股票回調。此外，減肥藥題材也持續受到關注，但企業福利政策的變化帶來不確定性。",
     "eventsPast": [
       {
-        "title": "美光科技遭分析師調降評等，股價下跌",
-        "detail": "Seeking Alpha分析師James Foord在美光科技股價達到其1,000美元目標價後，將評等下調至「賣出」，理由是AI題材帶動的漲勢已大幅反映，導致獲利了結賣壓湧現。"
+        "title": "Intel獲Google和Nvidia考慮作為備用晶片製造商",
+        "detail": "有報導指出，由於台積電產能吃緊，Google和Nvidia正考慮讓Intel成為其先進處理器的備用製造商，Google已向Intel下訂單，Nvidia也正在測試Intel的技術。"
       },
       {
-        "title": "Meta Platforms AI模型延後上線，引發獲利疑慮",
-        "detail": "《華爾街日報》報導Meta最新人工智慧模型Muse Spark的API多次因錯誤與基礎設施問題而延後對開發者釋出，至今尚未給出新時程，市場質疑公司龐大AI投入的變現速度。"
+        "title": "AMD宣布在英國投資20億英鎊加速AI創新",
+        "detail": "AMD宣布未來五年將在英國投資高達20億英鎊，用於加速AI創新、科學研究和勞動力發展，並與Imperial College London和Oriole Networks建立戰略合作夥伴關係。"
       },
       {
-        "title": "半導體類股普遍承壓，晶片股單日蒸發1.3兆美元",
-        "detail": "博通公布最新財報後，市場對其AI業務展望抱持更高期待，導致部分投資者獲利了結，使半導體類股普遍承壓，包括AMD、Nvidia、Marvell等晶片股單日市值蒸發約1.3兆美元。"
+        "title": "Nvidia與SK海力士建立AI記憶體合作夥伴關係",
+        "detail": "Nvidia和SK海力士宣布建立多年技術合作夥伴關係，共同開發用於AI工廠的下一代記憶體產品，這對美光科技等記憶體供應商是個利好消息。"
       },
       {
-        "title": "台積電示警AI晶片供應緊張",
-        "detail": "台積電董事長魏哲家表示，人工智慧晶片需求爆炸性增長導致供應普遍緊張，公司正加速擴大產能以避免瓶頸。"
+        "title": "美光科技將於6月24日公布財報",
+        "detail": "美光科技預計將於2026年6月24日公布其2026財年第三季度財報，市場預期營收將創下335億美元的紀錄。"
       },
       {
-        "title": "Marvell Technology將納入標普500指數",
-        "detail": "在人工智慧需求帶動下，晶片設計公司邁威爾科技成功跨越標普500指數的獲利門檻，將於6月22日開盤前正式納入標普500指數。"
+        "title": "Alphabet透過新融資方式支持AI電力需求",
+        "detail": "Alphabet透過市政債券市場進行約10億美元的預付能源交易，以確保其不斷擴大的AI數據中心所需的長期清潔電力供應。"
       }
     ],
     "eventsUpcoming": [
       {
-        "date": "6/9",
-        "title": "蘋果WWDC26全球開發者大會",
-        "detail": "蘋果將於台灣時間6月9日凌晨1點舉行主題演講，公布全新AI策略，包括全面改版的Siri數位助理以及一系列全新AI功能，並將發表旗下各項作業系統的更新版本。"
+        "date": "6/8",
+        "title": "Apple WWDC 2026",
+        "detail": "Apple預計將在WWDC 2026上公布iOS 27、macOS 27以及Siri的重大AI升級，可能會有新的硬體發布。"
       },
       {
         "date": "6/24",
-        "title": "美光科技公布2026財年第三季度財報",
-        "detail": "美光科技將於2026年6月24日公布其2026財年第三季度財報。"
+        "title": "美光科技（MU）財報",
+        "detail": "美光科技將公布2026財年第三季度財報，市場預期營收將創紀錄。"
       },
       {
-        "date": "本週",
-        "title": "美國CPI數據公布",
-        "detail": "華爾街市場焦點轉向即將公布的美國CPI數據，可能對市場走勢產生影響。"
-      },
-      {
-        "date": "本週四",
-        "title": "SpaceX首席執行官埃隆·馬斯克出席ASML年度技術大會",
-        "detail": "SpaceX首席執行官埃隆·馬斯克將於本週四出席ASML的年度技術大會。"
-      },
-      {
-        "date": "下半年",
-        "title": "Nvidia與宇樹科技合作的人形機器人產品上市",
-        "detail": "Nvidia與中國宇樹科技合作的Isaac GR00T參考人形機器人產品將於下半年正式上市，旨在為人形機器人打造更強大的智慧大腦。"
+        "date": "8/4",
+        "title": "AMD（AMD）財報",
+        "detail": "AMD預計將公布財報，分析師預期每股收益和營收將大幅增長。"
       }
     ]
   }
