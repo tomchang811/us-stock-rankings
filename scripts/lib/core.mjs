@@ -225,7 +225,15 @@ ${lines}
 
   const body = {
     contents: [{ parts: [{ text: prompt }] }],
-    generationConfig: { responseMimeType: "application/json", responseSchema: schema, temperature: 0.3 },
+    // 關掉 gemini-2.5-flash 預設 thinking 並給足輸出上限：否則 thinking 會吃光 token 預算
+    // → 回應為空/JSON 截斷 → 題材分析失敗退回 SIC（aiSource=none）。結構化輸出不需 thinking。
+    generationConfig: {
+      responseMimeType: "application/json",
+      responseSchema: schema,
+      temperature: 0.3,
+      maxOutputTokens: 8192,
+      thinkingConfig: { thinkingBudget: 0 },
+    },
   };
   const data = await callGemini(apiKey, body);
   const text = candidateText(data);
