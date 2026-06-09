@@ -652,7 +652,7 @@
     }
   ],
   "asOf": "2026-06-08T20:00:00.000Z",
-  "generatedAt": "2026-06-09T05:06:29.491Z",
+  "generatedAt": "2026-06-09T06:44:54.493Z",
   "source": "polygon",
   "aiSource": "none",
   "themeSummary": [],
@@ -662,43 +662,94 @@
       "name": "Ciena Corporation",
       "theme": "Telephone & Telegraph Apparatus",
       "changePercent": -4.412035804264551,
-      "reason": ""
+      "reason": "宣布增發25億美元可轉換優先債券，用於償還債務和股票回購計畫。"
     },
     {
       "symbol": "GS",
       "name": "Goldman Sachs Group Inc.",
       "theme": "Security Brokers, Dealers & Flotation Companies",
       "changePercent": 0.6084645896715,
-      "reason": ""
+      "reason": "高盛已秘密提交首次公開募股（IPO）申請，旨在競爭激烈的市場中尋求成長機會。"
     },
     {
       "symbol": "CAT",
       "name": "Caterpillar Inc.",
       "theme": "Construction Machinery & Equip",
       "changePercent": 1.2562480647587047,
-      "reason": ""
+      "reason": "近期無明確個股消息，可能受族群輪動帶動。"
     },
     {
       "symbol": "GLW",
       "name": "Corning Incorporated",
       "theme": "Drawing & Insulating Of Nonferrous Wire",
       "changePercent": 5.608739722941761,
-      "reason": ""
+      "reason": "與Amazon簽訂數十億美元協議，為AI資料中心提供光纖、電纜和連接解決方案。"
     },
     {
       "symbol": "COHR",
       "name": "Coherent Corp.",
       "theme": "Optical Instruments & Lenses",
       "changePercent": 6.615560094432213,
-      "reason": ""
+      "reason": "NVIDIA執行長黃仁勳讚揚光學網路需求，Coherent為AI光學關鍵供應商。"
     },
     {
       "symbol": "AZO",
       "name": "AutoZone, Inc.",
       "theme": "Retail-Auto & Home Supply Stores",
       "changePercent": -1.360210240563718,
-      "reason": ""
+      "reason": "近期發布穩健的2026財年第三季度財報，同店銷售額增長。"
     }
   ],
-  "marketBriefing": null
+  "marketBriefing": {
+    "highlights": "本日美股成交重點集中在半導體族群，特別是AI相關晶片股，資金回流主要受惠於市場對AI投資熱潮的信心，以及多項利好消息帶動。Marvell Technology (MRVL) 因被納入S&P 500指數及Nvidia執行長黃仁勳點名為「下一家兆美元公司」而大漲，Intel (INTC) 則受惠於Google的AI晶片大單傳聞。此外，記憶體股如Micron Technology (MU) 和Sandisk (SNDK) 也因AI帶動的企業級儲存需求升溫而表現強勁。",
+    "eventsPast": [
+      {
+        "title": "Marvell Technology (MRVL) 納入S&P 500指數",
+        "detail": "S&P Dow Jones Indices宣布Marvell Technology將於6月22日開盤前生效納入S&P 500指數，預期將引發被動買盤。"
+      },
+      {
+        "title": "Google傳向Intel下達AI晶片大單",
+        "detail": "有報導指出，Google已向Intel下訂超過300萬顆張量處理器（TPU），預計於2028年開始生產，激勵Intel股價飆升。"
+      },
+      {
+        "title": "Nvidia執行長黃仁勳點名Marvell Technology",
+        "detail": "Nvidia執行長黃仁勳在Computex上點名Marvell Technology有機會成為「下一家兆美元公司」，並強調其在AI基礎設施上的關鍵角色。"
+      },
+      {
+        "title": "Eli Lilly實驗性肥胖藥物臨床研究報捷",
+        "detail": "Eli Lilly的實驗性肥胖藥物retatrutide在兩項臨床研究中顯示顯著減重效果，並改善膝關節炎疼痛及睡眠窒息。"
+      },
+      {
+        "title": "AMD宣布投資百億美元擴大先進封裝產能",
+        "detail": "AMD宣布未來將在台灣投資超過100億美元，以提升先進封裝製造產能，並攜手力成推進面板級先進封裝技術。"
+      }
+    ],
+    "eventsUpcoming": [
+      {
+        "date": "本週三",
+        "title": "美國消費者物價指數 (CPI) 公布",
+        "detail": "市場將密切關注本週三公布的5月份消費者物價指數，以評估通膨狀況及聯準會未來的利率路徑。"
+      },
+      {
+        "date": "本週五",
+        "title": "SpaceX IPO",
+        "detail": "Elon Musk旗下的SpaceX預計將於本週五正式掛牌交易，估值高達約1.78兆美元，將是歷史上規模最大的IPO。"
+      },
+      {
+        "date": "本週三",
+        "title": "Oracle (ORCL) 財報公布",
+        "detail": "Oracle將於本週三公布第四財季財報，市場將藉此研判人工智能(AI)和雲計算貿易的現狀。"
+      },
+      {
+        "date": "本週四",
+        "title": "Adobe (ADBE) 財報公布",
+        "detail": "Adobe將於本週四公布財報。"
+      },
+      {
+        "date": "本週五",
+        "title": "密西根大學美國經濟信心與通脹預期調查",
+        "detail": "本週五將公布密西根大學的美國經濟信心與通脹預期調查，經濟學家預計讀數可能略微回升。"
+      }
+    ]
+  }
 }
