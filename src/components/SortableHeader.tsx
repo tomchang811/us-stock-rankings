@@ -9,6 +9,7 @@ interface Props {
   dir: SortDir;
   align?: "left" | "right";
   onSort: (key: SortKey) => void;
+  className?: string;
 }
 
 export default function SortableHeader({
@@ -18,6 +19,7 @@ export default function SortableHeader({
   dir,
   align = "left",
   onSort,
+  className = "",
 }: Props) {
   const isActive = activeKey === sortKey;
   const indicator = isActive ? (dir === "desc" ? "▼" : "▲") : "";
@@ -27,7 +29,7 @@ export default function SortableHeader({
       scope="col"
       className={`sticky top-0 z-10 bg-slate-900/95 px-3 py-2.5 text-xs font-semibold uppercase tracking-wider backdrop-blur ${
         align === "right" ? "text-right" : "text-left"
-      }`}
+      } ${className}`}
     >
       <button
         type="button"

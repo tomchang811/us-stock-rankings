@@ -6,6 +6,7 @@ import StatusBar from "./StatusBar";
 import ThemeSummary from "./ThemeSummary";
 import NewEntrants from "./NewEntrants";
 import MarketBriefing from "./MarketBriefing";
+import CollapsibleSection from "./CollapsibleSection";
 import StockTrendModal from "./StockTrendModal";
 import {
   changeColorClass,
@@ -52,15 +53,19 @@ interface ColumnDef {
   key: SortKey;
   label: string;
   align: "left" | "right";
+  hideOnMobile?: boolean; // 手機隱藏（節省寬度）；桌機照常
 }
+
+// 手機隱藏 className（與下方 <td> 一致）
+const HIDE_ON_MOBILE = "hidden sm:table-cell";
 
 const COLUMNS: ColumnDef[] = [
   { key: "symbol", label: "代碼", align: "left" },
-  { key: "price", label: "價格", align: "right" },
+  { key: "price", label: "價格", align: "right", hideOnMobile: true },
   { key: "changePercent", label: "漲跌幅", align: "right" },
-  { key: "streak", label: "在榜天數", align: "right" },
+  { key: "streak", label: "在榜天數", align: "right", hideOnMobile: true },
   { key: "dollarVolume", label: "成交金額", align: "right" },
-  { key: "marketCap", label: "市值", align: "right" },
+  { key: "marketCap", label: "市值", align: "right", hideOnMobile: true },
   { key: "theme", label: "題材/族群", align: "left" },
 ];
 
@@ -255,9 +260,21 @@ export default function RankingTable() {
         </div>
       )}
 
-      {!showSkeleton && <MarketBriefing data={marketBriefing} />}
-      {!showSkeleton && <NewEntrants items={newEntrants} />}
-      {!showSkeleton && <ThemeSummary items={themeSummary} aiSource={aiSource} />}
+      {!showSkeleton && marketBriefing && (
+        <CollapsibleSection title="📰 今日市場焦點">
+          <MarketBriefing data={marketBriefing} />
+        </CollapsibleSection>
+      )}
+      {!showSkeleton && newEntrants.length > 0 && (
+        <CollapsibleSection title="🆕 新進榜雷達">
+          <NewEntrants items={newEntrants} />
+        </CollapsibleSection>
+      )}
+      {!showSkeleton && (aiSource === "none" || themeSummary.length > 0) && (
+        <CollapsibleSection title="🔥 今日發動題材">
+          <ThemeSummary items={themeSummary} aiSource={aiSource} />
+        </CollapsibleSection>
+      )}
 
       {error && rows.length === 0 ? (
         <div className="rounded-lg border border-rose-800 bg-rose-950/40 p-8 text-center text-rose-300">
@@ -292,6 +309,7 @@ export default function RankingTable() {
                     dir={sortDir}
                     align={c.align}
                     onSort={handleSort}
+                    className={c.hideOnMobile ? HIDE_ON_MOBILE : ""}
                   />
                 ))}
               </tr>
@@ -337,7 +355,7 @@ export default function RankingTable() {
                           )}
                           {row.symbol}
                         </td>
-                        <td className="px-3 py-2.5 text-right font-mono text-slate-200">
+                        <td className="hidden px-3 py-2.5 text-right font-mono text-slate-200 sm:table-cell">
                           {formatPrice(row.price)}
                         </td>
                         <td
@@ -347,14 +365,14 @@ export default function RankingTable() {
                         >
                           {formatPercent(row.changePercent)}
                         </td>
-                        <td className="px-3 py-2.5 text-right font-mono">
+                        <td className="hidden px-3 py-2.5 text-right font-mono sm:table-cell">
                           <span className={streakClass(row.streak)}>{row.streak}</span>
                           <span className="ml-0.5 text-[10px] text-slate-600">天</span>
                         </td>
                         <td className="px-3 py-2.5 text-right font-mono text-emerald-300">
                           {formatMoney(row.dollarVolume)}
                         </td>
-                        <td className="px-3 py-2.5 text-right font-mono text-slate-300">
+                        <td className="hidden px-3 py-2.5 text-right font-mono text-slate-300 sm:table-cell">
                           {formatMoney(row.marketCap)}
                         </td>
                         <td className="px-3 py-2.5 text-slate-300">
