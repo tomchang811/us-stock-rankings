@@ -34,7 +34,7 @@
       "dollarVolume": 24814517422.629723,
       "marketCap": 252685980000.00003,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "網通晶片",
+      "theme": "資料中心網路晶片",
       "isNew": false,
       "rankChange": 0,
       "streak": 52
@@ -73,7 +73,7 @@
       "dollarVolume": 15061280078.364855,
       "marketCap": 554217020000,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "CPU/AI 晶片",
+      "theme": "半導體 CPU",
       "isNew": false,
       "rankChange": 4,
       "streak": 62
@@ -86,7 +86,7 @@
       "dollarVolume": 14708101586.737314,
       "marketCap": 1877769401774.4001,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "網通晶片",
+      "theme": "半導體基礎設施",
       "isNew": false,
       "rankChange": 1,
       "streak": 62
@@ -125,7 +125,7 @@
       "dollarVolume": 12281488527.979279,
       "marketCap": 799532411320.87,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "CPU/AI 晶片",
+      "theme": "AI 晶片",
       "isNew": false,
       "rankChange": -5,
       "streak": 62
@@ -229,7 +229,7 @@
       "dollarVolume": 4534238259.464924,
       "marketCap": 69662120000,
       "sector": "COMMUNICATIONS EQUIPMENT, NEC",
-      "theme": "光通訊",
+      "theme": "光通訊元件",
       "isNew": false,
       "rankChange": -2,
       "streak": 62
@@ -372,7 +372,7 @@
       "dollarVolume": 2901217645.686525,
       "marketCap": 15778937702.88,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "光通訊",
+      "theme": "光通訊元件",
       "isNew": false,
       "rankChange": 4,
       "streak": 3
@@ -424,7 +424,7 @@
       "dollarVolume": 2624218114.403502,
       "marketCap": 66058502109.740005,
       "sector": "TELEPHONE & TELEGRAPH APPARATUS",
-      "theme": "光通訊",
+      "theme": "光通訊設備",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -450,7 +450,7 @@
       "dollarVolume": 2448145178.928711,
       "marketCap": 275370651919.26,
       "sector": "OPTICAL INSTRUMENTS & LENSES",
-      "theme": "半導體設備",
+      "theme": "半導體檢測設備",
       "isNew": false,
       "rankChange": -1,
       "streak": 2
@@ -463,7 +463,7 @@
       "dollarVolume": 2441449751.19731,
       "marketCap": 308282754945,
       "sector": "SECURITY BROKERS, DEALERS & FLOTATION COMPANIES",
-      "theme": "金融服務",
+      "theme": "投資銀行",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -476,7 +476,7 @@
       "dollarVolume": 2384026616.385685,
       "marketCap": 21153243714.059998,
       "sector": "FINANCE SERVICES",
-      "theme": "比特幣/加密",
+      "theme": "比特幣挖礦",
       "isNew": false,
       "rankChange": 2,
       "streak": 6
@@ -489,7 +489,7 @@
       "dollarVolume": 2382670083.6299624,
       "marketCap": 45818144135.43,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "雲端軟體 SaaS",
+      "theme": "雲端基礎設施",
       "isNew": false,
       "rankChange": 4,
       "streak": 6
@@ -515,7 +515,7 @@
       "dollarVolume": 2327012314.663395,
       "marketCap": 421736443314.12,
       "sector": "CONSTRUCTION MACHINERY & EQUIP",
-      "theme": "工業機械",
+      "theme": "重型機械",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -606,7 +606,7 @@
       "dollarVolume": 2207109686.1088486,
       "marketCap": 50650403752.8,
       "sector": "RETAIL-AUTO & HOME SUPPLY STORES",
-      "theme": "汽車零售",
+      "theme": "汽車零配件零售",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -645,20 +645,20 @@
       "dollarVolume": 2130388224.109376,
       "marketCap": 833622797253.98,
       "sector": "NATIONAL COMMERCIAL BANKS",
-      "theme": "金融服務",
+      "theme": "商業銀行",
       "isNew": false,
       "rankChange": 0,
       "streak": 3
     }
   ],
   "asOf": "2026-06-08T20:00:00.000Z",
-  "generatedAt": "2026-06-09T12:45:10.773Z",
+  "generatedAt": "2026-06-10T02:05:50.365Z",
   "source": "polygon",
   "aiSource": "gemini",
   "themeSummary": [
     {
       "theme": "半導體設備",
-      "reason": "AI與高效能運算需求持續增長，帶動半導體製造商擴大資本支出，設備供應商直接受惠。",
+      "reason": "AI與高效能運算需求持續增長，帶動半導體製造商擴大資本支出，對相關設備需求強勁。",
       "symbols": [
         "AMAT",
         "LRCX",
@@ -669,18 +669,27 @@
       "avgChange": 7.857924533367973
     },
     {
-      "theme": "CPU/AI 晶片",
-      "reason": "市場對AI運算能力的需求激增，推動相關晶片設計與製造商的營收預期。",
+      "theme": "記憶體",
+      "reason": "AI應用對高頻寬記憶體（HBM）需求激增，加上整體記憶體市場復甦預期，推動相關個股上漲。",
       "symbols": [
-        "INTC",
+        "MU"
+      ],
+      "count": 1,
+      "avgChange": 9.869098737283132
+    },
+    {
+      "theme": "AI 晶片",
+      "reason": "AI技術快速發展，市場對AI晶片的需求持續旺盛，相關領導廠商表現強勁。",
+      "symbols": [
+        "NVDA",
         "AMD"
       ],
       "count": 2,
-      "avgChange": 8.164099237963873
+      "avgChange": 3.4306423601146836
     },
     {
-      "theme": "光通訊",
-      "reason": "AI數據中心和網路基礎設施升級，對高速光通訊模組和元件的需求增加。",
+      "theme": "光通訊元件",
+      "reason": "資料中心升級以支援AI運算，對高速光通訊模組和元件的需求增加。",
       "symbols": [
         "LITE",
         "AAOI"
@@ -690,7 +699,7 @@
     },
     {
       "theme": "儲存裝置",
-      "reason": "AI應用產生大量數據，對高效能、大容量儲存解決方案的需求持續成長。",
+      "reason": "隨著資料量爆炸性增長，對高效能和高容量儲存解決方案的需求持續提升。",
       "symbols": [
         "SNDK",
         "WDC",
@@ -701,68 +710,109 @@
     },
     {
       "theme": "比特幣/加密",
-      "reason": "加密貨幣市場情緒改善，帶動相關挖礦與投資公司的股價上漲。",
+      "reason": "比特幣價格波動帶動相關加密貨幣概念股的交易情緒。",
       "symbols": [
         "MSTR",
         "IREN"
       ],
       "count": 2,
       "avgChange": 7.258998514187628
-    },
-    {
-      "theme": "網通晶片",
-      "reason": "數據中心和企業網路升級，對高速、高效率網通晶片的需求旺盛。",
-      "symbols": [
-        "MRVL",
-        "AVGO"
-      ],
-      "count": 2,
-      "avgChange": 6.22550431534349
     }
   ],
   "newEntrants": [
     {
       "symbol": "CIEN",
       "name": "Ciena Corporation",
-      "theme": "光通訊",
+      "theme": "光通訊設備",
       "changePercent": -4.412035804264551,
-      "reason": "近期無明確個股消息，可能受族群輪動帶動。"
+      "reason": "宣布增發25億美元可轉換優先票據，用於償還債務和股票回購計畫。"
     },
     {
       "symbol": "GS",
       "name": "Goldman Sachs Group Inc.",
-      "theme": "金融服務",
+      "theme": "投資銀行",
       "changePercent": 0.6084645896715,
-      "reason": "近期無明確個股消息，可能受族群輪動帶動。"
+      "reason": "近期金融股走強，高盛作為行業領頭羊受到提振，並發行可贖回票據。"
     },
     {
       "symbol": "CAT",
       "name": "Caterpillar Inc.",
-      "theme": "工業機械",
+      "theme": "重型機械",
       "changePercent": 1.2562480647587047,
-      "reason": "近期無明確個股消息，可能受族群輪動帶動。"
+      "reason": "第一季度業績強勁，受惠於建築、發電和AI數據中心設備需求。"
     },
     {
       "symbol": "GLW",
       "name": "Corning Incorporated",
       "theme": "特用玻璃/光纖",
       "changePercent": 5.608739722941761,
-      "reason": "近期無明確個股消息，可能受族群輪動帶動。"
+      "reason": "與Amazon簽訂AI基礎設施光纖供應大單，強化AI數據中心業務。"
     },
     {
       "symbol": "COHR",
       "name": "Coherent Corp.",
       "theme": "光學元件",
       "changePercent": 6.615560094432213,
-      "reason": "近期無明確個股消息，可能受族群輪動帶動。"
+      "reason": "受惠於AI數據中心對光學元件需求強勁，Q3財報亮眼並與NVIDIA合作。"
     },
     {
       "symbol": "AZO",
       "name": "AutoZone, Inc.",
-      "theme": "汽車零售",
+      "theme": "汽車零配件零售",
       "changePercent": -1.360210240563718,
       "reason": "近期無明確個股消息，可能受族群輪動帶動。"
     }
   ],
-  "marketBriefing": null
+  "marketBriefing": {
+    "highlights": "本日美股成交重點集中在半導體相關族群，特別是記憶體、AI晶片和資料中心網路晶片。資金回流這些個股，主要受到AI浪潮帶動的強勁需求，以及部分公司傳出利好消息的影響。美光科技（MU）因分析師上調目標價和對AI驅動的記憶體需求看好而大漲，英特爾（INTC）則受惠於傳聞輝達和Google可能將其納入備援晶圓代工夥伴而股價飆升。蘋果（AAPL）在全球開發者大會（WWDC）上發表新的AI功能和與Google的合作，也吸引了市場目光。",
+    "eventsPast": [
+      {
+        "title": "記憶體牛市未完，美光飆近10%",
+        "detail": "美光科技（MU）股價強勢反彈，分析師認為AI浪潮帶動記憶體產業進入新階段，DRAM和NAND將缺貨到2028年底。"
+      },
+      {
+        "title": "蘋果WWDC揭曉AI大招",
+        "detail": "蘋果（AAPL）在全球開發者大會（WWDC）發表新一代Apple Intelligence與升級版Siri，並宣布與Google深化合作，打造全新AI架構。"
+      },
+      {
+        "title": "傳輝達、Google下單，英特爾暴漲12%",
+        "detail": "英特爾（INTC）股價暴力反彈，市場傳聞輝達（NVDA）與Google可能將其納入備援晶圓代工夥伴，加上伺服器CPU需求強勁，成為股價催化劑。"
+      },
+      {
+        "title": "OpenAI提交IPO申請",
+        "detail": "ChatGPT開發商OpenAI秘密提交美國首次公開發行（IPO）申請，目標估值上看1兆美元，最快可能於9月掛牌。"
+      },
+      {
+        "title": "美股AI股遭血洗，費半暴跌",
+        "detail": "上週五（6月5日），華爾街AI概念股遭遇猛烈拋售，半導體類股單日市值蒸發約1.3兆美元，費城半導體指數重挫10.3%，創2020年3月以來最大單日跌幅，主因博通（AVGO）財報雖優於預期，但AI晶片業務成長未能滿足投資人極高期待。"
+      }
+    ],
+    "eventsUpcoming": [
+      {
+        "date": "6/10",
+        "title": "美國CPI數據公布",
+        "detail": "美國5月消費者物價指數（CPI）將公布，此數據將影響市場對聯準會未來升降息的預期。"
+      },
+      {
+        "date": "本週三",
+        "title": "加拿大央行利率決議",
+        "detail": "加拿大央行將公布利率決議，可能對全球貨幣政策產生影響。"
+      },
+      {
+        "date": "本週四",
+        "title": "歐洲央行利率決議",
+        "detail": "歐洲央行將公布利率決議，市場普遍預期將宣布自2023年9月以來的首次加息。"
+      },
+      {
+        "date": "6/18",
+        "title": "聯準會（Fed）議息會議",
+        "detail": "新任聯準會主席Kevin Warsh上任後的首次議息會議，市場將密切關注其對通膨的態度及政策指引。"
+      },
+      {
+        "date": "9月",
+        "title": "OpenAI可能掛牌上市",
+        "detail": "ChatGPT開發商OpenAI可能於9月正式掛牌上市，估值上看1兆美元，將是AI產業的重大事件。"
+      }
+    ]
+  }
 }
