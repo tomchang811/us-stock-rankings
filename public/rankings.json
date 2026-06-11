@@ -47,7 +47,7 @@
       "dollarVolume": 25167002302.93018,
       "marketCap": 233466624000,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "資料中心晶片",
+      "theme": "網通晶片",
       "isNew": false,
       "rankChange": -1,
       "streak": 53
@@ -99,7 +99,7 @@
       "dollarVolume": 15979688088.140245,
       "marketCap": 542405920000,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "半導體",
+      "theme": "CPU",
       "isNew": false,
       "rankChange": -2,
       "streak": 63
@@ -112,7 +112,7 @@
       "dollarVolume": 14365843490.457878,
       "marketCap": 1856747475037.4402,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "半導體",
+      "theme": "網通晶片",
       "isNew": false,
       "rankChange": -2,
       "streak": 63
@@ -138,7 +138,7 @@
       "dollarVolume": 10871135230.893768,
       "marketCap": 2626778553176.84,
       "sector": "RETAIL-CATALOG & MAIL-ORDER HOUSES",
-      "theme": "電子商務",
+      "theme": "電商",
       "isNew": false,
       "rankChange": 2,
       "streak": 63
@@ -151,7 +151,7 @@
       "dollarVolume": 10759671187.43104,
       "marketCap": 2121450240000,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "雲端服務",
+      "theme": "雲端軟體 SaaS",
       "isNew": false,
       "rankChange": 0,
       "streak": 63
@@ -190,7 +190,7 @@
       "dollarVolume": 7192786708.037342,
       "marketCap": 1976654240000,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "雲端服務",
+      "theme": "雲端軟體 SaaS",
       "isNew": false,
       "rankChange": -1,
       "streak": 63
@@ -281,7 +281,7 @@
       "dollarVolume": 5100533108.619171,
       "marketCap": 303242141081.38,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "資料分析軟體",
+      "theme": "大數據分析",
       "isNew": false,
       "rankChange": -1,
       "streak": 63
@@ -294,7 +294,7 @@
       "dollarVolume": 4956263191.739113,
       "marketCap": 48308655170.56,
       "sector": "—",
-      "theme": "雲端服務",
+      "theme": "雲端軟體 SaaS",
       "isNew": false,
       "rankChange": 4,
       "streak": 21
@@ -333,7 +333,7 @@
       "dollarVolume": 4392331087.394812,
       "marketCap": 1077992552620.0801,
       "sector": "PHARMACEUTICAL PREPARATIONS",
-      "theme": "減肥藥 GLP-1",
+      "theme": "生技製藥",
       "isNew": false,
       "rankChange": -11,
       "streak": 15
@@ -411,7 +411,7 @@
       "dollarVolume": 3661389422.7083907,
       "marketCap": 43220309940.799995,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "資料中心晶片",
+      "theme": "資料中心互連",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -424,7 +424,7 @@
       "dollarVolume": 3623977771.783221,
       "marketCap": 837883220408.6,
       "sector": "NATIONAL COMMERCIAL BANKS",
-      "theme": "金融服務",
+      "theme": "銀行",
       "isNew": false,
       "rankChange": 17,
       "streak": 4
@@ -528,7 +528,7 @@
       "dollarVolume": 2955818746.3757124,
       "marketCap": 304450608546.21,
       "sector": "SECURITY BROKERS, DEALERS & FLOTATION COMPANIES",
-      "theme": "金融服務",
+      "theme": "投資銀行",
       "isNew": false,
       "rankChange": -5,
       "streak": 2
@@ -541,7 +541,7 @@
       "dollarVolume": 2912056549.5366607,
       "marketCap": 149699343280.5,
       "sector": "DRAWING & INSULATING OF NONFERROUS WIRE",
-      "theme": "光纖通訊",
+      "theme": "光纖",
       "isNew": false,
       "rankChange": 0,
       "streak": 2
@@ -652,13 +652,40 @@
     }
   ],
   "asOf": "2026-06-09T20:00:00.000Z",
-  "generatedAt": "2026-06-10T14:15:53.129Z",
+  "generatedAt": "2026-06-11T02:06:06.725Z",
   "source": "polygon",
   "aiSource": "gemini",
   "themeSummary": [
     {
+      "theme": "生技製藥",
+      "reason": "新藥研發進展或臨床數據公布，持續吸引資金關注。",
+      "symbols": [
+        "NUVL"
+      ],
+      "count": 1,
+      "avgChange": 39.28127472030739
+    },
+    {
+      "theme": "資料中心互連",
+      "reason": "隨著AI和雲端運算需求增長，資料中心內部高速傳輸技術的重要性日益提升。",
+      "symbols": [
+        "CRDO"
+      ],
+      "count": 1,
+      "avgChange": 5.421334413101175
+    },
+    {
+      "theme": "燃料電池",
+      "reason": "市場對清潔能源解決方案的需求增加，推動燃料電池技術的發展與應用。",
+      "symbols": [
+        "BE"
+      ],
+      "count": 1,
+      "avgChange": 2.3819852506211383
+    },
+    {
       "theme": "半導體設備",
-      "reason": "AI與高效能運算需求持續增長，帶動半導體製造商擴大資本支出，對半導體設備的需求維持強勁。",
+      "reason": "全球半導體產業擴張，對先進製程設備的需求持續旺盛。",
       "symbols": [
         "AMAT",
         "ASML",
@@ -669,51 +696,22 @@
       "avgChange": 1.3483817389336359
     },
     {
-      "theme": "雲端服務",
-      "reason": "企業數位轉型趨勢不變，雲端運算服務需求持續增長，帶動相關軟體與基礎設施供應商表現。",
-      "symbols": [
-        "GOOGL",
-        "GOOG",
-        "NBIS"
-      ],
-      "count": 3,
-      "avgChange": 0.5146883407295256
-    },
-    {
-      "theme": "生技製藥",
-      "reason": "特定新藥研發進展或臨床數據公布，可能引發市場對相關藥廠的樂觀預期。",
-      "symbols": [
-        "NUVL"
-      ],
-      "count": 1,
-      "avgChange": 39.28127472030739
-    },
-    {
-      "theme": "資料中心晶片",
-      "reason": "隨著AI應用普及，資料中心對處理大量數據的需求激增，推動相關晶片技術發展與市場需求。",
-      "symbols": [
-        "CRDO"
-      ],
-      "count": 1,
-      "avgChange": 5.421334413101175
-    },
-    {
-      "theme": "燃料電池",
-      "reason": "全球對潔淨能源解決方案的需求日益增加，燃料電池技術被視為未來能源轉型的重要一環。",
-      "symbols": [
-        "BE"
-      ],
-      "count": 1,
-      "avgChange": 2.3819852506211383
-    },
-    {
-      "theme": "金融服務",
-      "reason": "市場對經濟前景的預期變化，可能影響銀行和券商等金融服務公司的表現。",
+      "theme": "銀行",
+      "reason": "市場對利率政策和經濟前景的預期，影響銀行業的獲利展望。",
       "symbols": [
         "JPM"
       ],
       "count": 1,
       "avgChange": 0.5110732538330413
+    },
+    {
+      "theme": "醫療保險",
+      "reason": "人口老齡化和醫療需求增加，使醫療保險行業保持穩定增長。",
+      "symbols": [
+        "UNH"
+      ],
+      "count": 1,
+      "avgChange": 1.5815234768920499
     }
   ],
   "newEntrants": [
@@ -722,94 +720,68 @@
       "name": "Nuvalent, Inc. Class A Common Stock",
       "theme": "生技製藥",
       "changePercent": 39.28127472030739,
-      "reason": "GSK宣布以106億美元現金收購，溢價約40%，推升股價飆漲."
+      "reason": "葛蘭素史克宣布以106億美元收購Nuvalent，溢價約40%。"
     },
     {
       "symbol": "CRDO",
       "name": "Credo Technology Group Holding Ltd Ordinary Shares",
-      "theme": "資料中心晶片",
+      "theme": "資料中心互連",
       "changePercent": 5.421334413101175,
-      "reason": "Q4財報優於預期，AI資料中心晶片需求強勁，並收購DustPhotonics強化光學業務."
+      "reason": "AI資料中心高速連接需求強勁，AEC出貨與新產品放量帶動營收成長。"
     },
     {
       "symbol": "GEV",
       "name": "GE Vernova Inc.",
       "theme": "電力基礎建設",
       "changePercent": -1.4670450286448622,
-      "reason": "近期無明確個股消息，可能受族群輪動帶動."
+      "reason": "AI數據中心帶動電力需求暴增，燃氣輪機訂單能見度高，上調全年財測。"
     },
     {
       "symbol": "VRT",
       "name": "Vertiv Holdings Co Class A Common Stock",
       "theme": "資料中心基礎設施",
       "changePercent": -3.676348271617264,
-      "reason": "與NVIDIA合作開發AI資料中心基礎設施，並上調全年財測."
+      "reason": "受惠AI資料中心擴張，散熱與電力解決方案需求強勁，財報優於預期。"
     },
     {
       "symbol": "CRM",
       "name": "Salesforce, Inc.",
       "theme": "雲端軟體 SaaS",
       "changePercent": -3.944124897288423,
-      "reason": "宣布收購m3ter以擴展AI驅動的用量計費，並成為FIFA世界盃官方支持者."
+      "reason": "Salesforce宣布將在法國投資20億美元設立AI創新中心，並擴展AI教育。"
     },
     {
       "symbol": "XOM",
       "name": "Exxon Mobil Corporation",
       "theme": "石油天然氣",
       "changePercent": -1.8714991762767732,
-      "reason": "油價回升、地緣政治緊張推升原油價格，以及蓋亞那業務獲利強勁."
+      "reason": "近期無明確個股消息，可能受油價波動及能源股族群輪動帶動。"
     }
   ],
   "marketBriefing": {
-    "highlights": "本日美股成交重點聚焦於半導體族群的強勁反彈，特別是記憶體和AI晶片相關個股。資金回流主要受到AI浪潮持續推動記憶體需求、分析師調升目標價，以及市場傳言輝達和Google可能將部分晶圓代工訂單轉給英特爾等利多消息的影響。此外，儘管蘋果WWDC的AI發表內容未完全符合投資人預期，但市場對AI的熱情仍是主導力量，同時SpaceX即將IPO也吸引了部分市場關注。",
+    "highlights": "本日美股成交重點仍圍繞在AI相關題材，其中記憶體類股如美光 (MU) 和SanDisk (SNDK) 在AI需求帶動下表現強勁，儘管上週五半導體族群曾出現獲利了結賣壓，但資金迅速回流。蘋果 (AAPL) 則因全球開發者大會 (WWDC) 發表AI新功能與Google深化合作而受到關注。整體而言，市場持續交易AI帶來的結構性成長故事，但也有部分聲音提醒需留意估值過高及潛在泡沫風險。",
     "eventsPast": [
       {
         "title": "記憶體牛市未完，美光飆近10%",
-        "detail": "美光科技(MU)股價週一(8日)強勢反彈，狂飆近10%，帶動整體記憶體族群走高，分析師認為AI浪潮帶動記憶體產業進入新階段，DRAM和NAND預計缺貨至2028年底。"
+        "detail": "美光科技 (MU) 股價在週一 (6/8) 強勢反彈，狂飆近10%，分析師預期在AI浪潮下，DRAM和NAND記憶體將缺貨至2028年底。"
       },
       {
-        "title": "蘋果WWDC揭曉AI大招，新版Siri與Apple Intelligence亮相",
-        "detail": "蘋果(AAPL)於台灣時間週二(9日)凌晨在全球開發者大會(WWDC 2026)發表新一代Apple Intelligence與升級版Siri，並宣布與Google深化合作，打造全新AI架構，但因監管問題，Siri AI無法在歐盟與中國推出，導致股價下跌。"
+        "title": "蘋果WWDC揭曉AI大招",
+        "detail": "蘋果 (AAPL) 於台灣時間週二 (6/9) 凌晨在全球開發者大會 (WWDC 2026) 發表新一代Apple Intelligence與升級版Siri，並宣布與Google (GOOGL) 深化合作，打造全新AI架構。"
+      },
+      {
+        "title": "OpenAI提交IPO申請",
+        "detail": "ChatGPT開發商OpenAI在週一 (6/8) 秘密提交美國首次公開發行 (IPO) 申請，目標估值上看1兆美元，最快可能於9月掛牌。"
       },
       {
         "title": "傳輝達、Google下單，英特爾暴漲12%",
-        "detail": "英特爾(INTC)股價週一(8日)暴力反彈逾11.19%，成為標普500指數當天表現最佳個股，市場傳出輝達(NVDA)與Google可能將英特爾納入備援晶圓代工夥伴，加上伺服器CPU需求強勁，推升股價。"
+        "detail": "英特爾 (INTC) 週一 (6/8) 股價暴力反彈逾11%，據報導指出Google已要求其代工生產300萬顆自研AI晶片TPU，加上伺服器CPU需求強勁，成為股價上漲催化劑。"
       },
       {
-        "title": "Marvell Technology納入S&P 500指數",
-        "detail": "Marvell Technology (MRVL)在6月8日盤前交易中上漲，因其將於6月22日正式納入S&P 500指數，吸引投資者關注，儘管今日因獲利了結而下跌。"
-      },
-      {
-        "title": "FuelCell季度虧損擴大，股價反受AI熱潮提振飆升",
-        "detail": "燃料電池能源公司FuelCell Energy(US.FCEL)公布第二財季虧損擴大，但股價受惠人工智能(AI)熱潮逆市上揚，因其業務正聚焦AI數據中心市場。"
+        "title": "美國業界示警記憶體晶片短缺",
+        "detail": "美國多個產業團體近日聯名致函美國財長與商務部長，警告AI資料中心快速擴張正消耗大量記憶體晶片產能，導致記憶體短缺恐衝擊汽車、醫療設備等關鍵產業並推升消費者價格。"
       }
     ],
-    "eventsUpcoming": [
-      {
-        "date": "本週四",
-        "title": "SpaceX IPO定價",
-        "detail": "市場焦點幾乎全集中在SpaceX即將登場的IPO上，這項有望刷新紀錄的IPO預計於週四完成定價，可能影響特斯拉(TSLA)等相關個股。"
-      },
-      {
-        "date": "6/10",
-        "title": "美國通膨報告 (CPI)",
-        "detail": "美國通膨報告將於6月10日出爐，經濟學家預測5月消費者物價指數（CPI）年增率將達4.2%，高於4月的3.8%，可能影響聯準會政策路徑。"
-      },
-      {
-        "date": "6/17",
-        "title": "聯準會(Fed)主席華許首次召開利率會議",
-        "detail": "新任聯準會(Fed)主席華許將在6月17日首次召開利率會議，市場關注其對未來利率政策的看法。"
-      },
-      {
-        "date": "6/17",
-        "title": "美國商業庫存與銷售數據公布",
-        "detail": "美國4月批發庫存與銷售數據將於6月17日連同更新後的零售庫存及銷售數據一併公布，預計商業庫存有望錄得0.5%升幅，商業銷售則預期升1.2%。"
-      },
-      {
-        "date": "2026年9月",
-        "title": "OpenAI IPO",
-        "detail": "ChatGPT開發商OpenAI週一(8日)秘密提交美國首次公開發行(IPO)申請，目標是在上市時達到最高1兆美元估值，最快可能於9月掛牌。"
-      }
-    ]
+    "eventsUpcoming": []
   }
 }
