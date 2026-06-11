@@ -22,7 +22,7 @@ export default function ThemeSummary({ items, aiSource }: Props) {
 
   return (
     <section className="mb-5">
-      <div className="mb-2 flex items-center gap-2">
+      <div className="mb-2 hidden items-center gap-2 sm:flex">
         <h2 className="text-sm font-semibold text-white">🔥 今日發動題材</h2>
         <span className="text-xs text-slate-500">依族群強度排序 · 由 AI 分析</span>
       </div>

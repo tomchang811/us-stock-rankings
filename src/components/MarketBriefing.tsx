@@ -14,7 +14,7 @@ export default function MarketBriefing({ data }: Props) {
 
   return (
     <section className="mb-5 rounded-lg border border-sky-500/25 bg-sky-400/[0.05] p-4 shadow-lg">
-      <div className="mb-2 flex items-center gap-2">
+      <div className="mb-2 hidden items-center gap-2 sm:flex">
         <h2 className="text-sm font-semibold text-white">📰 今日市場焦點</h2>
         <span className="text-xs text-slate-500">
           成交重點與重大事件 · AI + Google 搜尋分析
