@@ -125,7 +125,7 @@
       "dollarVolume": 12749415119.880146,
       "marketCap": 737683729083.6,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "AI 晶片",
+      "theme": "CPU/GPU",
       "isNew": false,
       "rankChange": -3,
       "streak": 64
@@ -164,7 +164,7 @@
       "dollarVolume": 9238170903.407524,
       "marketCap": 2560192045768,
       "sector": "RETAIL-CATALOG & MAIL-ORDER HOUSES",
-      "theme": "電商與雲端",
+      "theme": "電商/雲端服務",
       "isNew": false,
       "rankChange": -2,
       "streak": 64
@@ -242,7 +242,7 @@
       "dollarVolume": 5006175180.533659,
       "marketCap": 66383628000,
       "sector": "COMMUNICATIONS EQUIPMENT, NEC",
-      "theme": "光通訊元件",
+      "theme": "光通訊",
       "isNew": false,
       "rankChange": -3,
       "streak": 64
@@ -346,7 +346,7 @@
       "dollarVolume": 3545467356.7864013,
       "marketCap": 120207393748.04,
       "sector": "ELECTRONIC COMPUTERS",
-      "theme": "PC與伺服器",
+      "theme": "PC/伺服器",
       "isNew": false,
       "rankChange": 2,
       "streak": 13
@@ -424,7 +424,7 @@
       "dollarVolume": 2983489591.763313,
       "marketCap": 14052915784.71,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "光通訊元件",
+      "theme": "光通訊",
       "isNew": false,
       "rankChange": -8,
       "streak": 5
@@ -437,7 +437,7 @@
       "dollarVolume": 2977709033.9928374,
       "marketCap": 345285479296,
       "sector": "SERVICES-VIDEO TAPE RENTAL",
-      "theme": "串流媒體",
+      "theme": "影音串流",
       "isNew": false,
       "rankChange": 10,
       "streak": 8
@@ -554,7 +554,7 @@
       "dollarVolume": 2314668301.8290434,
       "marketCap": 828344159760.52,
       "sector": "NATIONAL COMMERCIAL BANKS",
-      "theme": "大型銀行",
+      "theme": "商業銀行",
       "isNew": false,
       "rankChange": -10,
       "streak": 5
@@ -580,7 +580,7 @@
       "dollarVolume": 2204930489.0821905,
       "marketCap": 624311941540.4401,
       "sector": "PETROLEUM REFINING",
-      "theme": "石油與天然氣",
+      "theme": "石油天然氣",
       "isNew": false,
       "rankChange": 4,
       "streak": 2
@@ -645,20 +645,20 @@
       "dollarVolume": 2027047871.6104872,
       "marketCap": 387048054105.54,
       "sector": "NATIONAL COMMERCIAL BANKS",
-      "theme": "大型銀行",
+      "theme": "商業銀行",
       "isNew": true,
       "rankChange": null,
       "streak": 1
     }
   ],
   "asOf": "2026-06-10T20:00:00.000Z",
-  "generatedAt": "2026-06-11T07:25:09.968Z",
+  "generatedAt": "2026-06-11T15:01:59.536Z",
   "source": "polygon",
   "aiSource": "gemini",
   "themeSummary": [
     {
-      "theme": "光通訊元件",
-      "reason": "隨著AI與數據中心需求增長，高速傳輸與光通訊技術被視為關鍵基礎設施，帶動相關元件需求。",
+      "theme": "光通訊",
+      "reason": "隨著資料中心和AI基礎設施對高速傳輸的需求增加，光通訊相關技術和產品受到市場關注。",
       "symbols": [
         "LITE",
         "AAOI"
@@ -668,7 +668,7 @@
     },
     {
       "theme": "線上券商",
-      "reason": "市場波動與散戶交易活動增加，可能為提供低成本交易服務的線上券商帶來利多。",
+      "reason": "市場交易活動的增加以及對低成本交易平台的需求，使線上券商持續受到投資者青睞。",
       "symbols": [
         "HOOD"
       ],
@@ -676,17 +676,17 @@
       "avgChange": 3.0917989733794955
     },
     {
-      "theme": "零售百貨",
-      "reason": "消費者支出數據表現穩健，大型零售商因其防禦性特質和股息吸引力而受到關注。",
+      "theme": "消費性電子",
+      "reason": "儘管整體市場波動，部分大型消費性電子公司因其品牌實力及產品創新仍能吸引資金。",
       "symbols": [
-        "WMT"
+        "AAPL"
       ],
       "count": 1,
-      "avgChange": 1.4384253028263863
+      "avgChange": 0.3545000860437008
     },
     {
-      "theme": "串流媒體",
-      "reason": "儘管競爭激烈，但訂閱用戶增長和內容策略調整，持續吸引投資者目光。",
+      "theme": "影音串流",
+      "reason": "串流媒體平台在內容投資和用戶增長方面展現韌性，支撐其股價表現。",
       "symbols": [
         "NFLX"
       ],
@@ -694,22 +694,22 @@
       "avgChange": 0.7247266920525776
     },
     {
-      "theme": "石油與天然氣",
-      "reason": "國際油價波動或地緣政治事件，可能推升能源股表現。",
+      "theme": "零售百貨",
+      "reason": "大型零售商在通膨環境下展現成本控制和供應鏈管理能力，業績表現穩健。",
+      "symbols": [
+        "WMT"
+      ],
+      "count": 1,
+      "avgChange": 1.4384253028263863
+    },
+    {
+      "theme": "石油天然氣",
+      "reason": "全球能源需求和地緣政治因素影響油價，帶動能源類股表現。",
       "symbols": [
         "XOM"
       ],
       "count": 1,
       "avgChange": 1.1483446377006299
-    },
-    {
-      "theme": "大型銀行",
-      "reason": "在利率環境變化和經濟前景不明朗下，大型銀行因其穩健的資產負債表和多元業務而受到青睞。",
-      "symbols": [
-        "BAC"
-      ],
-      "count": 1,
-      "avgChange": 0.22050716648290597
     }
   ],
   "newEntrants": [
@@ -718,14 +718,14 @@
       "name": "Super Micro Computer, Inc. Common Stock",
       "theme": "AI 伺服器",
       "changePercent": -27.97736220472441,
-      "reason": "宣布籌資70億美元，引發股權稀釋疑慮導致股價重挫。"
+      "reason": "宣布發行70億美元股權融資，以滿足AI伺服器訂單需求，引發稀釋擔憂。"
     },
     {
       "symbol": "HOOD",
       "name": "Robinhood Markets, Inc. Class A Common Stock",
       "theme": "線上券商",
       "changePercent": 3.0917989733794955,
-      "reason": "受惠比特幣反彈及獲准跨足IPO承銷業務，股價上漲。"
+      "reason": "公布5月份營運數據亮眼，並獲准承銷IPO，提振市場信心。"
     },
     {
       "symbol": "BRK.B",
@@ -746,40 +746,56 @@
       "name": "Texas Instruments Incorporated",
       "theme": "類比IC",
       "changePercent": -2.293593874510621,
-      "reason": "晶片股近期自高檔拉回，獲利了結賣壓出籠。"
+      "reason": "推出電動車電池監測晶片，並獲分析師調升目標價，以及列入Zacks強勢買入名單。"
     },
     {
       "symbol": "BAC",
       "name": "Bank of America Corporation",
-      "theme": "大型銀行",
+      "theme": "商業銀行",
       "changePercent": 0.22050716648290597,
-      "reason": "美國司法部調查銀行關閉帳戶問題，引發市場關注。"
+      "reason": "美國司法部對其帳戶關閉行為展開調查，引發市場關注。"
     }
   ],
   "marketBriefing": {
-    "highlights": "本日成交重點聚焦於科技股，特別是AI相關領域，但市場情緒呈現複雜。記憶體類股如美光（MU）因AI資料中心對高頻寬記憶體（HBM）的強勁需求而受到資金追捧，儘管美國汽車、醫療設備等產業團體警告記憶體短缺可能衝擊供應鏈並推升物價，顯示AI需求已對其他產業造成排擠效應。AI晶片股如Nvidia（NVDA）和AMD（AMD）雖然成交量大，但股價普遍下跌，部分原因可能來自市場對AI成本飆升和估值過高的擔憂，以及博通（AVGO）財測不如預期引發的賣壓。然而，也有部分投資人將此視為逢低買進的機會。此外，Intel（INTC）受惠於Google的AI晶片代工大單傳聞而有亮眼表現，顯示市場對其晶圓代工業務的期待。",
+    "highlights": "本日美股成交重點集中在科技股，尤其是AI相關的記憶體、AI晶片和網通晶片類股，但整體呈現漲跌互見的局面。資金主要在AI題材中進行輪動與獲利了結，部分個股因利空消息而下跌，但也有個股因新訂單或產業利多而逆勢上漲。市場同時關注地緣政治風險和聯準會的政策走向，這些宏觀因素對科技股的估值產生影響。",
     "eventsPast": [
       {
-        "title": "美國多產業團體警告AI記憶體短缺",
-        "detail": "美國汽車、醫療設備、零售等九大產業協會聯名致函政府，警告AI資料中心對記憶體晶片的需求激增，導致記憶體價格飆升，並排擠其他產業的供應，可能引發通膨並衝擊關鍵供應鏈。"
+        "title": "Broadcom (AVGO) AI 指引未上修，股價下跌",
+        "detail": "Broadcom 公布優於預期的財報，但因未上調AI晶片營收目標，導致股價下跌約5%。"
       },
       {
-        "title": "博通財測不如預期引發AI晶片股賣壓",
-        "detail": "博通（AVGO）公布的AI晶片銷售展望低於市場預期，導致其股價重挫，並引發了整體AI晶片股的賣壓，費城半導體指數盤中一度大跌。"
+        "title": "Intel (INTC) 傳奪Google大單，股價飆漲",
+        "detail": "Intel 據傳拿下Google的TPU代工訂單，並獲Nvidia評估為備援晶片製造夥伴，激勵股價飆漲逾10%。"
       },
       {
-        "title": "Google傳下英特爾AI晶片大單",
-        "detail": "有報導指出，Google母公司Alphabet（GOOGL）已委託英特爾（INTC）於2028年生產超過300萬顆自研AI晶片，激勵英特爾股價應聲飆漲。"
+        "title": "Sandisk (SNDK) 受惠AI記憶體需求與外資調高目標價",
+        "detail": "Sandisk 股價上漲逾5%，受惠於AI記憶體需求強勁以及Mizuho將其目標價調升至2,200美元。"
       },
       {
-        "title": "Marvell財報與財測優於預期",
-        "detail": "Marvell Technology（MRVL）公布的上季財報和本季財測雙雙優於預期，並上調全年財測，主因AI資料中心基礎建設對網路和客製化晶片的需求「異常強勁」。"
+        "title": "Robinhood (HOOD) 受比特幣反彈與IPO業務擴張題材激勵",
+        "detail": "Robinhood 股價飆漲逾5%，因比特幣反彈和其IPO承銷業務版圖擴張的題材發酵。"
       },
       {
-        "title": "COMPUTEX聚焦AI與機器人",
-        "detail": "COMPUTEX 2026以「AI Together」為主題，並將機器人與智慧移動納入三大趨勢，顯示AI題材正從聊天轉向真實世界的應用，Nvidia也發表了人形機器人參考設計。"
+        "title": "Netflix (NFLX) 外資下調目標價",
+        "detail": "Netflix 近期股價回落，有外資機構將其目標價從128美元下調至110美元，反映市場對其未來表現的預期有所微調。"
       }
     ],
-    "eventsUpcoming": []
+    "eventsUpcoming": [
+      {
+        "date": "6/17",
+        "title": "FOMC會議",
+        "detail": "聯準會將舉行利率決議會議，並發布經濟預測摘要（SEP）與點陣圖（Dot Plot），對市場利率走向有關鍵影響。"
+      },
+      {
+        "date": "6/18",
+        "title": "聯準會利率決議公布",
+        "detail": "台灣時間6月18日凌晨2點將公布聯準會利率決議，此為本月最重要的總經事件。"
+      },
+      {
+        "date": "6/24",
+        "title": "美光科技 (MU) 財報",
+        "detail": "美光科技將公布2026會計年度第三季財報，市場預期其調整後每股盈餘將大幅成長。"
+      }
+    ]
   }
 }
