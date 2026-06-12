@@ -12,8 +12,7 @@ export default function ThemeSummary({ items, aiSource }: Props) {
   if (aiSource === "none") {
     return (
       <div className="mb-4 rounded-lg border border-slate-800 bg-slate-900/40 px-4 py-3 text-sm text-slate-400">
-        AI 題材分析未啟用（未設定 <code className="text-slate-300">GEMINI_API_KEY</code>）。
-        題材欄目前以產業別後備顯示。
+        今日 AI 題材分析暫無，「題材／族群」欄改以產業別顯示。
       </div>
     );
   }
