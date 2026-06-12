@@ -251,7 +251,6 @@ export default function RankingTable() {
         aiSource={aiSource}
         notice={notice}
         loading={loading}
-        onRefresh={() => void load(selectedDate)}
       />
 
       {history.length > 0 && (
