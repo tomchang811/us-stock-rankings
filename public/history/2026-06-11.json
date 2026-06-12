@@ -86,7 +86,7 @@
       "dollarVolume": 15491841804.091484,
       "marketCap": 245565107999.99997,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "半導體",
+      "theme": "資料中心晶片",
       "isNew": false,
       "rankChange": 0,
       "streak": 55
@@ -190,7 +190,7 @@
       "dollarVolume": 9873381776.42949,
       "marketCap": 2597949499888.36,
       "sector": "RETAIL-CATALOG & MAIL-ORDER HOUSES",
-      "theme": "電子商務",
+      "theme": "電商與雲端服務",
       "isNew": false,
       "rankChange": -2,
       "streak": 65
@@ -320,7 +320,7 @@
       "dollarVolume": 3784677991.024426,
       "marketCap": 213919840000,
       "sector": "RADIO & TV BROADCASTING & COMMUNICATIONS EQUIPMENT",
-      "theme": "手機晶片",
+      "theme": "行動晶片",
       "isNew": false,
       "rankChange": 1,
       "streak": 34
@@ -333,7 +333,7 @@
       "dollarVolume": 3584735122.973136,
       "marketCap": 300969030460.72003,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "大數據分析",
+      "theme": "資料分析軟體",
       "isNew": false,
       "rankChange": -3,
       "streak": 65
@@ -359,7 +359,7 @@
       "dollarVolume": 3374855743.092208,
       "marketCap": 48834966114.4,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "半導體",
+      "theme": "高速傳輸晶片",
       "isNew": false,
       "rankChange": 1,
       "streak": 3
@@ -489,7 +489,7 @@
       "dollarVolume": 2907523128.5403457,
       "marketCap": 270388568206.1,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "半導體",
+      "theme": "類比晶片",
       "isNew": false,
       "rankChange": 10,
       "streak": 2
@@ -619,7 +619,7 @@
       "dollarVolume": 2566620676.353718,
       "marketCap": 607649253949.2,
       "sector": "PETROLEUM REFINING",
-      "theme": "石油天然氣",
+      "theme": "石油與天然氣",
       "isNew": false,
       "rankChange": -3,
       "streak": 3
@@ -652,13 +652,13 @@
     }
   ],
   "asOf": "2026-06-11T20:00:00.000Z",
-  "generatedAt": "2026-06-12T13:48:55.664Z",
+  "generatedAt": "2026-06-12T17:16:22.241Z",
   "source": "polygon",
   "aiSource": "gemini",
   "themeSummary": [
     {
       "theme": "半導體設備",
-      "reason": "AI 發展帶動對先進製程和封裝技術的需求，半導體設備供應商持續受惠於資本支出增加。",
+      "reason": "AI 晶片需求持續增長，帶動上游半導體製造設備訂單強勁，市場預期產業景氣復甦。",
       "symbols": [
         "AMAT",
         "ASML",
@@ -669,31 +669,22 @@
       "avgChange": 11.575383332917355
     },
     {
-      "theme": "半導體",
-      "reason": "AI 晶片需求持續旺盛，帶動整個半導體產業鏈的樂觀情緒，相關公司股價表現強勁。",
-      "symbols": [
-        "INTC",
-        "MRVL",
-        "AVGO",
-        "CRDO",
-        "TXN"
-      ],
-      "count": 5,
-      "avgChange": 8.15291360636545
-    },
-    {
       "theme": "AI 晶片",
-      "reason": "AI 應用快速擴張，對高效能運算晶片的需求持續爆發性成長，是市場最熱門的題材。",
+      "reason": "人工智慧應用快速發展，對高效能運算晶片的需求持續旺盛，相關供應商受惠。",
       "symbols": [
+        "MU",
         "NVDA",
-        "AMD"
+        "MRVL",
+        "AMD",
+        "CRDO",
+        "ARM"
       ],
-      "count": 2,
-      "avgChange": 5.094474569804831
+      "count": 6,
+      "avgChange": 9.282395874697604
     },
     {
       "theme": "儲存裝置",
-      "reason": "AI 數據量龐大，對高效能儲存解決方案的需求激增，記憶體和儲存裝置廠商直接受惠。",
+      "reason": "記憶體與儲存產業景氣回升，加上AI應用對資料儲存的需求增加，推動相關公司股價上漲。",
       "symbols": [
         "SNDK",
         "WDC"
@@ -703,7 +694,7 @@
     },
     {
       "theme": "資安",
-      "reason": "隨著數位轉型和雲端應用的普及，企業對網路安全防護的需求日益增加，資安產業前景看好。",
+      "reason": "全球網路攻擊事件頻傳，企業及政府對資安防護的投入增加，資安軟體服務需求強勁。",
       "symbols": [
         "PANW",
         "CRWD"
@@ -713,7 +704,7 @@
     },
     {
       "theme": "雲端服務",
-      "reason": "企業持續將業務轉移至雲端，以及 AI 應用對雲端基礎設施的依賴，推動雲端服務提供商的成長。",
+      "reason": "企業數位轉型趨勢不變，雲端運算服務持續擴張，相關平台與基礎設施提供商表現穩健。",
       "symbols": [
         "GOOGL",
         "GOOG",
@@ -721,6 +712,15 @@
       ],
       "count": 3,
       "avgChange": 2.096917143711506
+    },
+    {
+      "theme": "電力基礎建設",
+      "reason": "全球能源轉型與電網現代化需求，加上AI資料中心對電力消耗的增加，推動電力基礎建設投資。",
+      "symbols": [
+        "GEV"
+      ],
+      "count": 1,
+      "avgChange": 4.578532793596966
     }
   ],
   "newEntrants": [
@@ -729,86 +729,86 @@
       "name": "Adobe Inc.",
       "theme": "雲端軟體 SaaS",
       "changePercent": -6.247321964178586,
-      "reason": "CFO離職、AI產品轉向免費增值模式，導致股價下跌。"
+      "reason": "CFO離職、AI策略轉向 freemium 模式，導致股價下跌放量."
     },
     {
       "symbol": "RKLB",
       "name": "Rocket Lab Corporation Common Stock",
       "theme": "太空",
       "changePercent": 9.262256068538795,
-      "reason": "宣布將於6月22日加入那斯達克100指數，激勵股價上漲。"
+      "reason": "宣布將加入那斯達克100指數，激勵股價上漲."
     },
     {
       "symbol": "CRM",
       "name": "Salesforce, Inc.",
       "theme": "雲端軟體 SaaS",
       "changePercent": -2.6152586005148604,
-      "reason": "近期無明確個股消息，可能受族群輪動帶動。"
+      "reason": "宣布新一輪裁員，並將重點轉向AI，市場對此反應不一."
     },
     {
       "symbol": "PANW",
       "name": "Palo Alto Networks, Inc. Common Stock",
       "theme": "資安",
       "changePercent": 6.1963376643112005,
-      "reason": "第三季財報優於預期，並上調全年財測，分析師給予買入評級。"
+      "reason": "強勁的財報和上調財測，以及AI資安需求成長."
     },
     {
       "symbol": "CRWD",
       "name": "CrowdStrike Holdings, Inc. Class A Common Stock",
       "theme": "資安",
       "changePercent": 6.760428567017625,
-      "reason": "第一季財報強勁，淨新ARR創紀錄，並宣布股票一拆四。"
+      "reason": "發布優於預期的財報與財測，並強調AI在資安領域的應用."
     }
   ],
   "marketBriefing": {
-    "highlights": "本日美股成交重點集中在半導體、記憶體、AI晶片和儲存裝置等科技類股。資金主要流向受惠於AI基礎設施建置需求大增的相關公司，例如美光科技（MU）因記憶體需求強勁和分析師上調目標價而大漲，SanDisk（SNDK）也因AI驅動的NAND需求和供應吃緊而表現亮眼。Nvidia（NVDA）則因其AI CPU Vera有望在中國市場推出而受到關注。整體市場故事圍繞著AI技術的快速發展及其對硬體產業的巨大推動作用。",
+    "highlights": "本日美股成交重點集中在AI晶片、記憶體與半導體族群，資金主要流向受惠於AI需求增長的個股。美光科技（MU）因投行大幅上調目標價，預期記憶體價格將急劇上升而大漲。AMD（AMD）受惠於花旗調升評等及AI GPU成長預期而走強。英特爾（INTC）則因傳出奪得Google AI晶片大單而股價飆升。Nvidia（NVDA）與Marvell（MRVL）也因AI基礎設施的強勁需求而受到關注。市場故事主要圍繞在AI產業鏈的持續擴張，以及相關硬體需求帶來的成長潛力。",
     "eventsPast": [
       {
-        "title": "Oracle 公布亮眼財報",
-        "detail": "甲骨文（ORCL）於 6 月 10 日公布了 2026 財年第四季度及全年財報，雲端基礎設施和雲端應用業務實現強勁增長，總營收達到 192 億美元，年增 21%。"
+        "title": "美光科技目標價大幅上調",
+        "detail": "Wolfe Research將美光科技（MU）的目標價上調至1250美元，反映對DRAM及NAND記憶體價格急劇上升的預期，特別是在2026年和2027年間。"
       },
       {
-        "title": "Marvell Technology 宣布CFO變動",
-        "detail": "Marvell Technology（MRVL）於 6 月 11 日宣布任命 Dan Durn 為新任財務長，並重申了其 2027 財年第二季度的財務展望。"
+        "title": "AMD獲花旗調升評等與目標價",
+        "detail": "花旗將AMD（AMD）的評等從中立上調至買進，目標價上調至575美元，主要受惠於其AI GPU在AI伺服器市場的關鍵角色。"
       },
       {
-        "title": "Nvidia Vera CPU 傳將進軍中國市場",
-        "detail": "路透社報導，Nvidia（NVDA）已告知中國客戶，其用於AI資料中心的 Vera CPU 最快可能在 8 月推出，客戶屆時可開始下訂單。"
+        "title": "英特爾傳奪Google AI晶片大單",
+        "detail": "英特爾（INTC）因傳出成功奪得Google的AI晶片大單，帶動股價單日飆升逾9%。"
       },
       {
-        "title": "Intel 獲 Google AI 晶片代工訂單傳聞",
-        "detail": "有報導指出，Google 已向 Intel 下訂單，預計在 2028 年生產超過 300 萬個張量處理單元（TPU），這對 Intel 的晶圓代工業務而言是個重大勝利。"
+        "title": "Nvidia向中國客戶推介新AI數據中心晶片",
+        "detail": "Nvidia（NVDA）據報已通知中國客戶，其新款用於AI數據中心的Vera中央處理器最快可於8月供應，並已可開始下單。"
       },
       {
-        "title": "Citi 上調 AMD 評級至買進",
-        "detail": "花旗（Citi）於 6 月 12 日將超微（AMD）的股票評級從「中性」上調至「買進」，並將目標價從 460 美元提高至 575 美元，主要看好其在資料中心和相關硬體領域的增長前景。"
+        "title": "Oracle財報優於預期但資料中心支出引發擔憂",
+        "detail": "Oracle（ORCL）公布第四財季業績優於華爾街預期，受AI帶動雲端基礎設施需求上升，但宣布未來一年將投入700億美元建設資料中心，引發投資人對獲利前景的擔憂，導致盤後股價下跌。"
       }
     ],
     "eventsUpcoming": [
       {
-        "date": "6/24",
-        "title": "美光科技（MU）公布財報",
-        "detail": "美光科技（MU）將於 2026 年 6 月 24 日舉行 2026 財年第三季度財報電話會議。"
+        "date": "6/15",
+        "title": "Marvell Technology, Inc. 財務長變動",
+        "detail": "Marvell Technology, Inc. (MRVL) 宣布任命Dan Durn為首席財務官，於2026年6月15日起生效。"
       },
       {
         "date": "6/24",
-        "title": "Nvidia（NVDA）股東大會",
-        "detail": "Nvidia（NVDA）將於 2026 年 6 月 24 日舉行年度股東大會。"
+        "title": "美光科技公布財報",
+        "detail": "美光科技（MU）將於2026年6月24日公布2026會計年度第三季財報，市場預期其調整後每股盈餘將大幅增長。"
+      },
+      {
+        "date": "6/30 後不久",
+        "title": "微軟Xbox部門裁員計畫",
+        "detail": "微軟（MSFT）旗下的Xbox部門預計將在公司會計年度於6月30日結束後不久，宣布大規模裁員計畫並縮減預算。"
       },
       {
         "date": "8月",
-        "title": "Nvidia Vera CPU 中國市場推出",
-        "detail": "Nvidia 的 Vera CPU 預計最快在 8 月份向中國客戶推出，並開放訂購。"
+        "title": "Nvidia新AI數據中心晶片供應中國",
+        "detail": "Nvidia（NVDA）據報將於最快8月開始向中國客戶供應新款用於AI數據中心的Vera中央處理器。"
       },
       {
-        "date": "本週四",
-        "title": "Amazon Alexa+ 全面推出",
-        "detail": "Amazon 宣布其生成式AI助理 Alexa+ 現已全面推出。"
-      },
-      {
-        "date": "8/24",
-        "title": "SanDisk Corporation (SNDK) 財報",
-        "detail": "SanDisk Corporation (SNDK) 預計將於 8 月 24 日公布財報。"
+        "date": "2028年",
+        "title": "Google下一代AI晶片量產",
+        "detail": "Google（GOOGL, GOOG）正在開發代號為「Icefish」的下一代張量處理器(TPU)，預計最快可能於2028年開始量產，並可能由三星承接部分生產工作。"
       }
     ]
   }
