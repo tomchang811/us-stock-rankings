@@ -54,6 +54,7 @@ interface ColumnDef {
   label: string;
   align: "left" | "right";
   hideOnMobile?: boolean; // 手機隱藏（節省寬度）；桌機照常
+  hint?: string; // 表頭 ⓘ tooltip 說明
 }
 
 // 手機隱藏 className（與下方 <td> 一致）
@@ -63,7 +64,13 @@ const COLUMNS: ColumnDef[] = [
   { key: "symbol", label: "代碼", align: "left" },
   { key: "price", label: "價格", align: "right", hideOnMobile: true },
   { key: "changePercent", label: "漲跌幅", align: "right" },
-  { key: "streak", label: "在榜天數", align: "right", hideOnMobile: true },
+  {
+    key: "streak",
+    label: "在榜天數",
+    align: "right",
+    hideOnMobile: true,
+    hint: "連續登上 Top 50 的天數；數字由歷史回補紀錄推算，僅供參考。",
+  },
   { key: "dollarVolume", label: "成交金額", align: "right" },
   { key: "marketCap", label: "市值", align: "right", hideOnMobile: true },
   { key: "theme", label: "題材/族群", align: "left" },
@@ -336,6 +343,7 @@ export default function RankingTable() {
                     align={c.align}
                     onSort={handleSort}
                     className={c.hideOnMobile ? HIDE_ON_MOBILE : ""}
+                    hint={c.hint}
                   />
                 ))}
               </tr>
