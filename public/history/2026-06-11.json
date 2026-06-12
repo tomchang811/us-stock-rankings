@@ -112,7 +112,7 @@
       "dollarVolume": 13454704692.879974,
       "marketCap": 1825546011704.88,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "網路晶片",
+      "theme": "半導體網路晶片",
       "isNew": false,
       "rankChange": -3,
       "streak": 65
@@ -190,7 +190,7 @@
       "dollarVolume": 9873381776.42949,
       "marketCap": 2597949499888.36,
       "sector": "RETAIL-CATALOG & MAIL-ORDER HOUSES",
-      "theme": "電子商務",
+      "theme": "電商與雲端服務",
       "isNew": false,
       "rankChange": -2,
       "streak": 65
@@ -268,7 +268,7 @@
       "dollarVolume": 4177327476.445465,
       "marketCap": 31502655474.443996,
       "sector": "OPTICAL INSTRUMENTS & LENSES",
-      "theme": "半導體設備",
+      "theme": "半導體檢測設備",
       "isNew": false,
       "rankChange": 7,
       "streak": 5
@@ -281,7 +281,7 @@
       "dollarVolume": 4073555087.5107827,
       "marketCap": 69210102000,
       "sector": "COMMUNICATIONS EQUIPMENT, NEC",
-      "theme": "光通訊",
+      "theme": "光通訊元件",
       "isNew": false,
       "rankChange": -3,
       "streak": 65
@@ -359,7 +359,7 @@
       "dollarVolume": 3374855743.092208,
       "marketCap": 48834966114.4,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "高速傳輸晶片",
+      "theme": "資料中心晶片",
       "isNew": false,
       "rankChange": 1,
       "streak": 3
@@ -424,7 +424,7 @@
       "dollarVolume": 3011684737.937568,
       "marketCap": 127234632892.59999,
       "sector": "ELECTRONIC COMPUTERS",
-      "theme": "AI PC",
+      "theme": "AI 伺服器",
       "isNew": false,
       "rankChange": -6,
       "streak": 14
@@ -489,7 +489,7 @@
       "dollarVolume": 2907523128.5403457,
       "marketCap": 270388568206.1,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "類比晶片",
+      "theme": "類比IC",
       "isNew": false,
       "rankChange": 10,
       "streak": 2
@@ -541,7 +541,7 @@
       "dollarVolume": 2742457231.834159,
       "marketCap": 679284372199.8301,
       "sector": "FIRE, MARINE & CASUALTY INSURANCE",
-      "theme": "多元控股",
+      "theme": "綜合保險",
       "isNew": false,
       "rankChange": -2,
       "streak": 2
@@ -619,7 +619,7 @@
       "dollarVolume": 2566620676.353718,
       "marketCap": 607649253949.2,
       "sector": "PETROLEUM REFINING",
-      "theme": "石油天然氣",
+      "theme": "石油與天然氣",
       "isNew": false,
       "rankChange": -3,
       "streak": 3
@@ -632,7 +632,7 @@
       "dollarVolume": 2447013172.081393,
       "marketCap": 13864345282.26,
       "sector": "SEMICONDUCTORS & RELATED DEVICES",
-      "theme": "光通訊",
+      "theme": "光通訊元件",
       "isNew": false,
       "rankChange": -16,
       "streak": 6
@@ -652,13 +652,13 @@
     }
   ],
   "asOf": "2026-06-11T20:00:00.000Z",
-  "generatedAt": "2026-06-12T07:13:20.785Z",
+  "generatedAt": "2026-06-12T13:14:32.628Z",
   "source": "polygon",
   "aiSource": "gemini",
   "themeSummary": [
     {
       "theme": "半導體設備",
-      "reason": "AI 晶片需求持續強勁，帶動上游半導體製造設備訂單與營收成長，市場對其未來展望樂觀。",
+      "reason": "AI與高效能運算需求持續增長，帶動半導體產業擴張，設備供應商直接受惠於資本支出增加。",
       "symbols": [
         "AMAT",
         "ASML",
@@ -669,37 +669,8 @@
       "avgChange": 11.575383332917355
     },
     {
-      "theme": "AI 晶片",
-      "reason": "人工智慧應用快速發展，對高效能運算晶片的需求持續爆發，相關供應商受惠於市場擴張。",
-      "symbols": [
-        "NVDA",
-        "AMD"
-      ],
-      "count": 2,
-      "avgChange": 5.094474569804831
-    },
-    {
-      "theme": "記憶體",
-      "reason": "HBM 等高頻寬記憶體在 AI 領域的應用日益普及，加上整體記憶體市場復甦，推動相關廠商股價上漲。",
-      "symbols": [
-        "MU"
-      ],
-      "count": 1,
-      "avgChange": 11.659640310355654
-    },
-    {
-      "theme": "儲存裝置",
-      "reason": "隨著資料量爆炸性增長，對高效能儲存解決方案的需求增加，帶動儲存裝置供應商的業績預期。",
-      "symbols": [
-        "SNDK",
-        "WDC"
-      ],
-      "count": 2,
-      "avgChange": 11.2496199258062
-    },
-    {
-      "theme": "高速傳輸晶片",
-      "reason": "AI 數據中心內部對高速、低延遲資料傳輸的需求激增，推動高速傳輸晶片解決方案的市場成長。",
+      "theme": "資料中心晶片",
+      "reason": "AI應用對資料中心處理能力的需求激增，推動相關晶片設計與供應商的成長。",
       "symbols": [
         "MRVL",
         "CRDO"
@@ -708,14 +679,43 @@
       "avgChange": 11.26306789829696
     },
     {
-      "theme": "資安",
-      "reason": "企業數位轉型加速，網路攻擊事件頻傳，資安防護需求日益迫切，相關軟體服務商營收成長動能強勁。",
+      "theme": "AI 晶片",
+      "reason": "AI技術的快速發展持續推動對高效能AI晶片的需求，市場對領導廠商的未來展望保持樂觀。",
       "symbols": [
-        "PANW",
-        "CRWD"
+        "NVDA",
+        "AMD"
       ],
       "count": 2,
-      "avgChange": 6.478383115664412
+      "avgChange": 5.094474569804831
+    },
+    {
+      "theme": "儲存裝置",
+      "reason": "隨著資料量爆炸性增長，對高效能、大容量儲存解決方案的需求持續上升。",
+      "symbols": [
+        "SNDK",
+        "WDC"
+      ],
+      "count": 2,
+      "avgChange": 11.2496199258062
+    },
+    {
+      "theme": "記憶體",
+      "reason": "AI與HPC應用對高頻寬記憶體需求強勁，帶動記憶體市場復甦與價格上漲。",
+      "symbols": [
+        "MU"
+      ],
+      "count": 1,
+      "avgChange": 11.659640310355654
+    },
+    {
+      "theme": "AI 伺服器",
+      "reason": "AI運算能力的提升需要更強大的伺服器基礎設施，相關供應商因此受惠。",
+      "symbols": [
+        "SMCI",
+        "DELL"
+      ],
+      "count": 2,
+      "avgChange": 7.535195558553617
     }
   ],
   "newEntrants": [
@@ -724,86 +724,76 @@
       "name": "Adobe Inc.",
       "theme": "雲端軟體 SaaS",
       "changePercent": -6.247321964178586,
-      "reason": "財報優於預期，但CFO離職及AI對營收影響引發擔憂而下跌。"
+      "reason": "近期無明確個股消息，可能受族群輪動帶動。"
     },
     {
       "symbol": "RKLB",
       "name": "Rocket Lab Corporation Common Stock",
       "theme": "太空",
       "changePercent": 9.262256068538795,
-      "reason": "第一季財報亮眼，營收、利潤和訂單均創新高，並獲大額合約。"
+      "reason": "第一季度營收創紀錄，積壓訂單大增，並獲得多項新合約。"
     },
     {
       "symbol": "CRM",
       "name": "Salesforce, Inc.",
       "theme": "雲端軟體 SaaS",
       "changePercent": -2.6152586005148604,
-      "reason": "近期宣布裁員並收購m3ter，市場對其AI策略與雲端產業前景仍有疑慮。"
+      "reason": "獲得美國陸軍56億美元大訂單，並推出AI客服中心解決方案。"
     },
     {
       "symbol": "PANW",
       "name": "Palo Alto Networks, Inc. Common Stock",
       "theme": "資安",
       "changePercent": 6.1963376643112005,
-      "reason": "第三季財報超預期，分析師上調評級與目標價，AI資安需求強勁。"
+      "reason": "多家分析師上調目標價，市場對其財報預期樂觀。"
     },
     {
       "symbol": "CRWD",
       "name": "CrowdStrike Holdings, Inc. Class A Common Stock",
       "theme": "資安",
       "changePercent": 6.760428567017625,
-      "reason": "第一季財報強勁，受惠於AI及供應商整合趨勢，並獲分析師看好。"
+      "reason": "上調2026財年財測，受惠於Falcon平台需求與AI應用增加。"
     }
   ],
   "marketBriefing": {
-    "highlights": "本日美股成交重點集中在半導體相關族群，特別是記憶體、儲存裝置和AI晶片。資金湧入這些板塊，主要受到地緣政治緊張局勢緩和、AI算力需求持續超預期以及產業權威機構上修半導體設備市場規模預期的多重利好消息帶動。市場正在交易AI產業鏈供需緊張的「確認現實」，尤其高頻寬記憶體（HBM）的供應短缺，使得相關廠商如美光科技（MU）和Sandisk（SNDK）成為資金追逐的焦點。",
+    "highlights": "本日美股成交重點集中在半導體、記憶體、儲存裝置及AI晶片等科技類股，主要受惠於市場對AI基礎建設需求的強勁預期。美光科技（MU）因分析師調升目標價及HBM（高頻寬記憶體）供應吃緊而成為成交金額最高的個股，顯示資金持續湧入AI相關硬體供應鏈。然而，甲骨文（ORCL）雖財報獲利超預期，但因計劃再籌資擴建AI基礎設施而導致盤後股價下跌，美超微（SMCI）也因大舉募資引發股權稀釋擔憂而暴跌，反映市場在追逐AI題材的同時，也開始關注企業的獲利能力與資金運用效率。",
     "eventsPast": [
       {
-        "title": "地緣衝突意外緩和",
-        "detail": "6月11日盤中，美國總統川普宣布取消對伊朗的軍事打擊計畫，並稱美伊雙方已就長期衝突達成歷史性和平協議，消除了市場對通膨再加速與能源供應鏈中斷的擔憂。"
+        "title": "甲骨文（ORCL）公布財報，獲利優於預期但盤後下跌",
+        "detail": "甲骨文公布2026會計年度第四季財報，營收與獲利均優於市場預期，並上調全年獲利預測，但因計劃進一步籌資200億美元擴建AI基礎建設，導致盤後股價重挫7%。"
       },
       {
-        "title": "AI產能確認，HBM供需矛盾升級",
-        "detail": "Nvidia執行長黃仁勳確認SK海力士、三星電子和美光科技均已通過HBM4認證並已投產，且全球主要雲服務商已提前鎖定2027年HBM長期供應協議，顯示儲存供需緊張已從「預期」升級為「已確認的現實」。"
+        "title": "美超微（SMCI）大舉募資，股價暴跌逾27%",
+        "detail": "AI伺服器大廠美超微宣布計劃透過發行股票及股票連結證券籌集約70億美元資金，以支應AI伺服器需求，但此舉引發市場對股權稀釋及獲利率壓力的擔憂，導致股價單日崩跌逾27%。"
       },
       {
-        "title": "SEMI大幅上修半導體設備市場規模預期",
-        "detail": "行業權威組織SEMI於6月11日發布報告，將2026年全球前段半導體設備市場規模增速預期從16.5%大幅上調至23.5%，達1522億美元，提振了半導體設備類股。"
+        "title": "美國5月生產者物價指數（PPI）年增率上升",
+        "detail": "美國5月PPI年增率升至6.5%，創2022年11月以來新高，月增率上升1.1%，顯示通膨壓力持續存在。"
       },
       {
-        "title": "甲骨文財報後股價大跌",
-        "detail": "甲骨文（ORCL）儘管營收和獲利優於預期，但因投資人對其能否將龐大的AI積壓訂單轉化為營收存在不確定性，導致股價大跌8.5%。"
+        "title": "美國上週初領失業救濟人數增加",
+        "detail": "截至6月6日當週，美國首次申領失業救濟人數增加4000人至229000人，連續第三週上升。"
       },
       {
-        "title": "Google傳與三星洽談AI晶片代工",
-        "detail": "Google母公司Alphabet（GOOGL）傳出正與三星電子洽談合作，計劃將下一代AI晶片「Icefish」的部分生產工作交由三星負責，以擴大供應鏈布局並降低對台積電的依賴。"
+        "title": "博通（AVGO）AI銷售預期不及市場預期",
+        "detail": "博通的AI營收指引不如市場預期，導致半導體板塊出現獲利回吐，影響了部分AI硬體相關股票的表現。"
       }
     ],
     "eventsUpcoming": [
       {
+        "date": "6/16-6/17",
+        "title": "聯準會（Fed）利率決議會議",
+        "detail": "聯準會將召開聯邦公開市場委員會（FOMC）利率決議會議，市場普遍預期將維持利率不變，但新任主席華許的發言及點陣圖預測將受到密切關注，可能影響市場對未來升息的預期。"
+      },
+      {
         "date": "6/24",
-        "title": "美光科技（MU）第三季財報",
-        "detail": "美光科技將於6月24日發布第三季財報，市場預期將有顯著走勢，可能引發進一步波動。"
+        "title": "美光科技（MU）公布第三季財報",
+        "detail": "美光科技將公布2026會計年度第三季財報，市場預期將有爆發性成長，但選擇權市場已反映股價可能出現劇烈波動，投資人將關注其HBM需求及營收指引。"
       },
       {
-        "date": "本週末",
-        "title": "美伊和平協議簽署",
-        "detail": "美國總統川普透露美伊協議已進入最後定稿階段，最快可能於本週末在歐洲正式簽署。"
-      },
-      {
-        "date": "未來幾日",
-        "title": "SpaceX 在納斯達克交易所掛牌",
-        "detail": "SpaceX預計在未來幾天於納斯達克交易所掛牌，屆時可關注太空題材。"
-      },
-      {
-        "date": "2027年第三季度",
-        "title": "晶圓代工廠產能利用率持續改善",
-        "detail": "晶圓代工廠產能利用率預計將持續改善至2027年第三季度，顯示半導體產業景氣度仍將維持高檔。"
-      },
-      {
-        "date": "2027年第四季度",
-        "title": "封裝設備收入同比增速持續改善",
-        "detail": "封裝設備收入同比增速預計將持續改善至2027年第四季度，反映半導體後段製程需求強勁。"
+        "date": "本週四",
+        "title": "世界盃足球賽開幕",
+        "detail": "2026年世界盃足球賽將於本週四在美加墨三地舉行，預計將帶動相關產業需求。"
       }
     ]
   }
