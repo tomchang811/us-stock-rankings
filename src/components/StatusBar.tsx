@@ -58,6 +58,10 @@ export default function StatusBar({ asOf, generatedAt, source, aiSource, notice,
 
       {loading && <span className="text-xs text-slate-500">更新中…</span>}
 
+      <p className="w-full text-xs leading-relaxed text-slate-500">
+        ℹ️ 顯示「前一個美股交易日」的收盤資料；每個交易日約台北 <span className="text-slate-400">13:00–14:00</span> 自動更新（免費資料源於美股收盤後隔日才提供，早上看到的多為前一交易日）。
+      </p>
+
       {notice && (
         <p className="w-full rounded-md bg-rose-500/10 px-3 py-2 text-xs text-rose-300">
           {notice}
