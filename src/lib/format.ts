@@ -55,6 +55,19 @@ export function formatSector(sector: string): string {
     .replace(/\bAnd\b/g, "&");
 }
 
+/**
+ * 將 asOf（= 美股某交易日 20:00 UTC 收盤）顯示為「交易日期（星期）」。
+ * 不可用本地時間換算：20:00 UTC 在台北是隔日 04:00，會讓日期 +1 造成「時間很怪」。
+ * 故直接取 ISO 的日期部分當作美股交易日。
+ */
+export function formatTradingDate(iso: string): string {
+  const d = iso.slice(0, 10); // YYYY-MM-DD（即美股交易日）
+  const [y, m, day] = d.split("-").map(Number);
+  if (!y || !m || !day) return d;
+  const wd = ["日", "一", "二", "三", "四", "五", "六"][new Date(y, m - 1, day).getDay()];
+  return `${d}（${wd}）`;
+}
+
 /** 將 ISO 時間戳格式化為使用者本地時間的可讀字串。 */
 export function formatTime(iso: string): string {
   try {

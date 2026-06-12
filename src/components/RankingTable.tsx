@@ -158,6 +158,33 @@ export default function RankingTable() {
     };
   }, [load]);
 
+  // 自動刷新：檢視「最新」時每 5 分鐘重抓索引並載入最新一天（分頁可見才做），
+  // 免得使用者一直手動重整去猜資料更新了沒。檢視歷史日時不刷新（不會變）。
+  useEffect(() => {
+    const latest = history[0]?.date ?? null;
+    const viewingLatest = !latest || selectedDate === latest;
+    if (!viewingLatest) return;
+    const id = setInterval(async () => {
+      if (typeof document !== "undefined" && document.visibilityState !== "visible") return;
+      try {
+        const res = await fetch(HISTORY_INDEX_URL, { cache: "no-store" });
+        if (res.ok) {
+          const idx = (await res.json()) as HistoryIndexEntry[];
+          if (Array.isArray(idx) && idx.length > 0) {
+            setHistory(idx);
+            setSelectedDate(idx[0].date);
+            await load(idx[0].date);
+            return;
+          }
+        }
+      } catch {
+        // 忽略；下一輪再試
+      }
+      await load(null);
+    }, 5 * 60 * 1000);
+    return () => clearInterval(id);
+  }, [history, selectedDate, load]);
+
   const handleSelectDate = useCallback(
     (date: string) => {
       setSelectedDate(date);

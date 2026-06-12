@@ -1,7 +1,7 @@
 "use client";
 
 import type { RankingSource } from "@/types/stock";
-import { formatTime } from "@/lib/format";
+import { formatTime, formatTradingDate } from "@/lib/format";
 
 interface Props {
   asOf: string | null;
@@ -18,15 +18,16 @@ export default function StatusBar({ asOf, generatedAt, source, aiSource, notice,
     <div className="mb-3 flex flex-wrap items-center justify-between gap-3 text-sm">
       <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-slate-400">
         <span>
-          資料時間：
+          美股收盤：
           <span className="ml-1 font-mono text-slate-200">
-            {asOf ? formatTime(asOf) : "—"}
+            {asOf ? formatTradingDate(asOf) : "—"}
           </span>
         </span>
         {generatedAt && (
           <span>
             更新於：
             <span className="ml-1 font-mono text-slate-300">{formatTime(generatedAt)}</span>
+            <span className="ml-1 text-xs text-slate-500">（台北）</span>
           </span>
         )}
         {source === "mock" && (
