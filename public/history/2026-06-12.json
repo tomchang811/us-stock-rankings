@@ -6,7 +6,7 @@
       "price": 160.95,
       "changePercent": 7.299999999999993,
       "dollarVolume": 85316491254.59464,
-      "marketCap": 0,
+      "marketCap": 2104560499916.2498,
       "sector": "—",
       "theme": "太空",
       "isNew": true,
@@ -164,7 +164,7 @@
       "dollarVolume": 8925375643.707874,
       "marketCap": 2094776320000,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "雲端軟體 SaaS",
+      "theme": "雲端服務",
       "isNew": false,
       "rankChange": -3,
       "streak": 66
@@ -203,7 +203,7 @@
       "dollarVolume": 6341180808.022353,
       "marketCap": 1954120960000.0002,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "雲端軟體 SaaS",
+      "theme": "雲端服務",
       "isNew": false,
       "rankChange": -3,
       "streak": 66
@@ -294,7 +294,7 @@
       "dollarVolume": 4551665833.32171,
       "marketCap": 293874170038.66,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "數據分析軟體",
+      "theme": "大數據分析",
       "isNew": false,
       "rankChange": 3,
       "streak": 66
@@ -346,7 +346,7 @@
       "dollarVolume": 4027484673.50068,
       "marketCap": 50994907847.68,
       "sector": "—",
-      "theme": "雲端基礎設施",
+      "theme": "雲端服務",
       "isNew": false,
       "rankChange": 4,
       "streak": 24
@@ -359,7 +359,7 @@
       "dollarVolume": 3704951714.1260657,
       "marketCap": 45003559566.45,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "雲端基礎設施",
+      "theme": "雲端運算",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -580,7 +580,7 @@
       "dollarVolume": 2344098838.5701103,
       "marketCap": 313519136667.75,
       "sector": "SECURITY BROKERS, DEALERS & FLOTATION COMPANIES",
-      "theme": "投資銀行",
+      "theme": "金融服務",
       "isNew": false,
       "rankChange": 2,
       "streak": 5
@@ -652,13 +652,13 @@
     }
   ],
   "asOf": "2026-06-12T20:00:00.000Z",
-  "generatedAt": "2026-06-13T06:49:25.576Z",
+  "generatedAt": "2026-06-13T08:31:57.097Z",
   "source": "polygon",
   "aiSource": "gemini",
   "themeSummary": [
     {
       "theme": "儲存裝置",
-      "reason": "市場對數據儲存需求持續增長，相關公司業績展望樂觀，吸引資金關注。",
+      "reason": "隨著資料量持續增長，市場對高效能儲存解決方案的需求不斷提升，帶動相關個股表現。",
       "symbols": [
         "SNDK",
         "WDC",
@@ -669,7 +669,7 @@
     },
     {
       "theme": "半導體設備",
-      "reason": "全球半導體產業擴張，資本支出增加，帶動設備供應商訂單成長。",
+      "reason": "全球半導體產業擴張，資本支出增加，推動半導體設備供應商的營收成長。",
       "symbols": [
         "AMAT",
         "LRCX",
@@ -679,42 +679,41 @@
       "avgChange": 3.124496706521473
     },
     {
-      "theme": "雲端基礎設施",
-      "reason": "AI 應用普及推動雲端運算需求，相關基礎設施服務商受惠。",
-      "symbols": [
-        "NBIS",
-        "CRWV"
-      ],
-      "count": 2,
-      "avgChange": 4.788829552921333
-    },
-    {
       "theme": "半導體",
-      "reason": "半導體產業景氣回升，市場預期需求將持續增長。",
+      "reason": "半導體產業受惠於AI、5G等新興技術發展，需求持續強勁，部分個股表現亮眼。",
       "symbols": [
-        "INTC"
-      ],
-      "count": 1,
-      "avgChange": 6.506497948016415
-    },
-    {
-      "theme": "AI 晶片",
-      "reason": "AI 技術發展迅速，對高效能晶片的需求持續強勁。",
-      "symbols": [
-        "NVDA",
-        "AMD"
+        "INTC",
+        "QCOM"
       ],
       "count": 2,
-      "avgChange": 2.444768385063742
+      "avgChange": 5.411309675624287
     },
     {
       "theme": "太空",
-      "reason": "商業太空探索領域持續發展，相關公司受到市場關注。",
+      "reason": "太空探索與衛星通訊領域的商業化進程加速，吸引投資者關注相關企業的成長潛力。",
       "symbols": [
         "SPCX"
       ],
       "count": 1,
       "avgChange": 7.299999999999993
+    },
+    {
+      "theme": "半導體 IP",
+      "reason": "AI晶片設計需求旺盛，半導體IP供應商受惠於授權金與版稅收入增加。",
+      "symbols": [
+        "ARM"
+      ],
+      "count": 1,
+      "avgChange": 11.273120416094434
+    },
+    {
+      "theme": "比特幣/加密",
+      "reason": "加密貨幣市場波動，但部分挖礦或相關服務提供商仍受資金青睞。",
+      "symbols": [
+        "IREN"
+      ],
+      "count": 1,
+      "avgChange": 5.395873743607833
     }
   ],
   "newEntrants": [
@@ -723,102 +722,107 @@
       "name": "Space Exploration Technologies Corp. Class A Common Stock",
       "theme": "太空",
       "changePercent": 7.299999999999993,
-      "reason": "SpaceX成功上市，市值突破2兆美元，帶動市場對太空產業的關注。"
+      "reason": "SpaceX於6月12日IPO上市，估值達1.77兆美元，引發市場關注。"
     },
     {
       "symbol": "SATS",
       "name": "EchoStar Corporation",
       "theme": "衛星通訊",
       "changePercent": -10.965425739483335,
-      "reason": "SpaceX上市預期帶動太空題材升溫，SATS持有SpaceX股份受惠。"
+      "reason": "EchoStar因未支付子公司DISH DBS的利息，引發違約和流動性擔憂。 此外，市場也關注其與SpaceX的170億美元頻譜交易。"
     },
     {
       "symbol": "ASTS",
       "name": "AST SpaceMobile, Inc. Class A Common Stock",
       "theme": "衛星通訊",
       "changePercent": -15.528905289052897,
-      "reason": "SpaceX上市後，市場重新評估高估值太空股，引發獲利了結賣壓。"
+      "reason": "AST SpaceMobile的股價下跌，主要受SpaceX上市後太空類股震盪影響。 儘管製造進度良好，但Blue Origin發射問題增加執行疑慮。"
     },
     {
       "symbol": "CRWV",
       "name": "CoreWeave, Inc. Class A Common Stock",
-      "theme": "雲端基礎設施",
+      "theme": "雲端運算",
       "changePercent": 5.024023396699397,
-      "reason": "第一季營收飆漲111%，外資看好其AI算力優勢與全球佈局。"
+      "reason": "CoreWeave因被選入Nasdaq-100指數，以及AI基礎設施擴張的樂觀情緒而上漲。"
     },
     {
       "symbol": "UNH",
       "name": "UNITEDHEALTH GROUP INCORPORATED (Delaware)",
       "theme": "醫療保險",
       "changePercent": 0.732338799161625,
-      "reason": "近期獲外資升評，受惠於醫療成本改善與AI技術導入。"
+      "reason": "UnitedHealth Group宣布第二季度財報日期，並推出AI醫療聊天機器人Avery。"
     },
     {
       "symbol": "STX",
       "name": "Seagate Technology Holdings PLC Ordinary Shares (Ireland)",
       "theme": "儲存裝置",
       "changePercent": 7.251552258406378,
-      "reason": "子公司贖回優先票據強化財務結構，分析師調升評級看好AI需求。"
+      "reason": "Seagate宣布贖回可交換優先票據，旨在消除約1.5億美元債務。"
     },
     {
       "symbol": "AAL",
       "name": "American Airlines Group Inc.",
       "theme": "航空",
       "changePercent": 2.2525597269624575,
-      "reason": "近期股價逆勢走高，但面臨燃油成本與營運壓力考驗。"
+      "reason": "近期無明確個股消息，可能受族群輪動帶動。"
     },
     {
       "symbol": "BE",
       "name": "Bloom Energy Corporation",
       "theme": "燃料電池",
       "changePercent": 4.556412729026049,
-      "reason": "近期獲BMO維持跑贏大市評級，與NEBIUS達成AI基礎設施供電協議。"
+      "reason": "Bloom Energy受惠於與Oracle擴大合作，為AI基礎設施部署燃料電池。"
     }
   ],
   "marketBriefing": {
-    "highlights": "本日美股市場焦點集中在太空、記憶體、儲存裝置、半導體及AI晶片等族群。SpaceX (SPCX) 的首次公開募股 (IPO) 成為市場最大亮點，其上市首日股價飆漲近20%，帶動太空概念股的資金流動，但也對其他太空股造成估值壓力。此外，記憶體和儲存裝置類股受惠於AI資料中心需求強勁及報價止穩而大幅反彈，半導體族群則在美國與伊朗和平談判的樂觀預期下普遍走高。",
+    "highlights": "本日美股成交重點集中在太空、半導體及儲存裝置等題材。SpaceX (SPCX) 的公開市場首秀吸引了大量資金，使其成為當日成交金額最高的個股，並帶動了太空概念股的關注度。同時，市場對AI晶片及記憶體的需求持續強勁，推動了Intel (INTC) 和Sandisk (SNDK) 等半導體及儲存裝置相關個股的成交量。整體而言，市場在交易著AI相關基礎建設的長期成長故事，以及新興太空經濟的潛力。",
     "eventsPast": [
       {
-        "title": "SpaceX (SPCX) 首次公開募股 (IPO)",
-        "detail": "SpaceX於2026年6月12日在那斯達克掛牌上市，股票代號為SPCX，發行價每股135美元，募資750億美元，首日股價收漲19.2%，估值達1.77兆美元，創下史上最大IPO紀錄。"
+        "title": "SpaceX 正式掛牌交易",
+        "detail": "馬斯克旗下太空探索公司SpaceX (SPCX) 於週五正式掛牌交易，首日股價勁揚19.34%，市值衝上2.1兆美元，躋身美國市值第六大上市公司，並帶動特斯拉股價回升。"
       },
       {
-        "title": "記憶體與儲存裝置類股強勁反彈",
-        "detail": "受惠於AI資料中心對高階記憶體需求快速攀升，以及記憶體報價止穩甚至築底反彈的利多消息，美光 (MU) 和Sandisk (SNDK) 等記憶體與儲存裝置個股股價大幅上漲。"
+        "title": "美國5月CPI數據公布",
+        "detail": "美國5月消費者物價指數（CPI）年增4.2%，創三年來新高，但核心CPI月增0.2%低於預期，顯示通膨壓力仍在但核心通膨有所緩解。"
       },
       {
-        "title": "半導體族群普遍走高",
-        "detail": "在美國總統川普取消對伊朗的打擊行動，並表示美伊和平協議即將簽署的樂觀預期下，半導體類股普遍反彈，Intel (INTC)、AMD (AMD) 和Nvidia (NVDA) 等個股均有不錯表現。"
+        "title": "美國5月非農就業報告超預期",
+        "detail": "美國5月非農就業人數增加17.2萬人，遠高於市場預期的8.5萬人，顯示勞動力市場仍具韌性，降低了聯準會近期降息的必要性。"
       },
       {
-        "title": "Nvidia (NVDA) 向中國客戶推銷Vera CPU",
-        "detail": "Nvidia 已告知中國客戶，用於AI數據中心的Vera中央處理器 (CPU) 最快可能在8月上市，客戶可以開始下訂單，此舉旨在擴大Nvidia在中國AI市場的影響力。"
+        "title": "Adobe財務長跳槽Marvell Technology",
+        "detail": "Adobe (ADBE) 股價大跌6.7%，因財務長Dan Durn將於6月15日離職，轉任Marvell Technology (MRVL) 財務長。"
       },
       {
-        "title": "Meta Platforms (META) 服務中斷後恢復",
-        "detail": "Meta旗下Facebook和Instagram服務於當日稍早出現全球性中斷，導致用戶無法登入，隨後逐步恢復正常。"
+        "title": "英特爾傳獲輝達、Google下單",
+        "detail": "市場傳出輝達 (NVDA) 與Google (GOOGL) 可能將英特爾 (INTC) 列為先進處理器生產的備援代工夥伴，加上伺服器CPU需求強勁，推升英特爾股價大漲。"
       }
     ],
     "eventsUpcoming": [
       {
+        "date": "6/16-17",
+        "title": "FOMC利率決議與主席記者會",
+        "detail": "聯準會將召開聯邦公開市場委員會（FOMC）利率會議，這是新任主席華許（Kevin Warsh）上任後的首秀，市場將關注利率決議、最新經濟預測及點陣圖變化。"
+      },
+      {
+        "date": "6月底",
+        "title": "核心PCE物價指數公布",
+        "detail": "聯準會最看重的通膨指標——核心個人消費支出物價指數（PCE）將公布，其數據可能再次引爆市場劇烈重定價。"
+      },
+      {
+        "date": "7月初",
+        "title": "美國6月非農就業數據",
+        "detail": "美國將公布6月非農就業數據，強勁的數據可能再次壓抑降息空間。"
+      },
+      {
         "date": "本週四",
-        "title": "蘋果 (AAPL) 傳將推出觸控版Macbook",
-        "detail": "市場傳聞蘋果將推出首款螢幕觸控版Macbook，可能命名為「MacBook Ultra」，並導入OLED面板，最快可能在2026年底或2027年初問世。"
+        "title": "美國生產者物價指數 (PPI)",
+        "detail": "美國將公布生產者物價指數，此數據將提供更多通膨壓力相關資訊。"
       },
       {
-        "date": "6/22",
-        "title": "Rocket Lab (RKLB) 將納入那斯達克100指數",
-        "detail": "Rocket Lab將於2026年6月22日市場開盤前正式納入那斯達克100指數，這項消息有望提升其能見度並吸引更多機構資金。"
-      },
-      {
-        "date": "8月",
-        "title": "Nvidia (NVDA) Vera CPU 預計向中國客戶供貨",
-        "detail": "Nvidia的Vera中央處理器 (CPU) 預計最快在8月開始向中國客戶供貨，此舉可能進一步加劇AI晶片市場的競爭。"
-      },
-      {
-        "date": "未來幾季",
-        "title": "記憶體DRAM價格持續上漲",
-        "detail": "摩根士丹利及Wolfe Research分析師預期DRAM價格有望持續上漲至2027年，主要受AI代理人崛起及無塵室空間短缺影響。"
+        "date": "本週五",
+        "title": "美國密大消費者信心指數",
+        "detail": "美國將公布密西根大學消費者信心指數，此數據將反映消費者對經濟前景的看法。"
       }
     ]
   }
