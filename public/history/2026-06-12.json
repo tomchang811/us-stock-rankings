@@ -164,7 +164,7 @@
       "dollarVolume": 8925375643.707874,
       "marketCap": 2094776320000,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "雲端服務",
+      "theme": "雲端軟體 SaaS",
       "isNew": false,
       "rankChange": -3,
       "streak": 66
@@ -203,7 +203,7 @@
       "dollarVolume": 6341180808.022353,
       "marketCap": 1954120960000.0002,
       "sector": "SERVICES-COMPUTER PROGRAMMING, DATA PROCESSING, ETC.",
-      "theme": "雲端服務",
+      "theme": "雲端軟體 SaaS",
       "isNew": false,
       "rankChange": -3,
       "streak": 66
@@ -346,7 +346,7 @@
       "dollarVolume": 4027484673.50068,
       "marketCap": 50994907847.68,
       "sector": "—",
-      "theme": "雲端服務",
+      "theme": "雲端基礎設施",
       "isNew": false,
       "rankChange": 4,
       "streak": 24
@@ -359,7 +359,7 @@
       "dollarVolume": 3704951714.1260657,
       "marketCap": 45003559566.45,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "雲端運算",
+      "theme": "雲端基礎設施",
       "isNew": true,
       "rankChange": null,
       "streak": 1
@@ -652,13 +652,13 @@
     }
   ],
   "asOf": "2026-06-12T20:00:00.000Z",
-  "generatedAt": "2026-06-13T05:24:34.546Z",
+  "generatedAt": "2026-06-13T06:49:25.576Z",
   "source": "polygon",
   "aiSource": "gemini",
   "themeSummary": [
     {
       "theme": "儲存裝置",
-      "reason": "市場對資料儲存需求增長以及新技術應用前景看好，帶動相關個股表現。",
+      "reason": "市場對數據儲存需求持續增長，相關公司業績展望樂觀，吸引資金關注。",
       "symbols": [
         "SNDK",
         "WDC",
@@ -669,7 +669,7 @@
     },
     {
       "theme": "半導體設備",
-      "reason": "全球半導體產業擴張，資本支出增加，設備供應商受惠於訂單成長。",
+      "reason": "全球半導體產業擴張，資本支出增加，帶動設備供應商訂單成長。",
       "symbols": [
         "AMAT",
         "LRCX",
@@ -679,18 +679,27 @@
       "avgChange": 3.124496706521473
     },
     {
-      "theme": "半導體",
-      "reason": "AI與高效能運算需求持續推動半導體產業發展，相關公司表現強勁。",
+      "theme": "雲端基礎設施",
+      "reason": "AI 應用普及推動雲端運算需求，相關基礎設施服務商受惠。",
       "symbols": [
-        "INTC",
-        "MRVL"
+        "NBIS",
+        "CRWV"
       ],
       "count": 2,
-      "avgChange": 3.073348008599068
+      "avgChange": 4.788829552921333
+    },
+    {
+      "theme": "半導體",
+      "reason": "半導體產業景氣回升，市場預期需求將持續增長。",
+      "symbols": [
+        "INTC"
+      ],
+      "count": 1,
+      "avgChange": 6.506497948016415
     },
     {
       "theme": "AI 晶片",
-      "reason": "人工智慧應用快速發展，對高效能AI晶片的需求持續旺盛，推動相關晶片設計公司股價上漲。",
+      "reason": "AI 技術發展迅速，對高效能晶片的需求持續強勁。",
       "symbols": [
         "NVDA",
         "AMD"
@@ -699,19 +708,8 @@
       "avgChange": 2.444768385063742
     },
     {
-      "theme": "雲端服務",
-      "reason": "企業數位轉型加速，雲端服務需求持續增長，帶動相關平台與軟體公司業績。",
-      "symbols": [
-        "GOOGL",
-        "GOOG",
-        "NBIS"
-      ],
-      "count": 3,
-      "avgChange": 1.8454101925640323
-    },
-    {
       "theme": "太空",
-      "reason": "太空探索與商業航太領域持續受到關注，相關技術與服務公司獲得市場青睞。",
+      "reason": "商業太空探索領域持續發展，相關公司受到市場關注。",
       "symbols": [
         "SPCX"
       ],
@@ -725,57 +723,103 @@
       "name": "Space Exploration Technologies Corp. Class A Common Stock",
       "theme": "太空",
       "changePercent": 7.299999999999993,
-      "reason": "SpaceX首次公開募股（IPO）並在納斯達克上市，股價飆升。"
+      "reason": "SpaceX成功上市，市值突破2兆美元，帶動市場對太空產業的關注。"
     },
     {
       "symbol": "SATS",
       "name": "EchoStar Corporation",
       "theme": "衛星通訊",
       "changePercent": -10.965425739483335,
-      "reason": "EchoStar因未支付利息且與SpaceX交易不確定，股價下跌。"
+      "reason": "SpaceX上市預期帶動太空題材升溫，SATS持有SpaceX股份受惠。"
     },
     {
       "symbol": "ASTS",
       "name": "AST SpaceMobile, Inc. Class A Common Stock",
       "theme": "衛星通訊",
       "changePercent": -15.528905289052897,
-      "reason": "CFO出售股票及BlueBird衛星即將發射，市場情緒複雜。"
+      "reason": "SpaceX上市後，市場重新評估高估值太空股，引發獲利了結賣壓。"
     },
     {
       "symbol": "CRWV",
       "name": "CoreWeave, Inc. Class A Common Stock",
-      "theme": "雲端運算",
+      "theme": "雲端基礎設施",
       "changePercent": 5.024023396699397,
-      "reason": "CoreWeave宣布將被納入納斯達克100指數，並發行新債券。"
+      "reason": "第一季營收飆漲111%，外資看好其AI算力優勢與全球佈局。"
     },
     {
       "symbol": "UNH",
       "name": "UNITEDHEALTH GROUP INCORPORATED (Delaware)",
       "theme": "醫療保險",
       "changePercent": 0.732338799161625,
-      "reason": "受分析師樂觀預期及看漲期權交易量增加帶動。"
+      "reason": "近期獲外資升評，受惠於醫療成本改善與AI技術導入。"
     },
     {
       "symbol": "STX",
       "name": "Seagate Technology Holdings PLC Ordinary Shares (Ireland)",
       "theme": "儲存裝置",
       "changePercent": 7.251552258406378,
-      "reason": "受AI驅動的儲存需求強勁，分析師上調目標價。"
+      "reason": "子公司贖回優先票據強化財務結構，分析師調升評級看好AI需求。"
     },
     {
       "symbol": "AAL",
       "name": "American Airlines Group Inc.",
       "theme": "航空",
       "changePercent": 2.2525597269624575,
-      "reason": "近期無明確個股消息，可能受族群輪動帶動。"
+      "reason": "近期股價逆勢走高，但面臨燃油成本與營運壓力考驗。"
     },
     {
       "symbol": "BE",
       "name": "Bloom Energy Corporation",
       "theme": "燃料電池",
       "changePercent": 4.556412729026049,
-      "reason": "受惠於AI數據中心需求及與Oracle等公司的大型合作協議。"
+      "reason": "近期獲BMO維持跑贏大市評級，與NEBIUS達成AI基礎設施供電協議。"
     }
   ],
-  "marketBriefing": null
+  "marketBriefing": {
+    "highlights": "本日美股市場焦點集中在太空、記憶體、儲存裝置、半導體及AI晶片等族群。SpaceX (SPCX) 的首次公開募股 (IPO) 成為市場最大亮點，其上市首日股價飆漲近20%，帶動太空概念股的資金流動，但也對其他太空股造成估值壓力。此外，記憶體和儲存裝置類股受惠於AI資料中心需求強勁及報價止穩而大幅反彈，半導體族群則在美國與伊朗和平談判的樂觀預期下普遍走高。",
+    "eventsPast": [
+      {
+        "title": "SpaceX (SPCX) 首次公開募股 (IPO)",
+        "detail": "SpaceX於2026年6月12日在那斯達克掛牌上市，股票代號為SPCX，發行價每股135美元，募資750億美元，首日股價收漲19.2%，估值達1.77兆美元，創下史上最大IPO紀錄。"
+      },
+      {
+        "title": "記憶體與儲存裝置類股強勁反彈",
+        "detail": "受惠於AI資料中心對高階記憶體需求快速攀升，以及記憶體報價止穩甚至築底反彈的利多消息，美光 (MU) 和Sandisk (SNDK) 等記憶體與儲存裝置個股股價大幅上漲。"
+      },
+      {
+        "title": "半導體族群普遍走高",
+        "detail": "在美國總統川普取消對伊朗的打擊行動，並表示美伊和平協議即將簽署的樂觀預期下，半導體類股普遍反彈，Intel (INTC)、AMD (AMD) 和Nvidia (NVDA) 等個股均有不錯表現。"
+      },
+      {
+        "title": "Nvidia (NVDA) 向中國客戶推銷Vera CPU",
+        "detail": "Nvidia 已告知中國客戶，用於AI數據中心的Vera中央處理器 (CPU) 最快可能在8月上市，客戶可以開始下訂單，此舉旨在擴大Nvidia在中國AI市場的影響力。"
+      },
+      {
+        "title": "Meta Platforms (META) 服務中斷後恢復",
+        "detail": "Meta旗下Facebook和Instagram服務於當日稍早出現全球性中斷，導致用戶無法登入，隨後逐步恢復正常。"
+      }
+    ],
+    "eventsUpcoming": [
+      {
+        "date": "本週四",
+        "title": "蘋果 (AAPL) 傳將推出觸控版Macbook",
+        "detail": "市場傳聞蘋果將推出首款螢幕觸控版Macbook，可能命名為「MacBook Ultra」，並導入OLED面板，最快可能在2026年底或2027年初問世。"
+      },
+      {
+        "date": "6/22",
+        "title": "Rocket Lab (RKLB) 將納入那斯達克100指數",
+        "detail": "Rocket Lab將於2026年6月22日市場開盤前正式納入那斯達克100指數，這項消息有望提升其能見度並吸引更多機構資金。"
+      },
+      {
+        "date": "8月",
+        "title": "Nvidia (NVDA) Vera CPU 預計向中國客戶供貨",
+        "detail": "Nvidia的Vera中央處理器 (CPU) 預計最快在8月開始向中國客戶供貨，此舉可能進一步加劇AI晶片市場的競爭。"
+      },
+      {
+        "date": "未來幾季",
+        "title": "記憶體DRAM價格持續上漲",
+        "detail": "摩根士丹利及Wolfe Research分析師預期DRAM價格有望持續上漲至2027年，主要受AI代理人崛起及無塵室空間短缺影響。"
+      }
+    ]
+  }
 }
