@@ -320,7 +320,7 @@
       "dollarVolume": 3784677991.024426,
       "marketCap": 213919840000,
       "sector": "RADIO & TV BROADCASTING & COMMUNICATIONS EQUIPMENT",
-      "theme": "行動晶片",
+      "theme": "手機晶片",
       "isNew": false,
       "rankChange": 1,
       "streak": 34
@@ -333,7 +333,7 @@
       "dollarVolume": 3584735122.973136,
       "marketCap": 300969030460.72003,
       "sector": "SERVICES-PREPACKAGED SOFTWARE",
-      "theme": "資料分析軟體",
+      "theme": "數據分析軟體",
       "isNew": false,
       "rankChange": -3,
       "streak": 65
@@ -515,7 +515,7 @@
       "dollarVolume": 2851384507.7374883,
       "marketCap": 840000034428.8201,
       "sector": "NATIONAL COMMERCIAL BANKS",
-      "theme": "銀行",
+      "theme": "商業銀行",
       "isNew": false,
       "rankChange": 3,
       "streak": 6
@@ -541,7 +541,7 @@
       "dollarVolume": 2742457231.834159,
       "marketCap": 679284372199.8301,
       "sector": "FIRE, MARINE & CASUALTY INSURANCE",
-      "theme": "綜合保險",
+      "theme": "多元控股",
       "isNew": false,
       "rankChange": -2,
       "streak": 2
@@ -652,13 +652,13 @@
     }
   ],
   "asOf": "2026-06-11T20:00:00.000Z",
-  "generatedAt": "2026-06-12T17:16:22.241Z",
+  "generatedAt": "2026-06-13T02:06:16.936Z",
   "source": "polygon",
   "aiSource": "gemini",
   "themeSummary": [
     {
       "theme": "半導體設備",
-      "reason": "AI 晶片需求持續增長，帶動上游半導體製造設備訂單強勁，市場預期產業景氣復甦。",
+      "reason": "在AI晶片需求持續增長下，半導體製造商擴大資本支出，帶動相關設備供應商訂單強勁。",
       "symbols": [
         "AMAT",
         "ASML",
@@ -670,7 +670,7 @@
     },
     {
       "theme": "AI 晶片",
-      "reason": "人工智慧應用快速發展，對高效能運算晶片的需求持續旺盛，相關供應商受惠。",
+      "reason": "人工智慧應用快速發展，市場對高效能AI晶片的需求持續旺盛，推動相關供應商股價上漲。",
       "symbols": [
         "MU",
         "NVDA",
@@ -684,7 +684,7 @@
     },
     {
       "theme": "儲存裝置",
-      "reason": "記憶體與儲存產業景氣回升，加上AI應用對資料儲存的需求增加，推動相關公司股價上漲。",
+      "reason": "AI與資料中心需求增長，帶動記憶體及儲存解決方案的需求增加，相關廠商受惠。",
       "symbols": [
         "SNDK",
         "WDC"
@@ -693,34 +693,36 @@
       "avgChange": 11.2496199258062
     },
     {
+      "theme": "半導體",
+      "reason": "整體半導體產業受惠於AI趨勢及庫存回補，市場對晶片需求前景樂觀。",
+      "symbols": [
+        "INTC",
+        "AVGO",
+        "QCOM",
+        "TXN"
+      ],
+      "count": 4,
+      "avgChange": 6.097264962574025
+    },
+    {
+      "theme": "電子電腦",
+      "reason": "AI PC概念興起，以及企業對高效能運算設備的需求增加，推動相關硬體廠商表現。",
+      "symbols": [
+        "SMCI",
+        "DELL"
+      ],
+      "count": 2,
+      "avgChange": 7.535195558553617
+    },
+    {
       "theme": "資安",
-      "reason": "全球網路攻擊事件頻傳，企業及政府對資安防護的投入增加，資安軟體服務需求強勁。",
+      "reason": "網路攻擊日益頻繁，企業及政府對網路安全解決方案的投資持續增加，資安產業前景看好。",
       "symbols": [
         "PANW",
         "CRWD"
       ],
       "count": 2,
       "avgChange": 6.478383115664412
-    },
-    {
-      "theme": "雲端服務",
-      "reason": "企業數位轉型趨勢不變，雲端運算服務持續擴張，相關平台與基礎設施提供商表現穩健。",
-      "symbols": [
-        "GOOGL",
-        "GOOG",
-        "NBIS"
-      ],
-      "count": 3,
-      "avgChange": 2.096917143711506
-    },
-    {
-      "theme": "電力基礎建設",
-      "reason": "全球能源轉型與電網現代化需求，加上AI資料中心對電力消耗的增加，推動電力基礎建設投資。",
-      "symbols": [
-        "GEV"
-      ],
-      "count": 1,
-      "avgChange": 4.578532793596966
     }
   ],
   "newEntrants": [
@@ -729,86 +731,76 @@
       "name": "Adobe Inc.",
       "theme": "雲端軟體 SaaS",
       "changePercent": -6.247321964178586,
-      "reason": "CFO離職、AI策略轉向 freemium 模式，導致股價下跌放量."
+      "reason": "財報優於預期但CFO離職與轉向免費增值模式引發市場擔憂，股價下跌放量。"
     },
     {
       "symbol": "RKLB",
       "name": "Rocket Lab Corporation Common Stock",
       "theme": "太空",
       "changePercent": 9.262256068538795,
-      "reason": "宣布將加入那斯達克100指數，激勵股價上漲."
+      "reason": "宣布將加入Nasdaq-100指數，並受SpaceX IPO熱潮帶動太空類股上漲。"
     },
     {
       "symbol": "CRM",
       "name": "Salesforce, Inc.",
       "theme": "雲端軟體 SaaS",
       "changePercent": -2.6152586005148604,
-      "reason": "宣布新一輪裁員，並將重點轉向AI，市場對此反應不一."
+      "reason": "最新財報強勁且AI業務增長，但裁員與收購消息及軟體板塊整體疲軟導致股價下跌。"
     },
     {
       "symbol": "PANW",
       "name": "Palo Alto Networks, Inc. Common Stock",
       "theme": "資安",
       "changePercent": 6.1963376643112005,
-      "reason": "強勁的財報和上調財測，以及AI資安需求成長."
+      "reason": "財報優於預期並上調全年財測，AI安全平台需求強勁，但GAAP虧損引發關注。"
     },
     {
       "symbol": "CRWD",
       "name": "CrowdStrike Holdings, Inc. Class A Common Stock",
       "theme": "資安",
       "changePercent": 6.760428567017625,
-      "reason": "發布優於預期的財報與財測，並強調AI在資安領域的應用."
+      "reason": "財報表現強勁，AI及供應商整合需求推動增長，並宣布股票分割。"
     }
   ],
   "marketBriefing": {
-    "highlights": "本日美股成交重點集中在AI晶片、記憶體與半導體族群，資金主要流向受惠於AI需求增長的個股。美光科技（MU）因投行大幅上調目標價，預期記憶體價格將急劇上升而大漲。AMD（AMD）受惠於花旗調升評等及AI GPU成長預期而走強。英特爾（INTC）則因傳出奪得Google AI晶片大單而股價飆升。Nvidia（NVDA）與Marvell（MRVL）也因AI基礎設施的強勁需求而受到關注。市場故事主要圍繞在AI產業鏈的持續擴張，以及相關硬體需求帶來的成長潛力。",
+    "highlights": "本日美股成交重點集中在AI相關族群，特別是記憶體、AI晶片和半導體類股，顯示市場資金持續追逐人工智慧基礎建設的投資機會。美光科技（MU）和Sandisk（SNDK）等記憶體股因AI資料中心需求強勁而大漲，而英特爾（INTC）則受惠於美國銀行上調評級，看好其服務器CPU市場前景。Marvell Technology（MRVL）也因被納入S&P 500指數以及Nvidia執行長黃仁勳的看好言論而表現強勁，共同帶動了半導體族群的成交量。",
     "eventsPast": [
       {
-        "title": "美光科技目標價大幅上調",
-        "detail": "Wolfe Research將美光科技（MU）的目標價上調至1250美元，反映對DRAM及NAND記憶體價格急劇上升的預期，特別是在2026年和2027年間。"
+        "title": "美銀上調英特爾評級至「買入」",
+        "detail": "美國銀行將英特爾（INTC）的股票評級從「跑輸大盤」直接上調兩級至「買入」，並將目標價從96美元上調至135美元，主因對其服務器芯片業務和外部代工業務前景的信心增強。"
       },
       {
-        "title": "AMD獲花旗調升評等與目標價",
-        "detail": "花旗將AMD（AMD）的評等從中立上調至買進，目標價上調至575美元，主要受惠於其AI GPU在AI伺服器市場的關鍵角色。"
+        "title": "美光科技HBM供應已全數售罄",
+        "detail": "美光科技（MU）2026年的高頻寬記憶體（HBM）供應已全數售罄，且訂單能見度延伸至2027年，受惠於AI伺服器與資料中心對HBM的強勁需求。"
       },
       {
-        "title": "英特爾傳奪Google AI晶片大單",
-        "detail": "英特爾（INTC）因傳出成功奪得Google的AI晶片大單，帶動股價單日飆升逾9%。"
+        "title": "Marvell Technology納入S&P 500指數",
+        "detail": "Marvell Technology（MRVL）被宣布將納入S&P 500指數，取代Pool Corp.等成分股，推升其股價表現。"
       },
       {
-        "title": "Nvidia向中國客戶推介新AI數據中心晶片",
-        "detail": "Nvidia（NVDA）據報已通知中國客戶，其新款用於AI數據中心的Vera中央處理器最快可於8月供應，並已可開始下單。"
+        "title": "甲骨文公布財報後股價重挫",
+        "detail": "甲骨文（ORCL）公布的財報雖然優於市場預期，但因揭露2026會計年度資本支出高達約556.6億美元，並預期2027會計年度資本支出上看950億美元，其中約700億美元為公司實際現金支出，引發投資人對未來資本支出壓力和獲利前景的擔憂，導致股價大跌。"
       },
       {
-        "title": "Oracle財報優於預期但資料中心支出引發擔憂",
-        "detail": "Oracle（ORCL）公布第四財季業績優於華爾街預期，受AI帶動雲端基礎設施需求上升，但宣布未來一年將投入700億美元建設資料中心，引發投資人對獲利前景的擔憂，導致盤後股價下跌。"
+        "title": "SpaceX IPO上市首日股價大漲",
+        "detail": "馬斯克旗下SpaceX（SPCX）在納斯達克上市首日股價大漲19.22%，總裁肖特韋爾不排除未來與特斯拉（TSLA）合併，但華爾街對合併前景看法分化。"
       }
     ],
     "eventsUpcoming": [
       {
-        "date": "6/15",
-        "title": "Marvell Technology, Inc. 財務長變動",
-        "detail": "Marvell Technology, Inc. (MRVL) 宣布任命Dan Durn為首席財務官，於2026年6月15日起生效。"
-      },
-      {
         "date": "6/24",
-        "title": "美光科技公布財報",
-        "detail": "美光科技（MU）將於2026年6月24日公布2026會計年度第三季財報，市場預期其調整後每股盈餘將大幅增長。"
+        "title": "美光科技（MU）財報公布",
+        "detail": "市場預期美光科技（MU）營收與獲利將出現數倍成長，但投資人仍需留意其財報與資本支出指引，以評估AI需求與記憶體景氣循環是否持續支撐高檔評價。"
       },
       {
-        "date": "6/30 後不久",
-        "title": "微軟Xbox部門裁員計畫",
-        "detail": "微軟（MSFT）旗下的Xbox部門預計將在公司會計年度於6月30日結束後不久，宣布大規模裁員計畫並縮減預算。"
+        "date": "本週",
+        "title": "聯準會會議",
+        "detail": "市場持續關注聯準會（Fed）的貨幣政策動向，這將影響整體市場情緒，特別是對高估值科技股的影響。"
       },
       {
-        "date": "8月",
-        "title": "Nvidia新AI數據中心晶片供應中國",
-        "detail": "Nvidia（NVDA）據報將於最快8月開始向中國客戶供應新款用於AI數據中心的Vera中央處理器。"
-      },
-      {
-        "date": "2028年",
-        "title": "Google下一代AI晶片量產",
-        "detail": "Google（GOOGL, GOOG）正在開發代號為「Icefish」的下一代張量處理器(TPU)，預計最快可能於2028年開始量產，並可能由三星承接部分生產工作。"
+        "date": "本週",
+        "title": "CPI/就業數據",
+        "detail": "美國通膨和就業數據的公布將影響聯準會的降息時程，進而左右市場對科技股的投資情緒。"
       }
     ]
   }
